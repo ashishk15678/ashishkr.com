@@ -10,7 +10,7 @@ export function RecognitionSection() {
       className="px-4 sm:px-6 md:px-12 lg:px-20 py-12 md:py-20 bg-foreground text-background"
       data-inspectable
     >
-      <div className="flex flex-col lg:grid lg:grid-cols-12 gap-8 md:gap-12">
+      <div className="relative z-10 flex flex-col lg:grid lg:grid-cols-12 gap-8 md:gap-12">
         {/* Section header */}
         <div className="lg:col-span-4">
           <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-3 md:mb-4 section-title">

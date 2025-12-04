@@ -212,7 +212,12 @@ html {
 
 /* Text gradient animation */
 .text-gradient-animate {
-  background: linear-gradient(90deg, var(--foreground) 0%, var(--muted-foreground) 50%, var(--foreground) 100%);
+  background: linear-gradient(
+    90deg,
+    var(--foreground) 0%,
+    var(--muted-foreground) 50%,
+    var(--foreground) 100%
+  );
   background-size: 200% auto;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
