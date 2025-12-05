@@ -339,18 +339,18 @@ const SKILLS = [
     "FULL STACK DEVELOPMENT",
     "REACT NATIVE",
     "NEXT.JS",
+    "RUST",
+    "C",
+    "C++",
+    "JAVA",
     "PYTHON",
-    "MACHINE LEARNING",
-    "SYSTEM ARCHITECTURE",
-    "UI/UX DESIGN",
-    "AI ENGINEERING",
     "TYPESCRIPT",
     "NODE.JS",
     "POSTGRESQL",
     "DOCKER",
-    "KUBERNETES",
-    "AWS",
-    "TENSORFLOW"
+    "PROMPT ENGINEERING",
+    "GIT",
+    "LINUX"
 ];
 if (typeof globalThis.$RefreshHelpers$ === 'object' && globalThis.$RefreshHelpers !== null) {
     __turbopack_context__.k.registerExports(__turbopack_context__.m, globalThis.$RefreshHelpers$);
@@ -435,70 +435,66 @@ const PROJECTS = [
     {
         id: "1",
         number: "01",
-        year: "2024",
+        year: "2025",
         endYear: "PRESENT",
-        title: "NeuroSync",
+        title: "zon3.xyz",
         tags: [
             "NEXT.JS",
-            "PYTHON",
-            "TENSORFLOW",
-            "OPENAI"
+            "REACT",
+            "TRPC",
+            "POSTGRES"
         ],
-        description: "AI-powered mental health companion. Built real-time mood analysis using facial recognition and NLP to provide personalized wellness recommendations.",
-        link: "https://neurosync.app"
+        description: "A small app which is n8n alike , can be used to connect nodes and for normal use cases. Very few nodes.",
+        link: "https://zon3.xyz"
     },
     {
         id: "2",
         number: "02",
-        year: "2024",
-        title: "CodePilot AI",
+        year: "2025",
+        title: "Docker clone",
         tags: [
-            "NEXT.JS 15",
-            "SUPABASE",
-            "GEMINI",
-            "RUST"
+            "C",
+            "Linux"
         ],
-        description: "Intelligent code review assistant. Analyzes PRs with context-aware suggestions and automated refactoring recommendations.",
-        link: "https://codepilot.dev"
+        description: "A simple docker clone written in C and Linux. It was part of college's minor project , also major in future."
     },
     {
         id: "3",
         number: "03",
-        year: "2024",
-        title: "DataForge",
+        year: "2025",
+        title: "SharedCN",
         tags: [
-            "FASTAPI",
+            "NEXT.JS 15",
             "REACT",
-            "APACHE SPARK"
+            "NODE",
+            "CLI"
         ],
-        description: "Enterprise data pipeline builder with drag-and-drop interface. Processes millions of records with real-time monitoring dashboards.",
-        link: "https://dataforge.io"
+        description: "A simple app to share your components and setups at one place , primarily used by nobody , around 10 users.",
+        link: "https://sharedcn.vercel.app"
     },
     {
         id: "4",
         number: "04",
-        year: "2023",
-        title: "EcoTrack",
+        year: "2025",
+        title: "Switch",
         tags: [
-            "REACT NATIVE",
-            "NODE.JS",
-            "MONGODB"
+            "NEXTJS",
+            "REACT"
         ],
-        description: "Carbon footprint tracking app for individuals and businesses. Uses ML to suggest actionable sustainability improvements.",
-        link: "https://ecotrack.green"
+        description: "A simple app to switch between different environments and configurations.",
+        link: "https://github.com/ashishk15678/switch"
     },
     {
         id: "5",
         number: "05",
-        year: "2023",
-        title: "MediChain",
+        year: "2024",
+        title: "Discord clone",
         tags: [
-            "SOLIDITY",
-            "REACT",
-            "IPFS"
+            "NEXTJS",
+            "REACT"
         ],
-        description: "Blockchain-based medical records management. Ensures patient data privacy with decentralized storage and smart contract access control.",
-        link: "https://medichain.health"
+        description: "A simple discord clone.",
+        link: "https://github.com/ashishk15678/dscord-clone"
     }
 ];
 if (typeof globalThis.$RefreshHelpers$ === 'object' && globalThis.$RefreshHelpers !== null) {
@@ -873,33 +869,21 @@ __turbopack_context__.s([
 const RECOGNITIONS = [
     {
         id: "1",
-        year: "2024",
-        title: "Winner - Google AI Hackathon",
-        organization: "Google Developer Groups / Bangalore"
+        year: "2025 - february",
+        title: "College DSA Competition",
+        organization: "NIET , Greater Noida"
     },
     {
         id: "2",
         year: "2024",
-        title: "Best Innovation Award",
-        organization: "TechCrunch Disrupt / India"
+        title: "Hackathon Participant",
+        organization: "Hack X Club"
     },
     {
         id: "3",
-        year: "2023",
-        title: "1st Place - Smart India Hackathon",
-        organization: "Ministry of Education / Govt. of India"
-    },
-    {
-        id: "4",
-        year: "2023",
-        title: "Open Source Contributor of the Year",
-        organization: "GitHub India"
-    },
-    {
-        id: "5",
-        year: "2022",
-        title: "Gold Medal - M.Tech Computer Science",
-        organization: "IIT Delhi"
+        year: "2024",
+        title: "Hackker rank 5 star",
+        organization: "Hacker rank"
     }
 ];
 if (typeof globalThis.$RefreshHelpers$ === 'object' && globalThis.$RefreshHelpers !== null) {
@@ -1595,28 +1579,28 @@ const DOCK_ITEMS = [
         id: "github",
         icon: __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$github$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Github$3e$__["Github"],
         label: "GitHub",
-        href: "https://github.com/ashishkumar",
+        href: "https://github.com/ashishk15678",
         external: true
     },
     {
         id: "linkedin",
         icon: __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$linkedin$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Linkedin$3e$__["Linkedin"],
         label: "LinkedIn",
-        href: "https://linkedin.com/in/ashishkumar",
+        href: "https://linkedin.com/in/ashishk15678",
         external: true
     },
     {
         id: "twitter",
         icon: __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$twitter$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Twitter$3e$__["Twitter"],
         label: "Twitter",
-        href: "https://twitter.com/ashishkumar",
+        href: "https://twitter.com/ashishonsol",
         external: true
     },
     {
         id: "email",
         icon: __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$mail$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Mail$3e$__["Mail"],
         label: "Email",
-        href: "mailto:ashish.kumar@gmail.com",
+        href: "mailto:15678ashish@gmail.com",
         external: true
     },
     {
