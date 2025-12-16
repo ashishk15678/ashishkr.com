@@ -2,7 +2,8 @@
 
 import { SITE_CONFIG } from "@/lib/constants/site";
 import { TextReveal } from "./text-reveal";
-import { useEffect, useState } from "react";
+import { Suspense, useEffect, useState } from "react";
+// import { HeroFuturistic } from "./blocks/hero-futuristic";
 
 export function HeroSection() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
@@ -36,7 +37,6 @@ export function HeroSection() {
         <div className="absolute top-1/4 -left-1/4 w-[600px] h-[600px] bg-gradient-to-r from-primary/5 to-transparent rounded-full blur-3xl" />
         <div className="absolute bottom-1/4 -right-1/4 w-[400px] h-[400px] bg-gradient-to-l from-muted/20 to-transparent rounded-full blur-3xl" />
       </div>
-
 
       <div className="space-y-0 leading-none hero-name relative z-10">
         <h1
@@ -72,10 +72,9 @@ export function HeroSection() {
           {SITE_CONFIG.tagline}
         </p>
       </div>
-
-      <div className="absolute right-20 top-1/2 -translate-y-1/2 hidden lg:block">
-        <div className="w-px h-32 bg-foreground animate-in slide-in-from-top duration-1000 delay-300" />
-      </div>
+      <Suspense fallback={<div>Loading...</div>}>
+        {/*<HeroFuturistic />*/}
+      </Suspense>
     </section>
   );
 }

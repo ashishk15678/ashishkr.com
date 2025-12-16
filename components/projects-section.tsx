@@ -59,7 +59,7 @@ export function ProjectsSection() {
                   {project.tags.map((tag, tagIndex) => (
                     <span
                       key={tag}
-                      className="px-2 md:px-3 py-0.5 md:py-1 border border-border rounded-full text-[10px] md:text-xs tracking-wider transition-all duration-300 hover:bg-foreground hover:text-background hover:scale-105"
+                      className="px-2 md:px-3 py-0.5 md:py-1 border border-border rounded-full text-[10px] md:text-xs tracking-wider transition-all duration-300 backdrop-blur-2xl"
                       style={{ transitionDelay: `${tagIndex * 50}ms` }}
                     >
                       {tag}

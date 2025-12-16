@@ -1,14 +1,12 @@
 import { Header } from "@/components/header";
 import { ResearchCard } from "@/components/research-card";
 import { RESEARCH_PAPERS } from "@/lib/constants/research";
-import { ScrollDock } from "@/components/scroll-dock";
 import { TextReveal } from "@/components/text-reveal";
 
 export default function ShelfPage() {
   return (
     <main className="min-h-screen bg-background text-foreground">
       <Header />
-      <ScrollDock />
       <div className="px-4 sm:px-6 md:px-12 lg:px-20 pt-24 md:pt-32 pb-16 md:pb-20">
         {/* Page header */}
         <div className="mb-10 md:mb-16" data-inspectable>

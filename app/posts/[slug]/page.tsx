@@ -1,35 +1,33 @@
-import { Header } from "@/components/header"
-import { ScrollDock } from "@/components/scroll-dock"
-import { getBlogBySlug, getAllBlogSlugs } from "@/lib/blog"
-import { markdownToHtml } from "@/lib/markdown-to-html"
-import { notFound } from "next/navigation"
-import Link from "next/link"
-import { ArrowLeft, Calendar, Clock } from "lucide-react"
-import { BlogDownloadButtons } from "@/components/blog-download-buttons"
+import { Header } from "@/components/header";
+import { getBlogBySlug, getAllBlogSlugs } from "@/lib/blog";
+import { markdownToHtml } from "@/lib/markdown-to-html";
+import { notFound } from "next/navigation";
+import Link from "next/link";
+import { ArrowLeft, Calendar, Clock } from "lucide-react";
+import { BlogDownloadButtons } from "@/components/blog-download-buttons";
 
 export async function generateStaticParams() {
-  const slugs = getAllBlogSlugs()
-  return slugs.map((slug) => ({ slug }))
+  const slugs = getAllBlogSlugs();
+  return slugs.map((slug) => ({ slug }));
 }
 
 interface Props {
-  params: Promise<{ slug: string }>
+  params: Promise<{ slug: string }>;
 }
 
 export default async function BlogPostPage({ params }: Props) {
-  const { slug } = await params
-  const blog = getBlogBySlug(slug)
+  const { slug } = await params;
+  const blog = getBlogBySlug(slug);
 
   if (!blog) {
-    notFound()
+    notFound();
   }
 
-  const htmlContent = await markdownToHtml(blog.content)
+  const htmlContent = await markdownToHtml(blog.content);
 
   return (
     <main className="min-h-screen bg-background text-foreground">
       <Header />
-      <ScrollDock />
 
       <article className="px-4 sm:px-6 md:px-12 lg:px-20 pt-24 md:pt-32 pb-16 md:pb-20">
         {/* Back link */}
@@ -58,11 +56,16 @@ export default async function BlogPostPage({ params }: Props) {
             </span>
           </div>
 
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tighter mb-6">{blog.title}</h1>
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tighter mb-6">
+            {blog.title}
+          </h1>
 
           <div className="flex flex-wrap gap-2 mb-6">
             {blog.tags.map((tag) => (
-              <span key={tag} className="px-3 py-1 border border-border rounded-full text-xs tracking-wider">
+              <span
+                key={tag}
+                className="px-3 py-1 border border-border rounded-full text-xs tracking-wider"
+              >
                 {tag}
               </span>
             ))}
@@ -89,5 +92,5 @@ export default async function BlogPostPage({ params }: Props) {
         />
       </article>
     </main>
-  )
+  );
 }

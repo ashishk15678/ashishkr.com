@@ -1,9 +1,0 @@
-{
-  "/_global-error/page": "/_global-error",
-  "/_not-found/page": "/_not-found",
-  "/api/blog/download/route": "/api/blog/download",
-  "/page": "/",
-  "/posts/[slug]/page": "/posts/[slug]",
-  "/posts/page": "/posts",
-  "/shelf/page": "/shelf"
-}
