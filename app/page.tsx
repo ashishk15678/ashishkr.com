@@ -4,6 +4,7 @@ import { ProjectsSection } from "@/components/projects-section";
 import { RecognitionSection } from "@/components/recognition-section";
 import { ContactSection } from "@/components/contact-section";
 import { Header } from "@/components/header";
+import { Suspense } from "react";
 
 export default function Home() {
   return (
