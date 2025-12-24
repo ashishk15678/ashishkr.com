@@ -17,6 +17,20 @@ export function Header() {
     setTheme(theme === "dark" ? "light" : "dark");
   };
 
+  const [name, setName] = useState(SITE_CONFIG.name);
+
+  // const showHeaderName = new IntersectionObserver(
+  //   () => {
+  //     setName("Portfolio");
+  //   },
+  //   {
+  //     root: document.querySelector("header-name"),
+  //     rootMargin: "0px",
+  //     threshold: 1.0,
+  //   },
+  // );
+  // showHeaderName.observe(document.body);
+
   return (
     <header className="fixed top-0 left-0 right-0 z-50 px-4 sm:px-6 md:px-12 lg:px-20 py-4 md:py-6 flex items-center justify-between bg-background/80 backdrop-blur-sm">
       <MagneticButton as="div" strength={0.2}>
@@ -24,7 +38,7 @@ export function Header() {
           href="/"
           className="font-bold text-base md:text-lg tracking-tight hover:opacity-70 transition-opacity"
         >
-          {SITE_CONFIG.name}
+          {name}
         </Link>
       </MagneticButton>
 
@@ -36,14 +50,13 @@ export function Header() {
               href={link.href}
               className={`relative text-sm tracking-wide transition-colors ${
                 pathname === link.href
-                  ? "text-foreground"
+                  ? "text-foreground underline underline-offset-4"
                   : "text-muted-foreground hover:text-foreground"
-              }`}
+              }
+              ${link.name == "Designs" && "rainbow-text"}
+              `}
             >
               {link.name}
-              {pathname === link.href && (
-                <span className="absolute -bottom-1 left-0 right-0 h-px bg-foreground animate-in fade-in slide-in-from-left duration-300" />
-              )}
             </Link>
           </MagneticButton>
         ))}
@@ -77,7 +90,11 @@ export function Header() {
           onClick={() => setIsMenuOpen(!isMenuOpen)}
           aria-label="Toggle menu"
         >
-          {isMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+          {isMenuOpen ? (
+            <X className="w-5 h-5" />
+          ) : (
+            <Menu className="w-5 h-5" />
+          )}
         </button>
       </div>
 

@@ -6,7 +6,9 @@ import { Plus, FileText } from "lucide-react";
 
 export default function PostsPage() {
   const blogs = getAllBlogs();
-
+  const additionalBlogs = [
+    { id: 1, blogLink: "", title: "", source: "Peerlist" },
+  ];
   return (
     <main className="min-h-screen bg-background text-foreground">
       <Header />

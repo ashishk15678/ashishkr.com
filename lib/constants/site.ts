@@ -24,4 +24,5 @@ export const NAV_LINKS = [
   { name: "Home", href: "/" },
   { name: "Posts", href: "/posts" },
   { name: "Shelf", href: "/shelf" },
+  { name: "Designs", href: "/designs" },
 ];
