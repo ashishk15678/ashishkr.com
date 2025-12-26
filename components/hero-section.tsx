@@ -19,7 +19,7 @@ export function HeroSection() {
         <h1 className="text-[18vw] sm:text-[15vw] md:text-[12vw] lg:text-[11vw] font-bold tracking-tighter text-foreground transition-transform duration-100 ease-out">
           <TextReveal delay={100}>{SITE_CONFIG.firstName}</TextReveal>
         </h1>
-        <h1 className="text-[18vw] sm:text-[15vw] md:text-[12vw] lg:text-[11vw] font-bold tracking-tighter text-primary  ml-[2vw] sm:ml-[5vw] transition-transform duration-100 ease-out">
+        <h1 className="text-[18vw] sm:text-[15vw] md:text-[12vw] lg:text-[11vw] font-bold tracking-tighter text-primary/50  ml-[2vw] sm:ml-[5vw] transition-transform duration-100 ease-out">
           <TextReveal delay={300}>{SITE_CONFIG.lastName}</TextReveal>
         </h1>
       </div>
