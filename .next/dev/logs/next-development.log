@@ -1,731 +1,478 @@
-[00:00:01.475] Server  LOG      ✓ Ready in 874ms
-[00:00:05.361] Server  LOG      ○ Compiling / ...
-[00:00:07.159] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[00:00:07.159] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/","route":"/"}
-[00:00:07.159] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1766775154256}
-[00:03:07.636] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
-[00:03:07.636] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/simulations color: rgb(120, 120, 120) color: inherit {"dp":"/simulations","o":"http://localhost:3000/simulations","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1766775334732}
-[00:03:24.467] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1766775351563}
-[00:03:27.214] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/simulations color: rgb(120, 120, 120) color: inherit {"dp":"/simulations","o":"http://localhost:3000/simulations","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1766775354311}
-[00:07:06.107] Browser ERROR   Each child in a list should have a unique "key" prop.%s%s See https://react.dev/link/warning-keys for more information. 
-
-Check the render method of `div`.  It was passed a child from Page. {"name":"Stack","stack":"\ndiv@unknown:0:0"}
-[00:08:13.841] Server  ERROR   Each child in a list should have a unique "key" prop. See https://react.dev/link/warning-keys for more information.
-[00:08:17.577] Server  ERROR   Each child in a list should have a unique "key" prop. See https://react.dev/link/warning-keys for more information.
-[00:08:31.232] Server  ERROR   Each child in a list should have a unique "key" prop. See https://react.dev/link/warning-keys for more information.
-[00:08:40.041] Server  ERROR   Each child in a list should have a unique "key" prop. See https://react.dev/link/warning-keys for more information.
-[00:08:43.537] Server  ERROR   Each child in a list should have a unique "key" prop. See https://react.dev/link/warning-keys for more information.
-[00:08:59.629] Server  ERROR   Each child in a list should have a unique "key" prop. See https://react.dev/link/warning-keys for more information.
-[00:08:59.792] Browser ERROR   Invalid DOM property `%s`. Did you mean `%s`? autoplay autoPlay {"name":"Stack","stack":"\nvideo@unknown:0:0"}
-[00:08:59.792] Browser ERROR   Received `%s` for a non-boolean attribute `%s`.
-
-If you want to write it to the DOM, pass a string instead: %s="%s" or %s={value.toString()}. true infinite infinite true infinite {"name":"Stack","stack":"\nvideo@unknown:0:0"}
-[00:08:59.792] Browser ERROR   An empty string ("") was passed to the %s attribute. This may cause the browser to download the whole page again over the network. To fix this, either do not render the element at all or pass null to %s instead of an empty string. src src {"name":"Stack","stack":"\nvideo@unknown:0:0"}
-[00:09:03.410] Server  ERROR   Each child in a list should have a unique "key" prop. See https://react.dev/link/warning-keys for more information.
-[00:09:12.319] Server  ERROR   Each child in a list should have a unique "key" prop. See https://react.dev/link/warning-keys for more information.
-[00:09:15.511] Server  ERROR   Each child in a list should have a unique "key" prop. See https://react.dev/link/warning-keys for more information.
-[00:09:15.609] Server  ERROR   An empty string ("") was passed to the src attribute. This may cause the browser to download the whole page again over the network. To fix this, either do not render the element at all or pass null to src instead of an empty string.
-[00:09:16.397] Browser ERROR   An empty string ("") was passed to the %s attribute. This may cause the browser to download the whole page again over the network. To fix this, either do not render the element at all or pass null to %s instead of an empty string. src src
-[00:09:17.067] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[00:09:17.067] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/simulations","route":"/simulations"}
-[00:09:17.067] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/simulations color: rgb(120, 120, 120) color: inherit {"dp":"/simulations","o":"http://localhost:3000/simulations","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1766775704167}
-[00:09:39.590] Server  ERROR   Each child in a list should have a unique "key" prop. See https://react.dev/link/warning-keys for more information.
-[00:09:49.713] Server  ERROR   Each child in a list should have a unique "key" prop. See https://react.dev/link/warning-keys for more information.
-[00:09:49.772] Server  ERROR   An empty string ("") was passed to the src attribute. This may cause the browser to download the whole page again over the network. To fix this, either do not render the element at all or pass null to src instead of an empty string.
-[00:09:50.523] Browser ERROR   An empty string ("") was passed to the %s attribute. This may cause the browser to download the whole page again over the network. To fix this, either do not render the element at all or pass null to %s instead of an empty string. src src
-[00:09:50.523] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[00:09:50.523] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/simulations","route":"/simulations"}
-[00:09:50.523] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/simulations color: rgb(120, 120, 120) color: inherit {"dp":"/simulations","o":"http://localhost:3000/simulations","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1766775737621}
-[00:09:58.797] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[00:09:58.797] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/simulations/1","route":"/simulations/1"}
-[00:09:58.797] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/simulations/1 color: rgb(120, 120, 120) color: inherit {"dp":"/simulations/1","o":"http://localhost:3000/simulations/1","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1766775745896}
-[00:09:59.662] Server  ERROR   Each child in a list should have a unique "key" prop. See https://react.dev/link/warning-keys for more information.
-[00:09:59.688] Server  ERROR   An empty string ("") was passed to the src attribute. This may cause the browser to download the whole page again over the network. To fix this, either do not render the element at all or pass null to src instead of an empty string.
-[00:10:00.462] Browser ERROR   An empty string ("") was passed to the %s attribute. This may cause the browser to download the whole page again over the network. To fix this, either do not render the element at all or pass null to %s instead of an empty string. src src
-[00:10:00.462] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[00:10:00.462] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/simulations","route":"/simulations"}
-[00:10:00.462] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/simulations color: rgb(120, 120, 120) color: inherit {"dp":"/simulations","o":"http://localhost:3000/simulations","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1766775747562}
-[00:10:16.368] Browser ERROR   ./app/simulations/page.tsx:27:56
+[00:00:01.524] Server  LOG      ✓ Ready in 1050ms
+[00:00:05.898] Server  LOG      ○ Compiling / ...
+[00:00:09.136] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[00:00:09.136] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/","route":"/"}
+[00:00:09.136] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1767275928301}
+[00:08:24.324] Server  ERROR    ⨯ ./app/layout.tsx:40:14
 Parsing ecmascript source code failed
-  25 |             <div key={s.name} className="px-4 py-1">
-  26 |               <div>{s.name}</div>
-> 27 |               <video src={s.video} muted loop controls=false className="max-w-sm"></video>
-     |                                                        ^^^^^
-  28 |             </div>
-  29 |           </Link>
-  30 |         ))}
+  38 |         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  39 |         <link href="https://fonts.googleapis.com/css2?family=Bitcount:wght@100..900&display=swap" rel="stylesheet">
+> 40 |       </head>
+     |              ^
+> 41 |       <body className="font-sans antialiased">
+     | ^^^^^^^
+  42 |         <Suspense fallback={<div>Loading...</div>}>
+  43 |           <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+  44 |             {children}
 
-Expected '</', got 'false'
-[00:10:18.603] Server  ERROR   Each child in a list should have a unique "key" prop. See https://react.dev/link/warning-keys for more information.
-[00:10:18.665] Server  ERROR   An empty string ("") was passed to the src attribute. This may cause the browser to download the whole page again over the network. To fix this, either do not render the element at all or pass null to src instead of an empty string.
-[00:10:19.436] Browser ERROR   An empty string ("") was passed to the %s attribute. This may cause the browser to download the whole page again over the network. To fix this, either do not render the element at all or pass null to %s instead of an empty string. src src {"name":"Stack","stack":"\nvideo@unknown:0:0"}
-[00:10:19.436] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[00:10:19.436] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/simulations","route":"/simulations"}
-[00:10:19.436] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/simulations color: rgb(120, 120, 120) color: inherit {"dp":"/simulations","o":"http://localhost:3000/simulations","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1766775766535}
-[00:11:07.182] Server  ERROR   Each child in a list should have a unique "key" prop. See https://react.dev/link/warning-keys for more information.
-[00:11:07.479] Browser ERROR   Invalid DOM property `%s`. Did you mean `%s`? autoplay autoPlay {"name":"Stack","stack":"\nvideo@unknown:0:0"}
-[00:11:10.692] Server  ERROR   Each child in a list should have a unique "key" prop. See https://react.dev/link/warning-keys for more information.
-[00:11:10.764] Server  ERROR   Invalid DOM property `autoplay`. Did you mean `autoPlay`?
-[00:11:10.766] Server  ERROR   An empty string ("") was passed to the src attribute. This may cause the browser to download the whole page again over the network. To fix this, either do not render the element at all or pass null to src instead of an empty string.
-[00:11:12.559] Browser ERROR   Invalid DOM property `%s`. Did you mean `%s`? autoplay autoPlay
-[00:11:12.559] Browser ERROR   An empty string ("") was passed to the %s attribute. This may cause the browser to download the whole page again over the network. To fix this, either do not render the element at all or pass null to %s instead of an empty string. src src
-[00:11:12.824] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[00:11:12.824] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/simulations","route":"/simulations"}
-[00:11:12.824] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/simulations color: rgb(120, 120, 120) color: inherit {"dp":"/simulations","o":"http://localhost:3000/simulations","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1766775819892}
-[00:11:49.910] Server  ERROR   Each child in a list should have a unique "key" prop. See https://react.dev/link/warning-keys for more information.
-[00:11:49.946] Server  ERROR   An empty string ("") was passed to the src attribute. This may cause the browser to download the whole page again over the network. To fix this, either do not render the element at all or pass null to src instead of an empty string.
-[00:12:04.233] Server  ERROR   Each child in a list should have a unique "key" prop. See https://react.dev/link/warning-keys for more information.
-[00:12:10.919] Server  ERROR   Each child in a list should have a unique "key" prop. See https://react.dev/link/warning-keys for more information.
-[00:12:13.403] Server  ERROR   Each child in a list should have a unique "key" prop. See https://react.dev/link/warning-keys for more information.
-[00:12:14.175] Browser ERROR   Invalid DOM property `%s`. Did you mean `%s`? autoplay autoPlay
-[00:12:14.493] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[00:12:14.493] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/simulations","route":"/simulations"}
-[00:12:14.493] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/simulations color: rgb(120, 120, 120) color: inherit {"dp":"/simulations","o":"http://localhost:3000/simulations","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1766775881546}
-[00:12:38.779] Server  ERROR    ⨯ TypeError: Cannot read properties of undefined (reading 'length')
-[00:12:39.009] Browser ERROR   uncaughtError: TypeError: Cannot read properties of undefined (reading 'length')
-[00:12:41.287] Server  ERROR    ⨯ TypeError: Cannot read properties of undefined (reading 'length')
-[00:12:41.969] Browser ERROR   uncaughtError: TypeError: Cannot read properties of undefined (reading 'length')
-[00:12:48.811] Server  LOG      ✓ Compiled in 6.8s
-[00:12:48.871] Server  ERROR   Each child in a list should have a unique "key" prop. See https://react.dev/link/warning-keys for more information.
-[00:12:49.732] Browser ERROR   Invalid DOM property `%s`. Did you mean `%s`? autoplay autoPlay {"name":"Stack","stack":"\nvideo@unknown:0:0"}
-[00:12:49.955] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[00:12:49.955] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/simulations","route":"/simulations"}
-[00:12:49.955] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/simulations color: rgb(120, 120, 120) color: inherit {"dp":"/simulations","o":"http://localhost:3000/simulations","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1766775917051}
-[00:12:52.044] Server  ERROR   Each child in a list should have a unique "key" prop. See https://react.dev/link/warning-keys for more information.
-[00:12:52.798] Browser ERROR   Invalid DOM property `%s`. Did you mean `%s`? autoplay autoPlay
-[00:12:53.078] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[00:12:53.078] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/simulations","route":"/simulations"}
-[00:12:53.078] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/simulations color: rgb(120, 120, 120) color: inherit {"dp":"/simulations","o":"http://localhost:3000/simulations","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1766775920121}
-[00:13:40.914] Server  ERROR   Each child in a list should have a unique "key" prop. See https://react.dev/link/warning-keys for more information.
-[00:13:44.257] Server  ERROR   Each child in a list should have a unique "key" prop. See https://react.dev/link/warning-keys for more information.
-[00:13:46.864] Server  ERROR   Each child in a list should have a unique "key" prop. See https://react.dev/link/warning-keys for more information.
-[00:13:48.088] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[00:13:48.088] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/simulations","route":"/simulations"}
-[00:13:48.088] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/simulations color: rgb(120, 120, 120) color: inherit {"dp":"/simulations","o":"http://localhost:3000/simulations","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1766775974998}
-[00:13:58.777] Server  ERROR   Each child in a list should have a unique "key" prop. See https://react.dev/link/warning-keys for more information.
-[00:13:58.989] Browser ERROR   Invalid DOM property `%s`. Did you mean `%s`? autoplay autoPlay {"name":"Stack","stack":"\nvideo@unknown:0:0"}
-[00:14:03.326] Server  ERROR   Each child in a list should have a unique "key" prop. See https://react.dev/link/warning-keys for more information.
-[00:14:06.312] Server  ERROR   Each child in a list should have a unique "key" prop. See https://react.dev/link/warning-keys for more information.
-[00:14:28.901] Server  ERROR   Each child in a list should have a unique "key" prop. See https://react.dev/link/warning-keys for more information.
-[00:14:42.210] Server  ERROR   Each child in a list should have a unique "key" prop. See https://react.dev/link/warning-keys for more information.
-[00:14:43.586] Server  ERROR   Each child in a list should have a unique "key" prop. See https://react.dev/link/warning-keys for more information.
-[00:22:24.720] Server  ERROR   Each child in a list should have a unique "key" prop. See https://react.dev/link/warning-keys for more information.
-[00:22:41.583] Server  ERROR   Each child in a list should have a unique "key" prop. See https://react.dev/link/warning-keys for more information.
-[00:23:09.548] Server  ERROR   Each child in a list should have a unique "key" prop. See https://react.dev/link/warning-keys for more information.
-[00:23:16.230] Server  ERROR   Each child in a list should have a unique "key" prop. See https://react.dev/link/warning-keys for more information.
-[00:23:18.197] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[00:23:18.197] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/simulations","route":"/simulations"}
-[00:23:18.197] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/simulations color: rgb(120, 120, 120) color: inherit {"dp":"/simulations","o":"http://localhost:3000/simulations","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1766776545115}
-[00:23:24.648] Server  ERROR   Each child in a list should have a unique "key" prop. See https://react.dev/link/warning-keys for more information.
-[00:23:38.602] Server  ERROR   Each child in a list should have a unique "key" prop. See https://react.dev/link/warning-keys for more information.
-[00:23:42.296] Server  ERROR   Each child in a list should have a unique "key" prop. See https://react.dev/link/warning-keys for more information.
-[00:23:45.547] Server  ERROR   Each child in a list should have a unique "key" prop. See https://react.dev/link/warning-keys for more information.
-[00:23:48.642] Server  ERROR   Each child in a list should have a unique "key" prop. See https://react.dev/link/warning-keys for more information.
-[00:24:00.867] Server  ERROR   Each child in a list should have a unique "key" prop. See https://react.dev/link/warning-keys for more information.
-[00:24:14.627] Server  ERROR   Each child in a list should have a unique "key" prop. See https://react.dev/link/warning-keys for more information.
-[00:24:27.964] Server  ERROR   Each child in a list should have a unique "key" prop. See https://react.dev/link/warning-keys for more information.
-[00:24:36.968] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[00:24:36.968] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/simulations/1","route":"/simulations/1"}
-[00:24:36.968] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/simulations/1 color: rgb(120, 120, 120) color: inherit {"dp":"/simulations/1","o":"http://localhost:3000/simulations/1","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1766776623947}
-[00:24:47.972] Server  ERROR    ⨯ Error: The default export is not a React Component in "/simulations/1/page"
-[00:24:48.286] Server  ERROR    ⨯ Error: The default export is not a React Component in "/simulations/1/page"
-[00:24:49.922] Server  ERROR    ⨯ Error: The default export is not a React Component in "/simulations/1/page"
-[00:24:50.199] Server  ERROR    ⨯ Error: The default export is not a React Component in "/simulations/1/page"
-[00:24:50.625] Server  ERROR    ⨯ Error: The default export is not a React Component in "/simulations/1/page"
-[00:24:50.913] Server  ERROR    ⨯ Error: The default export is not a React Component in "/simulations/1/page"
-[00:24:51.817] Server  ERROR    ⨯ Error: The default export is not a React Component in "/simulations/1/page"
-[00:24:52.088] Server  ERROR    ⨯ Error: The default export is not a React Component in "/simulations/1/page"
-[00:24:52.403] Server  ERROR    ⨯ Error: The default export is not a React Component in "/simulations/1/page"
-[00:24:52.705] Server  ERROR    ⨯ Error: The default export is not a React Component in "/simulations/1/page"
-[00:24:53.002] Server  ERROR    ⨯ Error: The default export is not a React Component in "/simulations/1/page"
-[00:24:53.270] Server  ERROR    ⨯ Error: The default export is not a React Component in "/simulations/1/page"
-[00:24:53.613] Server  ERROR    ⨯ Error: The default export is not a React Component in "/simulations/1/page"
-[00:24:53.877] Server  ERROR    ⨯ Error: The default export is not a React Component in "/simulations/1/page"
-[00:24:54.306] Server  ERROR    ⨯ Error: The default export is not a React Component in "/simulations/1/page"
-[00:24:54.553] Server  ERROR    ⨯ Error: The default export is not a React Component in "/simulations/1/page"
-[00:24:54.926] Server  ERROR    ⨯ Error: The default export is not a React Component in "/simulations/1/page"
-[00:24:55.183] Server  ERROR    ⨯ Error: The default export is not a React Component in "/simulations/1/page"
-[00:24:55.513] Server  ERROR    ⨯ Error: The default export is not a React Component in "/simulations/1/page"
-[00:24:55.781] Server  ERROR    ⨯ Error: The default export is not a React Component in "/simulations/1/page"
-[00:24:56.110] Server  ERROR    ⨯ Error: The default export is not a React Component in "/simulations/1/page"
-[00:24:56.378] Server  ERROR    ⨯ Error: The default export is not a React Component in "/simulations/1/page"
-[00:24:56.785] Server  ERROR    ⨯ Error: The default export is not a React Component in "/simulations/1/page"
-[00:24:57.026] Server  ERROR    ⨯ Error: The default export is not a React Component in "/simulations/1/page"
-[00:24:57.384] Server  ERROR    ⨯ Error: The default export is not a React Component in "/simulations/1/page"
-[00:24:57.633] Server  ERROR    ⨯ Error: The default export is not a React Component in "/simulations/1/page"
-[00:24:57.943] Server  ERROR    ⨯ Error: The default export is not a React Component in "/simulations/1/page"
-[00:24:58.217] Server  ERROR    ⨯ Error: The default export is not a React Component in "/simulations/1/page"
-[00:24:58.550] Server  ERROR    ⨯ Error: The default export is not a React Component in "/simulations/1/page"
-[00:24:58.827] Server  ERROR    ⨯ Error: The default export is not a React Component in "/simulations/1/page"
-[00:24:59.232] Server  ERROR    ⨯ Error: The default export is not a React Component in "/simulations/1/page"
-[00:24:59.508] Server  ERROR    ⨯ Error: The default export is not a React Component in "/simulations/1/page"
-[00:24:59.880] Server  ERROR    ⨯ Error: The default export is not a React Component in "/simulations/1/page"
-[00:25:00.144] Server  ERROR    ⨯ Error: The default export is not a React Component in "/simulations/1/page"
-[00:25:00.462] Server  ERROR    ⨯ Error: The default export is not a React Component in "/simulations/1/page"
-[00:25:00.746] Server  ERROR    ⨯ Error: The default export is not a React Component in "/simulations/1/page"
-[00:25:01.072] Server  ERROR    ⨯ Error: The default export is not a React Component in "/simulations/1/page"
-[00:25:01.344] Server  ERROR    ⨯ Error: The default export is not a React Component in "/simulations/1/page"
-[00:25:01.762] Server  ERROR    ⨯ Error: The default export is not a React Component in "/simulations/1/page"
-[00:25:02.015] Server  ERROR    ⨯ Error: The default export is not a React Component in "/simulations/1/page"
-[00:25:02.370] Server  ERROR    ⨯ Error: The default export is not a React Component in "/simulations/1/page"
-[00:25:02.633] Server  ERROR    ⨯ Error: The default export is not a React Component in "/simulations/1/page"
-[00:25:02.947] Server  ERROR    ⨯ Error: The default export is not a React Component in "/simulations/1/page"
-[00:25:03.227] Server  ERROR    ⨯ Error: The default export is not a React Component in "/simulations/1/page"
-[00:25:03.583] Server  ERROR    ⨯ Error: The default export is not a React Component in "/simulations/1/page"
-[00:25:03.870] Server  ERROR    ⨯ Error: The default export is not a React Component in "/simulations/1/page"
-[00:25:06.323] Browser ERROR   uncaughtError: Error: The default export is not a React Component in "/simulations/1/page"
-[00:25:20.920] Server  LOG      ✓ Compiled in 70ms
-[00:25:22.534] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[00:25:22.534] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/simulations/1","route":"/simulations/1"}
-[00:25:22.534] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/simulations/1 color: rgb(120, 120, 120) color: inherit {"dp":"/simulations/1","o":"http://localhost:3000/simulations/1","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1766776669627}
-[00:28:44.270] Server  ERROR    ⨯ ReferenceError: game is not defined
-[00:28:44.767] Browser ERROR   uncaughtError: ReferenceError: game is not defined
-[00:29:13.895] Server  LOG      ✓ Compiled in 30s
-[00:29:14.053] Server  ERROR    ⨯ ReferenceError: document is not defined
-[00:29:14.795] Browser ERROR   uncaughtError: ReferenceError: document is not defined
-[00:29:26.245] Server  LOG      ✓ Compiled in 280ms
-[00:29:26.565] Server  ERROR    ⨯ ReferenceError: document is not defined
-[00:29:27.370] Browser ERROR   uncaughtError: TypeError: can't access property "width", game is null
-[00:29:45.858] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
-[00:29:45.892] Server  LOG      ✓ Compiled in 18.5s
-[00:29:46.139] Server  ERROR    ⨯ TypeError: Cannot set properties of null (setting 'width')
-[00:29:47.018] Browser ERROR   uncaughtError: TypeError: can't access property "width", game.current is null
-[00:29:47.461] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
-[00:29:47.511] Server  LOG      ✓ Compiled in 688ms
-[00:29:47.750] Server  ERROR    ⨯ TypeError: Cannot set properties of null (setting 'width')
-[00:29:48.359] Browser ERROR   uncaughtError: TypeError: can't access property "width", game.current is null
-[00:29:49.065] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
-[00:29:49.100] Server  LOG      ✓ Compiled in 709ms
-[00:29:49.346] Server  ERROR    ⨯ TypeError: Cannot set properties of null (setting 'width')
-[00:29:50.333] Browser ERROR   uncaughtError: TypeError: can't access property "width", game.current is null
-[00:29:58.521] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
-[00:29:58.584] Server  LOG      ✓ Compiled in 8.5s
-[00:29:58.844] Server  ERROR    ⨯ TypeError: Cannot set properties of null (setting 'width')
-[00:29:59.550] Browser ERROR   uncaughtError: TypeError: can't access property "width", game.current is null
-[00:30:13.472] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
-[00:30:13.518] Server  LOG      ✓ Compiled in 13.9s
-[00:30:13.796] Server  ERROR    ⨯ TypeError: Cannot set properties of null (setting 'width')
-[00:30:14.962] Browser ERROR   uncaughtError: TypeError: can't access property "width", game.current is null
-[00:30:31.185] Server  LOG      ✓ Compiled in 183ms
-[00:30:32.773] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[00:30:32.773] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/simulations/1","route":"/simulations/1"}
-[00:30:32.773] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/simulations/1 color: rgb(120, 120, 120) color: inherit {"dp":"/simulations/1","o":"http://localhost:3000/simulations/1","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1766776979760}
-[00:31:42.011] Server  LOG      ✓ Compiled in 6.7s
-[00:31:42.356] Browser ERROR   uncaughtError: ReferenceError: fame is not defined
-[00:31:49.872] Server  LOG      ✓ Compiled in 7.9s
-[00:31:49.982] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
-[00:31:50.075] Server  LOG      ✓ Compiled in 203ms
-[00:31:50.356] Server  ERROR    ⨯ ReferenceError: fame is not defined
-[00:31:51.244] Browser ERROR   uncaughtError: ReferenceError: fame is not defined
-[00:31:52.804] Server  LOG      ✓ Compiled in 1531ms
-[00:31:52.808] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
-[00:31:54.053] Server  ERROR    ⨯ ReferenceError: fame is not defined
-[00:31:55.149] Browser ERROR   uncaughtError: ReferenceError: fame is not defined
-[00:32:01.741] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
-[00:32:01.794] Server  LOG      ✓ Compiled in 172ms
-[00:32:02.040] Server  ERROR    ⨯ ReferenceError: fame is not defined
-[00:32:03.070] Browser ERROR   uncaughtError: ReferenceError: fame is not defined
-[00:32:03.471] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
-[00:32:03.632] Server  LOG      ✓ Compiled in 867ms
-[00:32:03.938] Server  ERROR    ⨯ ReferenceError: fame is not defined
-[00:32:04.648] Browser ERROR   uncaughtError: ReferenceError: fame is not defined
-[00:32:05.418] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
-[00:32:05.464] Server  LOG      ✓ Compiled in 784ms
-[00:32:05.769] Server  ERROR    ⨯ ReferenceError: fame is not defined
-[00:32:06.729] Browser ERROR   uncaughtError: ReferenceError: fame is not defined
-[00:32:09.422] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
-[00:32:09.469] Server  LOG      ✓ Compiled in 83ms
-[00:32:09.726] Server  ERROR    ⨯ ReferenceError: fame is not defined
-[00:32:10.798] Browser ERROR   uncaughtError: ReferenceError: fame is not defined
-[00:32:19.972] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
-[00:32:20.006] Server  LOG      ✓ Compiled in 9.5s
-[00:32:21.601] Browser LOG     {"ctx":{}}
-[00:32:21.601] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[00:32:21.601] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/simulations/1","route":"/simulations/1"}
-[00:32:21.601] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/simulations/1 color: rgb(120, 120, 120) color: inherit {"dp":"/simulations/1","o":"http://localhost:3000/simulations/1","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1766777088555}
-[00:33:02.212] Server  LOG      ✓ Compiled in 41.3s
-[00:33:24.778] Server  LOG      ✓ Compiled in 22.6s
-[00:33:38.814] Server  LOG      ✓ Compiled in 14s
-[00:33:40.268] Browser LOG     {"ctx":{}}
-[00:33:41.078] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[00:33:41.078] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/simulations/1","route":"/simulations/1"}
-[00:33:41.078] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/simulations/1 color: rgb(120, 120, 120) color: inherit {"dp":"/simulations/1","o":"http://localhost:3000/simulations/1","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1766777168113}
-[00:34:14.666] Server  LOG      ✓ Compiled in 15.2s
-[00:34:16.147] Browser LOG     {"ctx":{}}
-[00:34:16.328] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[00:34:16.328] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/simulations/1","route":"/simulations/1"}
-[00:34:16.328] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/simulations/1 color: rgb(120, 120, 120) color: inherit {"dp":"/simulations/1","o":"http://localhost:3000/simulations/1","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1766777203357}
-[00:35:17.677] Server  LOG      ✓ Compiled in 10.4s
-[00:35:21.639] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[00:35:21.639] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/simulations/1","route":"/simulations/1"}
-[00:35:21.639] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/simulations/1 color: rgb(120, 120, 120) color: inherit {"dp":"/simulations/1","o":"http://localhost:3000/simulations/1","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1766777268435}
-[00:36:12.146] Server  LOG      ✓ Compiled in 52.6s
-[00:36:13.710] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[00:36:13.710] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/simulations/1","route":"/simulations/1"}
-[00:36:13.710] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/simulations/1 color: rgb(120, 120, 120) color: inherit {"dp":"/simulations/1","o":"http://localhost:3000/simulations/1","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1766777320645}
-[00:36:20.923] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
-[00:36:20.923] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1766777327957}
-[00:36:23.509] Server  ERROR   Each child in a list should have a unique "key" prop. See https://react.dev/link/warning-keys for more information.
-[00:36:23.535] Server  ERROR   Each child in a list should have a unique "key" prop. See https://react.dev/link/warning-keys for more information.
-[00:36:23.940] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/simulations color: rgb(120, 120, 120) color: inherit {"dp":"/simulations","o":"http://localhost:3000/simulations","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1766777330942}
-[00:36:27.358] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/simulations/1 color: rgb(120, 120, 120) color: inherit {"dp":"/simulations/1","o":"http://localhost:3000/simulations/1","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1766777334340}
-[00:37:10.128] Server  LOG      ✓ Compiled in 57s
-[00:37:10.210] Server  ERROR    ⨯ ./app/simulations/1/page.tsx:255:15
+Expected '</', got 'jsx text (
+      )'
+
+
+[00:08:26.108] Browser ERROR   uncaughtError: Error: ./app/layout.tsx:40:14
 Parsing ecmascript source code failed
-  253 |
-  254 |
-> 255 |               `}
-      |               ^^
-> 256 |           </pre>
-      | ^^^^^^^^^^^^^^^^
-> 257 |         </div>
-      | ^^^^^^^^^^^^^^^^
-> 258 |       </div>
-      | ^^^^^^^^^^^^^^^^
-> 259 |     </div>
-      | ^^^^^^^^^^^^^^^^
-> 260 |   );
-      | ^^^^^^^^^^^^^^^^
-> 261 | }
-      | ^^^^^^^^^^^^^^^^
-> 262 | 
-      | ^
+  38 |         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  39 |         <link href="https://fonts.googleapis.com/css2?family=Bitcount:wght@100..900&display=swap" rel="stylesheet">
+> 40 |       </head>
+     |              ^
+> 41 |       <body className="font-sans antialiased">
+     | ^^^^^^^
+  42 |         <Suspense fallback={<div>Loading...</div>}>
+  43 |           <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+  44 |             {children}
 
-Unterminated template
-
-Import traces:
-  Client Component Browser:
-    ./app/simulations/1/page.tsx [Client Component Browser]
-    ./app/simulations/1/page.tsx [Server Component]
-
-  Client Component SSR:
-    ./app/simulations/1/page.tsx [Client Component SSR]
-    ./app/simulations/1/page.tsx [Server Component]
+Expected '</', got 'jsx text (
+      )'
 
 
-[00:37:11.421] Browser ERROR   uncaughtError: Error: ./app/simulations/1/page.tsx:255:15
+[00:08:26.108] Browser ERROR   ./app/layout.tsx:40:14
 Parsing ecmascript source code failed
-  253 |
-  254 |
-> 255 |               `}
-      |               ^^
-> 256 |           </pre>
-      | ^^^^^^^^^^^^^^^^
-> 257 |         </div>
-      | ^^^^^^^^^^^^^^^^
-> 258 |       </div>
-      | ^^^^^^^^^^^^^^^^
-> 259 |     </div>
-      | ^^^^^^^^^^^^^^^^
-> 260 |   );
-      | ^^^^^^^^^^^^^^^^
-> 261 | }
-      | ^^^^^^^^^^^^^^^^
-> 262 | 
-      | ^
+  38 |         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  39 |         <link href="https://fonts.googleapis.com/css2?family=Bitcount:wght@100..900&display=swap" rel="stylesheet">
+> 40 |       </head>
+     |              ^
+> 41 |       <body className="font-sans antialiased">
+     | ^^^^^^^
+  42 |         <Suspense fallback={<div>Loading...</div>}>
+  43 |           <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+  44 |             {children}
 
-Unterminated template
-
-Import traces:
-  Client Component Browser:
-    ./app/simulations/1/page.tsx [Client Component Browser]
-    ./app/simulations/1/page.tsx [Server Component]
-
-  Client Component SSR:
-    ./app/simulations/1/page.tsx [Client Component SSR]
-    ./app/simulations/1/page.tsx [Server Component]
-
-
-[00:37:11.537] Browser ERROR   ./app/simulations/1/page.tsx:255:15
+Expected '</', got 'jsx text (
+      )'
+[00:08:26.108] Browser ERROR   ./app/layout.tsx:40:14
 Parsing ecmascript source code failed
-  253 |
-  254 |
-> 255 |               `}
-      |               ^^
-> 256 |           </pre>
-      | ^^^^^^^^^^^^^^^^
-> 257 |         </div>
-      | ^^^^^^^^^^^^^^^^
-> 258 |       </div>
-      | ^^^^^^^^^^^^^^^^
-> 259 |     </div>
-      | ^^^^^^^^^^^^^^^^
-> 260 |   );
-      | ^^^^^^^^^^^^^^^^
-> 261 | }
-      | ^^^^^^^^^^^^^^^^
-> 262 | 
-      | ^
+  38 |         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  39 |         <link href="https://fonts.googleapis.com/css2?family=Bitcount:wght@100..900&display=swap" rel="stylesheet">
+> 40 |       </head>
+     |              ^
+> 41 |       <body className="font-sans antialiased">
+     | ^^^^^^^
+  42 |         <Suspense fallback={<div>Loading...</div>}>
+  43 |           <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+  44 |             {children}
 
-Unterminated template
-
-Import traces:
-  Client Component Browser:
-    ./app/simulations/1/page.tsx [Client Component Browser]
-    ./app/simulations/1/page.tsx [Server Component]
-
-  Client Component SSR:
-    ./app/simulations/1/page.tsx [Client Component SSR]
-    ./app/simulations/1/page.tsx [Server Component]
-[00:37:11.652] Browser ERROR   ./app/simulations/1/page.tsx:255:15
+Expected '</', got 'jsx text (
+      )'
+[00:08:26.108] Browser ERROR   ./app/layout.tsx:40:14
 Parsing ecmascript source code failed
-  253 |
-  254 |
-> 255 |               `}
-      |               ^^
-> 256 |           </pre>
-      | ^^^^^^^^^^^^^^^^
-> 257 |         </div>
-      | ^^^^^^^^^^^^^^^^
-> 258 |       </div>
-      | ^^^^^^^^^^^^^^^^
-> 259 |     </div>
-      | ^^^^^^^^^^^^^^^^
-> 260 |   );
-      | ^^^^^^^^^^^^^^^^
-> 261 | }
-      | ^^^^^^^^^^^^^^^^
-> 262 | 
-      | ^
+  38 |         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  39 |         <link href="https://fonts.googleapis.com/css2?family=Bitcount:wght@100..900&display=swap" rel="stylesheet">
+> 40 |       </head>
+     |              ^
+> 41 |       <body className="font-sans antialiased">
+     | ^^^^^^^
+  42 |         <Suspense fallback={<div>Loading...</div>}>
+  43 |           <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+  44 |             {children}
 
-Unterminated template
+Expected '</', got 'jsx text (
+      )'
+[00:08:32.721] Browser ERROR   ./app/layout.tsx:40:14
+Parsing ecmascript source code failed
+  38 |         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  39 |         <link href="https://fonts.googleapis.com/css2?family=Bitcount:wght@100..900&display=swap" rel="stylesheet">
+> 40 |       </head>
+     |              ^
+> 41 |
+     | ^
+> 42 |       <body className="font-sans antialiased">
+     | ^^^^^^^
+  43 |         <Suspense fallback={<div>Loading...</div>}>
+  44 |           <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+  45 |             {children}
 
-Import traces:
-  Client Component Browser:
-    ./app/simulations/1/page.tsx [Client Component Browser]
-    ./app/simulations/1/page.tsx [Server Component]
+Expected '</', got 'jsx text (
 
-  Client Component SSR:
-    ./app/simulations/1/page.tsx [Client Component SSR]
-    ./app/simulations/1/page.tsx [Server Component]
-[00:37:43.504] Server  LOG      ✓ Compiled in 58ms
-[00:37:45.165] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[00:37:45.165] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/simulations/1","route":"/simulations/1"}
-[00:37:45.165] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/simulations/1 color: rgb(120, 120, 120) color: inherit {"dp":"/simulations/1","o":"http://localhost:3000/simulations/1","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1766777412206}
-[00:38:28.808] Server  LOG      ✓ Compiled in 44.1s
-[00:39:00.307] Server  LOG      ✓ Compiled in 31.5s
-[00:39:09.507] Server  ERROR   Each child in a list should have a unique "key" prop. See https://react.dev/link/warning-keys for more information.
-[00:39:10.353] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
-[00:39:10.353] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/simulations color: rgb(120, 120, 120) color: inherit {"dp":"/simulations","o":"http://localhost:3000/simulations","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1766777497378}
-[00:39:14.269] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/simulations/1 color: rgb(120, 120, 120) color: inherit {"dp":"/simulations/1","o":"http://localhost:3000/simulations/1","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1766777501358}
-[00:39:50.596] Server  LOG      ✓ Compiled in 50.3s
-[00:39:58.541] Server  LOG      ✓ Compiled in 7.9s
-[00:40:49.906] Server  LOG      ✓ Compiled in 51.4s
-[00:40:50.152] Browser ERROR   ./app/simulations/1/page.tsx:14:5
+      )'
+[00:08:34.794] Browser ERROR   ./app/layout.tsx:41:14
+Parsing ecmascript source code failed
+  39 |         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  40 |         <link href="https://fonts.googleapis.com/css2?family=Bitcount:wght@100..900&display=swap" rel="stylesheet">
+> 41 |       </head>
+     |              ^
+> 42 |
+     | ^
+> 43 |       <body className="font-sans antialiased">
+     | ^^^^^^^
+  44 |         <Suspense fallback={<div>Loading...</div>}>
+  45 |           <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+  46 |             {children}
+
+Expected '</', got 'jsx text (
+
+      )'
+[00:09:02.578] Browser ERROR   ./app/layout.tsx:40:16
+Parsing ecmascript source code failed
+  38 |           <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  39 |           <link href="https://fonts.googleapis.com/css2?family=Bitcount:wght@100..900&display=swap" rel="stylesheet">
+> 40 |         </head>
+     |                ^
+> 41 |
+     | ^
+> 42 |       <body className="font-sans antialiased">
+     | ^^^^^^^
+  43 |         <Suspense fallback={<div>Loading...</div>}>
+  44 |           <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+  45 |             {children}
+
+Expected '</', got 'jsx text (
+
+      )'
+[00:09:03.793] Browser ERROR   ./app/layout.tsx:51:1
+Parsing ecmascript source code failed
+  49 |     </html>
+  50 |   );
+> 51 | }
+     | ^
+  52 |
+
+Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
+[00:09:10.446] Browser ERROR   ./app/layout.tsx:51:1
+Parsing ecmascript source code failed
+  49 |     </html>
+  50 |   );
+> 51 | }
+     | ^
+  52 |
+
+Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
+[00:09:53.889] Server  LOG      ✓ Compiled in 55ms
+[00:09:57.637] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[00:09:57.637] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/","route":"/"}
+[00:09:57.637] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1767276516794}
+[00:10:25.379] Server  ERROR    ⨯ ReferenceError: Bitcount is not defined
+[00:10:47.301] Browser ERROR   ./components/hero-section.tsx:7:20
 Ecmascript file had an error
-  12 |     const FPS = 60;
-  13 |     const canvas = game.current;
-> 14 |     canvas = canvas as unknown as HTMLCanvasElement;
-     |     ^^^^^^
-  15 |     const ctx = canvas.getContext("2d");
-  16 |
-  17 |     // Handle high-DPI displays for sharpness
+   5 |
+   6 | export function HeroSection() {
+>  7 |   const bitcount = Bitcount({
+     |                    ^^^^^^^^
+   8 |     subsets: ["latin"],
+   9 |     weight: ["100", "400", "900"], // Choose specific weights or a range
+  10 |     variable: "--font-bitcount", // Define a CSS variable name
 
-cannot reassign to a variable declared with `const`
+Font loaders must be called and assigned to a const in the module scope
 
-Import traces:
-  Client Component Browser:
-    ./app/simulations/1/page.tsx [Client Component Browser]
-    ./app/simulations/1/page.tsx [Server Component]
-
-  Client Component SSR:
-    ./app/simulations/1/page.tsx [Client Component SSR]
-    ./app/simulations/1/page.tsx [Server Component]
-[00:41:31.980] Server  ERROR   Each child in a list should have a unique "key" prop. See https://react.dev/link/warning-keys for more information.
-[00:41:32.314] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/simulations color: rgb(120, 120, 120) color: inherit {"dp":"/simulations","o":"http://localhost:3000/simulations","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1766777639382}
-[00:41:35.422] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/simulations/2 color: rgb(120, 120, 120) color: inherit {"dp":"/simulations/2","o":"http://localhost:3000/simulations/2","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1766777642467}
-[00:42:28.711] Server  LOG      ✓ Compiled in 65s
-[00:42:30.276] Browser ERROR   uncaughtError: TypeError: can't access property "width", background is null
-[00:42:34.371] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
-[00:42:34.434] Server  LOG      ✓ Compiled in 4.8s
-[00:42:36.214] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[00:42:36.214] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/simulations/2","route":"/simulations/2"}
-[00:42:36.214] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/simulations/2 color: rgb(120, 120, 120) color: inherit {"dp":"/simulations/2","o":"http://localhost:3000/simulations/2","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1766777703198}
-[00:43:02.160] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./app/simulations/2/page.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
-[00:43:02.195] Server  LOG      ✓ Compiled in 193ms
-[00:43:04.818] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[00:43:04.818] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/simulations/2","route":"/simulations/2"}
-[00:43:04.818] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/simulations/2 color: rgb(120, 120, 120) color: inherit {"dp":"/simulations/2","o":"http://localhost:3000/simulations/2","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1766777730621}
-[00:43:14.519] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[00:43:14.519] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/simulations/2","route":"/simulations/2"}
-[00:43:14.519] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/simulations/2 color: rgb(120, 120, 120) color: inherit {"dp":"/simulations/2","o":"http://localhost:3000/simulations/2","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1766777741543}
-[00:44:12.681] Server  LOG      ✓ Compiled in 58.7s
-[00:44:14.281] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[00:44:14.281] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/simulations/2","route":"/simulations/2"}
-[00:44:14.281] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/simulations/2 color: rgb(120, 120, 120) color: inherit {"dp":"/simulations/2","o":"http://localhost:3000/simulations/2","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1766777801292}
-[00:44:40.086] Server  LOG      ✓ Compiled in 886ms
-[00:44:41.606] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[00:44:41.606] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/simulations/2","route":"/simulations/2"}
-[00:44:41.606] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/simulations/2 color: rgb(120, 120, 120) color: inherit {"dp":"/simulations/2","o":"http://localhost:3000/simulations/2","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1766777828640}
-[00:45:08.454] Server  LOG      ✓ Compiled in 27.5s
-[00:45:09.906] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[00:45:09.906] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/simulations/2","route":"/simulations/2"}
-[00:45:09.906] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/simulations/2 color: rgb(120, 120, 120) color: inherit {"dp":"/simulations/2","o":"http://localhost:3000/simulations/2","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1766777856975}
-[00:45:21.298] Server  LOG      ✓ Compiled in 12s
-[00:45:22.832] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[00:45:22.832] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/simulations/2","route":"/simulations/2"}
-[00:45:22.832] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/simulations/2 color: rgb(120, 120, 120) color: inherit {"dp":"/simulations/2","o":"http://localhost:3000/simulations/2","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1766777869903}
-[00:45:34.636] Server  LOG      ✓ Compiled in 12.5s
-[00:45:36.139] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[00:45:36.139] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/simulations/2","route":"/simulations/2"}
-[00:45:36.139] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/simulations/2 color: rgb(120, 120, 120) color: inherit {"dp":"/simulations/2","o":"http://localhost:3000/simulations/2","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1766777883203}
-[00:46:02.150] Server  LOG      ✓ Compiled in 26.6s
-[00:46:03.704] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[00:46:03.704] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/simulations/2","route":"/simulations/2"}
-[00:46:03.704] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/simulations/2 color: rgb(120, 120, 120) color: inherit {"dp":"/simulations/2","o":"http://localhost:3000/simulations/2","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1766777910777}
-[00:46:14.541] Server  LOG      ✓ Compiled in 11.5s
-[00:46:16.127] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[00:46:16.127] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/simulations/2","route":"/simulations/2"}
-[00:46:16.127] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/simulations/2 color: rgb(120, 120, 120) color: inherit {"dp":"/simulations/2","o":"http://localhost:3000/simulations/2","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1766777923022}
-[00:46:22.311] Server  LOG      ✓ Compiled in 1524ms
-[00:46:23.602] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[00:46:23.602] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/simulations/2","route":"/simulations/2"}
-[00:46:23.602] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/simulations/2 color: rgb(120, 120, 120) color: inherit {"dp":"/simulations/2","o":"http://localhost:3000/simulations/2","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1766777930650}
-[00:46:50.110] Server  LOG      ✓ Compiled in 26.9s
-[00:46:51.731] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[00:46:51.731] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/simulations/2","route":"/simulations/2"}
-[00:46:51.731] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/simulations/2 color: rgb(120, 120, 120) color: inherit {"dp":"/simulations/2","o":"http://localhost:3000/simulations/2","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1766777958809}
-[00:47:09.457] Server  LOG      ✓ Compiled in 3.7s
-[00:47:11.052] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[00:47:11.052] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/simulations/2","route":"/simulations/2"}
-[00:47:11.052] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/simulations/2 color: rgb(120, 120, 120) color: inherit {"dp":"/simulations/2","o":"http://localhost:3000/simulations/2","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1766777978080}
-[00:48:12.977] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./app/simulations/2/page.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
-[00:48:13.014] Server  LOG      ✓ Compiled in 51.8s
-[00:48:15.536] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[00:48:15.536] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/simulations/2","route":"/simulations/2"}
-[00:48:15.536] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/simulations/2 color: rgb(120, 120, 120) color: inherit {"dp":"/simulations/2","o":"http://localhost:3000/simulations/2","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1766778041489}
-[00:48:42.350] Server  LOG      ✓ Compiled in 28.3s
-[00:48:53.770] Server  LOG      ✓ Compiled in 11.4s
-[00:49:14.041] Server  LOG      ✓ Compiled in 20.3s
-[00:49:15.475] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[00:49:15.475] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/simulations/2","route":"/simulations/2"}
-[00:49:15.475] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/simulations/2 color: rgb(120, 120, 120) color: inherit {"dp":"/simulations/2","o":"http://localhost:3000/simulations/2","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1766778102501}
-[00:49:40.768] Server  ERROR   Each child in a list should have a unique "key" prop. See https://react.dev/link/warning-keys for more information.
-[00:49:41.179] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
-[00:49:41.179] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/simulations color: rgb(120, 120, 120) color: inherit {"dp":"/simulations","o":"http://localhost:3000/simulations","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1766778128187}
-[00:55:38.042] Server  ERROR   Each child in a list should have a unique "key" prop. See https://react.dev/link/warning-keys for more information.
-[00:55:40.654] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[00:55:40.654] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/simulations","route":"/simulations"}
-[00:55:40.655] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/simulations color: rgb(120, 120, 120) color: inherit {"dp":"/simulations","o":"http://localhost:3000/simulations","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1766778487744}
-[00:57:32.441] Server  ERROR   Each child in a list should have a unique "key" prop. See https://react.dev/link/warning-keys for more information.
-[00:57:39.714] Server  ERROR   Each child in a list should have a unique "key" prop. See https://react.dev/link/warning-keys for more information.
-[00:57:52.521] Server  LOG      ✓ Compiled in 13.1s
-[00:57:52.682] Server  ERROR   Each child in a list should have a unique "key" prop. See https://react.dev/link/warning-keys for more information.
-[00:57:57.749] Server  ERROR   Each child in a list should have a unique "key" prop. See https://react.dev/link/warning-keys for more information.
-[00:57:58.948] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[00:57:58.948] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/simulations","route":"/simulations"}
-[00:57:58.948] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/simulations color: rgb(120, 120, 120) color: inherit {"dp":"/simulations","o":"http://localhost:3000/simulations","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1766778626006}
-[00:58:15.388] Server  ERROR   Each child in a list should have a unique "key" prop. See https://react.dev/link/warning-keys for more information.
-[00:58:16.471] Server  ERROR   Each child in a list should have a unique "key" prop. See https://react.dev/link/warning-keys for more information.
-[00:58:18.122] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[00:58:18.122] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/simulations","route":"/simulations"}
-[00:58:18.122] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/simulations color: rgb(120, 120, 120) color: inherit {"dp":"/simulations","o":"http://localhost:3000/simulations","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1766778644945}
-[00:58:28.683] Server  ERROR   Each child in a list should have a unique "key" prop. See https://react.dev/link/warning-keys for more information.
-[00:58:33.505] Server  ERROR   Each child in a list should have a unique "key" prop. See https://react.dev/link/warning-keys for more information.
-[00:58:34.415] Server  ERROR   Each child in a list should have a unique "key" prop. See https://react.dev/link/warning-keys for more information.
-[00:58:35.912] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[00:58:35.912] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/simulations","route":"/simulations"}
-[00:58:35.912] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/simulations color: rgb(120, 120, 120) color: inherit {"dp":"/simulations","o":"http://localhost:3000/simulations","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1766778663011}
-[00:59:07.363] Server  ERROR   Each child in a list should have a unique "key" prop. See https://react.dev/link/warning-keys for more information.
-[00:59:08.998] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[00:59:08.998] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/simulations","route":"/simulations"}
-[00:59:08.998] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/simulations color: rgb(120, 120, 120) color: inherit {"dp":"/simulations","o":"http://localhost:3000/simulations","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1766778696094}
-[00:59:27.682] Server  ERROR   Each child in a list should have a unique "key" prop. See https://react.dev/link/warning-keys for more information.
-[00:59:31.991] Server  ERROR   Each child in a list should have a unique "key" prop. See https://react.dev/link/warning-keys for more information.
-[00:59:32.291] Browser WARN    Image with src "http://localhost:3000/simulations/simulation3.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
-[00:59:32.291] Browser WARN    Image with src "/simulations/simulation3.png" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
-Read more: https://nextjs.org/docs/app/api-reference/components/image#loading
-[00:59:37.918] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[00:59:37.918] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/simulations/3","route":"/simulations/3"}
-[00:59:37.918] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/simulations/3 color: rgb(120, 120, 120) color: inherit {"dp":"/simulations/3","o":"http://localhost:3000/simulations/3","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1766778725018}
-[00:59:46.216] Server  ERROR    ⨯ Error: The default export is not a React Component in "/simulations/3/page"
-[00:59:46.506] Server  ERROR    ⨯ Error: The default export is not a React Component in "/simulations/3/page"
-[00:59:47.035] Server  ERROR    ⨯ Error: The default export is not a React Component in "/simulations/3/page"
-[00:59:47.321] Server  ERROR    ⨯ Error: The default export is not a React Component in "/simulations/3/page"
-[00:59:47.620] Server  ERROR    ⨯ Error: The default export is not a React Component in "/simulations/3/page"
-[00:59:47.882] Server  ERROR    ⨯ Error: The default export is not a React Component in "/simulations/3/page"
-[00:59:48.374] Server  ERROR    ⨯ Error: The default export is not a React Component in "/simulations/3/page"
-[00:59:48.632] Server  ERROR    ⨯ Error: The default export is not a React Component in "/simulations/3/page"
-[00:59:48.974] Server  ERROR    ⨯ Error: The default export is not a React Component in "/simulations/3/page"
-[00:59:49.217] Server  ERROR    ⨯ Error: The default export is not a React Component in "/simulations/3/page"
-[00:59:49.584] Server  ERROR    ⨯ Error: The default export is not a React Component in "/simulations/3/page"
-[00:59:49.890] Server  ERROR    ⨯ Error: The default export is not a React Component in "/simulations/3/page"
-[00:59:50.277] Server  ERROR    ⨯ Error: The default export is not a React Component in "/simulations/3/page"
-[00:59:50.573] Server  ERROR    ⨯ Error: The default export is not a React Component in "/simulations/3/page"
-[00:59:50.919] Server  ERROR    ⨯ Error: The default export is not a React Component in "/simulations/3/page"
-[00:59:51.196] Server  ERROR    ⨯ Error: The default export is not a React Component in "/simulations/3/page"
-[00:59:51.661] Server  ERROR    ⨯ Error: The default export is not a React Component in "/simulations/3/page"
-[00:59:51.923] Server  ERROR    ⨯ Error: The default export is not a React Component in "/simulations/3/page"
-[00:59:52.810] Server  ERROR    ⨯ Error: The default export is not a React Component in "/simulations/3/page"
-[00:59:53.086] Server  ERROR    ⨯ Error: The default export is not a React Component in "/simulations/3/page"
-[00:59:53.381] Server  ERROR    ⨯ Error: The default export is not a React Component in "/simulations/3/page"
-[00:59:53.645] Server  ERROR    ⨯ Error: The default export is not a React Component in "/simulations/3/page"
-[00:59:53.973] Server  ERROR    ⨯ Error: The default export is not a React Component in "/simulations/3/page"
-[00:59:54.252] Server  ERROR    ⨯ Error: The default export is not a React Component in "/simulations/3/page"
-[00:59:54.567] Server  ERROR    ⨯ Error: The default export is not a React Component in "/simulations/3/page"
-[00:59:54.854] Server  ERROR    ⨯ Error: The default export is not a React Component in "/simulations/3/page"
-[00:59:55.277] Server  ERROR    ⨯ Error: The default export is not a React Component in "/simulations/3/page"
-[00:59:55.598] Server  ERROR    ⨯ Error: The default export is not a React Component in "/simulations/3/page"
-[00:59:55.903] Server  ERROR    ⨯ Error: The default export is not a React Component in "/simulations/3/page"
-[00:59:56.168] Server  ERROR    ⨯ Error: The default export is not a React Component in "/simulations/3/page"
-[00:59:56.485] Server  ERROR    ⨯ Error: The default export is not a React Component in "/simulations/3/page"
-[00:59:56.728] Server  ERROR    ⨯ Error: The default export is not a React Component in "/simulations/3/page"
-[00:59:57.013] Server  ERROR    ⨯ Error: The default export is not a React Component in "/simulations/3/page"
-[00:59:57.277] Server  ERROR    ⨯ Error: The default export is not a React Component in "/simulations/3/page"
-[00:59:57.679] Server  ERROR    ⨯ Error: The default export is not a React Component in "/simulations/3/page"
-[00:59:57.946] Server  ERROR    ⨯ Error: The default export is not a React Component in "/simulations/3/page"
-[00:59:58.382] Server  ERROR    ⨯ Error: The default export is not a React Component in "/simulations/3/page"
-[00:59:58.625] Server  ERROR    ⨯ Error: The default export is not a React Component in "/simulations/3/page"
-[00:59:58.964] Server  ERROR    ⨯ Error: The default export is not a React Component in "/simulations/3/page"
-[00:59:59.209] Server  ERROR    ⨯ Error: The default export is not a React Component in "/simulations/3/page"
-[00:59:59.514] Server  ERROR    ⨯ Error: The default export is not a React Component in "/simulations/3/page"
-[00:59:59.806] Server  ERROR    ⨯ Error: The default export is not a React Component in "/simulations/3/page"
-[01:00:00.141] Server  ERROR    ⨯ Error: The default export is not a React Component in "/simulations/3/page"
-[01:00:00.405] Server  ERROR    ⨯ Error: The default export is not a React Component in "/simulations/3/page"
-[01:00:00.697] Server  ERROR    ⨯ Error: The default export is not a React Component in "/simulations/3/page"
-[01:00:00.967] Server  ERROR    ⨯ Error: The default export is not a React Component in "/simulations/3/page"
-[01:00:01.423] Server  ERROR    ⨯ Error: The default export is not a React Component in "/simulations/3/page"
-[01:00:01.684] Server  ERROR    ⨯ Error: The default export is not a React Component in "/simulations/3/page"
-[01:00:01.990] Server  ERROR    ⨯ Error: The default export is not a React Component in "/simulations/3/page"
-[01:00:02.285] Server  ERROR    ⨯ Error: The default export is not a React Component in "/simulations/3/page"
-[01:00:02.665] Server  ERROR    ⨯ Error: The default export is not a React Component in "/simulations/3/page"
-[01:00:02.916] Server  ERROR    ⨯ Error: The default export is not a React Component in "/simulations/3/page"
-[01:00:03.242] Server  ERROR    ⨯ Error: The default export is not a React Component in "/simulations/3/page"
-[01:00:03.515] Server  ERROR    ⨯ Error: The default export is not a React Component in "/simulations/3/page"
-[01:00:06.063] Browser ERROR   uncaughtError: Error: The default export is not a React Component in "/simulations/3/page"
-[01:00:43.663] Server  LOG      ✓ Compiled in 56ms
-[01:00:44.061] Server  ERROR    ⨯ Error: The default export is not a React Component in "/simulations/3/page"
-[01:00:44.360] Server  ERROR    ⨯ Error: The default export is not a React Component in "/simulations/3/page"
-[01:00:46.852] Browser ERROR   uncaughtError: Error: The default export is not a React Component in "/simulations/3/page"
-[01:00:52.494] Server  LOG      ✓ Compiled in 62ms
-[01:00:52.873] Server  ERROR    ⨯ Error: The default export is not a React Component in "/simulations/3/page"
-[01:00:53.166] Server  ERROR    ⨯ Error: The default export is not a React Component in "/simulations/3/page"
-[01:00:55.704] Browser ERROR   uncaughtError: Error: The default export is not a React Component in "/simulations/3/page"
-[01:01:00.082] Server  LOG      ✓ Compiled in 155ms
-[01:01:01.981] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[01:01:01.981] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/simulations/3","route":"/simulations/3"}
-[01:01:01.981] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/simulations/3 color: rgb(120, 120, 120) color: inherit {"dp":"/simulations/3","o":"http://localhost:3000/simulations/3","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1766778808456}
-[01:01:42.880] Server  LOG      ✓ Compiled in 41.8s
-[01:01:50.435] Server  LOG      ✓ Compiled in 7.5s
-[01:02:17.701] Server  LOG      ✓ Compiled in 21.8s
-[01:02:19.836] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[01:02:19.836] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/simulations/3","route":"/simulations/3"}
-[01:02:19.836] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/simulations/3 color: rgb(120, 120, 120) color: inherit {"dp":"/simulations/3","o":"http://localhost:3000/simulations/3","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1766778886906}
-[01:02:48.880] Server  ERROR   Each child in a list should have a unique "key" prop. See https://react.dev/link/warning-keys for more information.
-[01:02:49.758] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
-[01:02:49.758] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/simulations color: rgb(120, 120, 120) color: inherit {"dp":"/simulations","o":"http://localhost:3000/simulations","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1766778916830}
-[01:02:49.930] Browser WARN    Image with src "http://localhost:3000/simulations/simulation3.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
-[01:04:12.189] Server  ERROR   Each child in a list should have a unique "key" prop. See https://react.dev/link/warning-keys for more information.
-[01:04:21.375] Server  ERROR   Each child in a list should have a unique "key" prop. See https://react.dev/link/warning-keys for more information.
-[01:04:27.887] Browser WARN    Image with src "http://localhost:3000/simulations/simulation4.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
-[01:04:40.180] Server  ERROR   Each child in a list should have a unique "key" prop. See https://react.dev/link/warning-keys for more information.
-[01:04:49.943] Server  ERROR   Each child in a list should have a unique "key" prop. See https://react.dev/link/warning-keys for more information.
-[01:04:50.018] Server  ERROR   Each child in a list should have a unique "key" prop. See https://react.dev/link/warning-keys for more information.
-[01:04:50.076] Server  ERROR   Each child in a list should have a unique "key" prop. See https://react.dev/link/warning-keys for more information.
-[01:04:50.126] Server  ERROR   Each child in a list should have a unique "key" prop. See https://react.dev/link/warning-keys for more information.
-[01:04:50.174] Server  ERROR   Each child in a list should have a unique "key" prop. See https://react.dev/link/warning-keys for more information.
-[01:04:50.227] Server  ERROR   Each child in a list should have a unique "key" prop. See https://react.dev/link/warning-keys for more information.
-[01:04:50.272] Server  ERROR   Each child in a list should have a unique "key" prop. See https://react.dev/link/warning-keys for more information.
-[01:04:50.328] Server  ERROR   Each child in a list should have a unique "key" prop. See https://react.dev/link/warning-keys for more information.
-[01:04:50.379] Server  ERROR   Each child in a list should have a unique "key" prop. See https://react.dev/link/warning-keys for more information.
-[01:04:50.429] Server  ERROR   Each child in a list should have a unique "key" prop. See https://react.dev/link/warning-keys for more information.
-[01:04:50.497] Server  ERROR   Each child in a list should have a unique "key" prop. See https://react.dev/link/warning-keys for more information.
-[01:04:50.568] Server  ERROR   Each child in a list should have a unique "key" prop. See https://react.dev/link/warning-keys for more information.
-[01:04:50.639] Server  ERROR   Each child in a list should have a unique "key" prop. See https://react.dev/link/warning-keys for more information.
-[01:04:50.706] Server  ERROR   Each child in a list should have a unique "key" prop. See https://react.dev/link/warning-keys for more information.
-[01:04:50.756] Server  ERROR   Each child in a list should have a unique "key" prop. See https://react.dev/link/warning-keys for more information.
-[01:04:50.951] Server  ERROR   Each child in a list should have a unique "key" prop. See https://react.dev/link/warning-keys for more information.
-[01:04:51.010] Server  ERROR   Each child in a list should have a unique "key" prop. See https://react.dev/link/warning-keys for more information.
-[01:04:51.081] Server  ERROR   Each child in a list should have a unique "key" prop. See https://react.dev/link/warning-keys for more information.
-[01:04:51.140] Server  ERROR   Each child in a list should have a unique "key" prop. See https://react.dev/link/warning-keys for more information.
-[01:04:51.196] Server  ERROR   Each child in a list should have a unique "key" prop. See https://react.dev/link/warning-keys for more information.
-[01:04:51.244] Server  ERROR   Each child in a list should have a unique "key" prop. See https://react.dev/link/warning-keys for more information.
-[01:04:51.294] Server  ERROR   Each child in a list should have a unique "key" prop. See https://react.dev/link/warning-keys for more information.
-[01:04:51.347] Server  ERROR   Each child in a list should have a unique "key" prop. See https://react.dev/link/warning-keys for more information.
-[01:04:51.394] Server  ERROR   Each child in a list should have a unique "key" prop. See https://react.dev/link/warning-keys for more information.
-[01:04:51.445] Server  ERROR   Each child in a list should have a unique "key" prop. See https://react.dev/link/warning-keys for more information.
-[01:04:51.496] Server  ERROR   Each child in a list should have a unique "key" prop. See https://react.dev/link/warning-keys for more information.
-[01:04:51.555] Server  ERROR   Each child in a list should have a unique "key" prop. See https://react.dev/link/warning-keys for more information.
-[01:04:51.604] Server  ERROR   Each child in a list should have a unique "key" prop. See https://react.dev/link/warning-keys for more information.
-[01:04:56.622] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/simulations/4 color: rgb(120, 120, 120) color: inherit {"dp":"/simulations/4","o":"http://localhost:3000/simulations/4","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1766779043692}
-[01:05:59.785] Server  LOG      ✓ Compiled in 69s
-[01:06:01.236] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[01:06:01.236] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/simulations/4","route":"/simulations/4"}
-[01:06:01.236] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/simulations/4 color: rgb(120, 120, 120) color: inherit {"dp":"/simulations/4","o":"http://localhost:3000/simulations/4","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1766779108336}
-[01:06:28.449] Browser ERROR   ./app/error.tsx
+Import trace:
+  Server Component:
+    ./components/hero-section.tsx
+    ./app/page.tsx
+[00:11:01.238] Server  ERROR    ⨯ ./components/hero-section.tsx:7:20
 Ecmascript file had an error
-app/error.tsx must be a Client Component. Add the "use client" directive the top of the file to resolve this issue.
-Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
-[01:06:47.359] Server  LOG      ✓ Compiled in 19s
-[01:06:48.684] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[01:06:48.684] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/simulations/4","route":"/simulations/4"}
-[01:06:48.684] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/simulations/4 color: rgb(120, 120, 120) color: inherit {"dp":"/simulations/4","o":"http://localhost:3000/simulations/4","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1766779155764}
-[01:06:53.250] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[01:06:53.250] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/random","route":"/random"}
-[01:06:53.250] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/random color: rgb(120, 120, 120) color: inherit {"dp":"/random","o":"http://localhost:3000/random","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1766779160348}
-[01:07:35.741] Server  ERROR    ⨯ Error: The default export is not a React Component in "/simulations/4/not-found"
-[01:07:36.098] Server  ERROR    ⨯ Error: The default export is not a React Component in "/simulations/4/not-found"
-[01:07:36.205] Browser ERROR   uncaughtError: Error: Internal Next.js error: Router action dispatched before initialization.
-[01:07:36.205] Browser ERROR   uncaughtError: Error: Internal Next.js error: Router action dispatched before initialization.
-[01:07:36.205] Browser ERROR   uncaughtError: Error: Internal Next.js error: Router action dispatched before initialization.
-[01:07:36.205] Browser ERROR   uncaughtError: Error: Internal Next.js error: Router action dispatched before initialization.
-[01:07:36.206] Browser ERROR   uncaughtError: Error: Internal Next.js error: Router action dispatched before initialization.
-[01:07:36.206] Browser ERROR   uncaughtError: Error: Internal Next.js error: Router action dispatched before initialization.
-[01:07:36.281] Browser ERROR   uncaughtError: Error: Internal Next.js error: Router action dispatched before initialization.
-[01:07:36.620] Server  ERROR    ⨯ Error: The default export is not a React Component in "/simulations/4/not-found"
-[01:07:36.973] Server  ERROR    ⨯ Error: The default export is not a React Component in "/simulations/4/not-found"
-[01:07:37.452] Server  ERROR    ⨯ Error: The default export is not a React Component in "/simulations/4/not-found"
-[01:07:37.812] Server  ERROR    ⨯ Error: The default export is not a React Component in "/simulations/4/not-found"
-[01:07:38.278] Server  ERROR    ⨯ Error: The default export is not a React Component in "/simulations/4/not-found"
-[01:07:38.614] Server  ERROR    ⨯ Error: The default export is not a React Component in "/simulations/4/not-found"
-[01:07:39.424] Server  ERROR    ⨯ Error: The default export is not a React Component in "/simulations/4/not-found"
-[01:07:39.745] Server  ERROR    ⨯ Error: The default export is not a React Component in "/simulations/4/not-found"
-[01:07:40.242] Server  ERROR    ⨯ Error: The default export is not a React Component in "/simulations/4/not-found"
-[01:07:40.618] Server  ERROR    ⨯ Error: The default export is not a React Component in "/simulations/4/not-found"
-[01:07:41.096] Server  ERROR    ⨯ Error: The default export is not a React Component in "/simulations/4/not-found"
-[01:07:41.445] Server  ERROR    ⨯ Error: The default export is not a React Component in "/simulations/4/not-found"
-[01:07:41.951] Server  ERROR    ⨯ Error: The default export is not a React Component in "/simulations/4/not-found"
-[01:07:42.236] Server  ERROR    ⨯ Error: The default export is not a React Component in "/simulations/4/not-found"
-[01:07:43.043] Server  ERROR    ⨯ Error: The default export is not a React Component in "/_not-found/not-found"
-[01:07:43.339] Server  ERROR    ⨯ Error: The default export is not a React Component in "/_not-found/not-found"
-[01:07:44.189] Server  ERROR    ⨯ Error: The default export is not a React Component in "/_not-found/not-found"
-[01:07:44.598] Server  ERROR    ⨯ Error: The default export is not a React Component in "/_not-found/not-found"
-[01:07:44.705] Browser ERROR   uncaughtError: Error: The default export is not a React Component in "/simulations/4/not-found"
-[01:07:45.615] Server  LOG      ✓ Compiled in 55ms
-[01:07:45.689] Browser ERROR   uncaughtError: Error: Internal Next.js error: Router action dispatched before initialization.
-[01:07:45.689] Browser ERROR   uncaughtError: Error: Internal Next.js error: Router action dispatched before initialization.
-[01:07:45.689] Browser ERROR   uncaughtError: Error: Internal Next.js error: Router action dispatched before initialization.
-[01:07:45.689] Browser ERROR   uncaughtError: Error: Internal Next.js error: Router action dispatched before initialization.
-[01:07:45.689] Browser ERROR   uncaughtError: Error: Internal Next.js error: Router action dispatched before initialization.
-[01:07:45.689] Browser ERROR   uncaughtError: Error: Internal Next.js error: Router action dispatched before initialization.
-[01:07:45.689] Browser ERROR   uncaughtError: Error: Internal Next.js error: Router action dispatched before initialization.
-[01:07:47.674] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[01:07:47.674] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/simulations/4","route":"/simulations/4"}
-[01:07:47.674] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/simulations/4 color: rgb(120, 120, 120) color: inherit {"dp":"/simulations/4","o":"http://localhost:3000/simulations/4","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1766779214170}
-[01:07:51.888] Browser ERROR   uncaughtError: Error: Internal Next.js error: Router action dispatched before initialization.
-[01:07:51.888] Browser ERROR   uncaughtError: Error: Internal Next.js error: Router action dispatched before initialization.
-[01:07:51.888] Browser ERROR   uncaughtError: Error: Internal Next.js error: Router action dispatched before initialization.
-[01:07:51.888] Browser ERROR   uncaughtError: Error: Internal Next.js error: Router action dispatched before initialization.
-[01:07:51.888] Browser ERROR   uncaughtError: Error: Internal Next.js error: Router action dispatched before initialization.
-[01:07:51.888] Browser ERROR   uncaughtError: Error: Internal Next.js error: Router action dispatched before initialization.
-[01:07:51.888] Browser ERROR   uncaughtError: Error: Internal Next.js error: Router action dispatched before initialization.
-[01:07:52.937] Server  ERROR    ⨯ ReferenceError: error is not defined
-[01:08:00.401] Server  ERROR    ⨯ ReferenceError: error is not defined
-[01:08:06.642] Browser ERROR   unhandledRejection: Error: Failed to load chunk /_next/static/chunks/app_layout_tsx_78cdd4a3._.js from module [project]/node_modules/next/dist/compiled/react-server-dom-turbopack/cjs/react-server-dom-turbopack-client.browser.development.js [app-client] (ecmascript)
-[01:08:17.505] Browser ERROR   unhandledRejection: Error: Failed to load chunk /_next/static/chunks/app_layout_tsx_78cdd4a3._.js from module [project]/node_modules/next/dist/compiled/react-server-dom-turbopack/cjs/react-server-dom-turbopack-client.browser.development.js [app-client] (ecmascript)
-[01:09:07.279] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[01:09:07.279] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/random","route":"/random"}
-[01:09:07.279] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/random color: rgb(120, 120, 120) color: inherit {"dp":"/random","o":"http://localhost:3000/random","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1766779294379}
-[01:09:44.261] Server  LOG      ✓ Compiled in 117.1s
-[01:09:55.243] Server  LOG      ✓ Compiled in 11s
-[01:10:08.005] Server  LOG      ✓ Compiled in 12.8s
-[01:10:39.947] Server  LOG      ✓ Compiled in 31.9s
-[01:10:47.270] Server  LOG      ✓ Compiled in 7.3s
-[01:11:39.767] Server  LOG      ✓ Compiled in 52.5s
-[01:11:43.066] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[01:11:43.066] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/random","route":"/random"}
-[01:11:43.066] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/random color: rgb(120, 120, 120) color: inherit {"dp":"/random","o":"http://localhost:3000/random","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1766779450166}
-[01:11:47.443] Server  LOG      ✓ Compiled in 7.7s
-[01:11:49.354] Server  LOG      ✓ Compiled in 1911ms
-[01:11:57.751] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
-[01:11:57.751] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1766779464846}
+   5 |
+   6 | export function HeroSection() {
+>  7 |   const bitcount = Bitcount({
+     |                    ^^^^^^^^
+   8 |     subsets: ["latin"],
+   9 |     weight: ["100", "400", "900"], // Choose specific weights or a range
+  10 |     variable: "--font-bitcount", // Define a CSS variable name
+
+Font loaders must be called and assigned to a const in the module scope
+
+Import trace:
+  Server Component:
+    ./components/hero-section.tsx
+    ./app/page.tsx
+
+
+[00:11:01.731] Browser ERROR   uncaughtError: Error: ./components/hero-section.tsx:7:20
+Ecmascript file had an error
+   5 |
+   6 | export function HeroSection() {
+>  7 |   const bitcount = Bitcount({
+     |                    ^^^^^^^^
+   8 |     subsets: ["latin"],
+   9 |     weight: ["100", "400", "900"], // Choose specific weights or a range
+  10 |     variable: "--font-bitcount", // Define a CSS variable name
+
+Font loaders must be called and assigned to a const in the module scope
+
+Import trace:
+  Server Component:
+    ./components/hero-section.tsx
+    ./app/page.tsx
+
+
+[00:11:01.906] Browser ERROR   ./components/hero-section.tsx:7:20
+Ecmascript file had an error
+   5 |
+   6 | export function HeroSection() {
+>  7 |   const bitcount = Bitcount({
+     |                    ^^^^^^^^
+   8 |     subsets: ["latin"],
+   9 |     weight: ["100", "400", "900"], // Choose specific weights or a range
+  10 |     variable: "--font-bitcount", // Define a CSS variable name
+
+Font loaders must be called and assigned to a const in the module scope
+
+Import trace:
+  Server Component:
+    ./components/hero-section.tsx
+    ./app/page.tsx
+[00:11:01.906] Browser ERROR   ./components/hero-section.tsx:7:20
+Ecmascript file had an error
+   5 |
+   6 | export function HeroSection() {
+>  7 |   const bitcount = Bitcount({
+     |                    ^^^^^^^^
+   8 |     subsets: ["latin"],
+   9 |     weight: ["100", "400", "900"], // Choose specific weights or a range
+  10 |     variable: "--font-bitcount", // Define a CSS variable name
+
+Font loaders must be called and assigned to a const in the module scope
+
+Import trace:
+  Server Component:
+    ./components/hero-section.tsx
+    ./app/page.tsx
+[00:11:07.620] Browser ERROR   ./components/hero-section.tsx:7:20
+Ecmascript file had an error
+   5 |
+   6 | export function HeroSection() {
+>  7 |   const bitcount = Bitcount({
+     |                    ^^^^^^^^
+   8 |     subsets: ["latin"],
+   9 |     weight: ["100", "400", "900"], // Choose specific weights or a range
+  10 |     variable: "--font-bitcount", // Define a CSS variable name
+
+Font loaders must be called and assigned to a const in the module scope
+
+Import trace:
+  Server Component:
+    ./components/hero-section.tsx
+    ./app/page.tsx
+[00:11:43.332] Server  LOG      ✓ Compiled in 296ms
+[00:11:43.355] Server  WARN     ⚠ ./
+Failed to find font override values for font `Bitcount`
+Skipping generating a fallback font.
+
+
+[00:11:44.265] Server  WARN     ⚠ ./
+Failed to find font override values for font `Bitcount`
+Skipping generating a fallback font.
+
+
+[00:11:44.402] Server  WARN     ⚠ ./
+Failed to find font override values for font `Bitcount`
+Skipping generating a fallback font.
+
+
+[00:11:44.670] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[00:11:44.670] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/","route":"/"}
+[00:11:44.670] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1767276623804}
+[00:11:45.538] Server  WARN     ⚠ ./
+Failed to find font override values for font `Bitcount`
+Skipping generating a fallback font.
+
+
+[00:12:26.388] Server  WARN     ⚠ ./
+Failed to find font override values for font `Bitcount`
+Skipping generating a fallback font.
+
+
+[00:12:26.493] Server  LOG      ✓ Compiled in 42.1s
+[00:12:27.097] Server  WARN     ⚠ ./
+Failed to find font override values for font `Bitcount`
+Skipping generating a fallback font.
+
+
+[00:12:27.552] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[00:12:27.552] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/","route":"/"}
+[00:12:27.552] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1767276666724}
+[00:12:47.710] Server  WARN     ⚠ ./
+Failed to find font override values for font `Bitcount`
+Skipping generating a fallback font.
+
+
+[00:12:48.264] Server  WARN     ⚠ ./
+Failed to find font override values for font `Bitcount`
+Skipping generating a fallback font.
+
+
+[00:12:48.585] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[00:12:48.585] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/","route":"/"}
+[00:12:48.586] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1767276687741}
+[00:14:39.939] Server  WARN     ⚠ ./
+Failed to find font override values for font `Bitcount`
+Skipping generating a fallback font.
+
+
+[00:14:51.322] Server  WARN     ⚠ ./
+Failed to find font override values for font `Bitcount`
+Skipping generating a fallback font.
+
+
+[00:14:52.140] Server  WARN     ⚠ ./
+Failed to find font override values for font `Bitcount`
+Skipping generating a fallback font.
+
+
+[00:14:52.492] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[00:14:52.492] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/","route":"/"}
+[00:14:52.492] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1767276811661}
+[00:15:10.788] Server  WARN     ⚠ ./
+Failed to find font override values for font `Bitcount`
+Skipping generating a fallback font.
+
+
+[00:15:52.513] Server  LOG      ✓ Compiled in 60.3s
+[00:15:52.616] Browser ERROR   ./components/hero-section.tsx:28:11
+Parsing ecmascript source code failed
+  26 |           className={
+  27 |             "text-[18vw] sm:text-[15vw] md:text-[12vw] lg:text-[11vw] tracking-tighter text-foreground transition-transform duration-100 ease-out" +
+> 28 |           }
+     |           ^
+  29 |         >
+  30 |           <TextReveal className={bitcount.className} delay={100}>
+  31 |             {SITE_CONFIG.firstName}
+
+Expected '</', got '}'
+
+Import trace:
+  Server Component:
+    ./components/hero-section.tsx
+    ./app/page.tsx
+[00:16:08.800] Server  WARN     ⚠ ./
+Failed to find font override values for font `Bitcount`
+Skipping generating a fallback font.
+
+
+[00:16:16.910] Server  WARN     ⚠ ./
+Failed to find font override values for font `Bitcount`
+Skipping generating a fallback font.
+
+
+[00:16:23.137] Server  WARN     ⚠ ./
+Failed to find font override values for font `Bitcount`
+Skipping generating a fallback font.
+
+
+[00:19:38.489] Server  WARN     ⚠ ./
+Failed to find font override values for font `Bitcount`
+Skipping generating a fallback font.
+
+
+[00:19:55.618] Server  WARN     ⚠ ./
+Failed to find font override values for font `Bitcount`
+Skipping generating a fallback font.
+
+
+[00:20:02.499] Server  WARN     ⚠ ./
+Failed to find font override values for font `Bitcount`
+Skipping generating a fallback font.
+
+
+[00:20:29.635] Server  WARN     ⚠ ./
+Failed to find font override values for font `Bitcount`
+Skipping generating a fallback font.
+
+
+[00:20:30.080] Browser ERROR   An empty string ("") was passed to the %s attribute. This may cause the browser to download the whole page again over the network. To fix this, either do not render the element at all or pass null to %s instead of an empty string. src src {"name":"Stack","stack":"\nimg@unknown:0:0\n"}
+[00:20:30.080] Browser ERROR   Image is missing required "src" property: <img> {"name":"Stack","stack":"\nimg@unknown:0:0\n"}
+[00:20:30.080] Browser WARN    Image with src "" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:20:30.080] Browser ERROR   %c%s %o %o %o color: rgba(124, 124, 124, 0.75) Image is missing required "src" property: <img> {"name":"Stack","stack":"\nimg@unknown:0:0\n"}
+[00:20:58.392] Server  WARN     ⚠ ./
+Failed to find font override values for font `Bitcount`
+Skipping generating a fallback font.
+
+
+[00:21:19.081] Server  WARN     ⚠ ./
+Failed to find font override values for font `Bitcount`
+Skipping generating a fallback font.
+
+
+[00:21:27.615] Server  WARN     ⚠ ./
+Failed to find font override values for font `Bitcount`
+Skipping generating a fallback font.
+
+
+[00:21:36.107] Server  WARN     ⚠ ./
+Failed to find font override values for font `Bitcount`
+Skipping generating a fallback font.
+
+
+[00:21:50.898] Server  WARN     ⚠ ./
+Failed to find font override values for font `Bitcount`
+Skipping generating a fallback font.
+
+
+[00:21:53.873] Server  WARN     ⚠ ./
+Failed to find font override values for font `Bitcount`
+Skipping generating a fallback font.
+
+
+[00:22:06.627] Server  WARN     ⚠ ./
+Failed to find font override values for font `Bitcount`
+Skipping generating a fallback font.
+
+
+[00:22:50.487] Server  WARN     ⚠ ./
+Failed to find font override values for font `Bitcount`
+Skipping generating a fallback font.
+
+
+[00:22:56.489] Server  WARN     ⚠ ./
+Failed to find font override values for font `Bitcount`
+Skipping generating a fallback font.
+
+
+[00:23:10.408] Server  WARN     ⚠ ./
+Failed to find font override values for font `Bitcount`
+Skipping generating a fallback font.
+
+
+[00:23:14.864] Server  WARN     ⚠ ./
+Failed to find font override values for font `Bitcount`
+Skipping generating a fallback font.
+
+
+[00:23:36.415] Server  WARN     ⚠ ./
+Failed to find font override values for font `Bitcount`
+Skipping generating a fallback font.
+
+
+[00:23:53.863] Server  WARN     ⚠ ./
+Failed to find font override values for font `Bitcount`
+Skipping generating a fallback font.
+
+
+[00:24:01.305] Server  WARN     ⚠ ./
+Failed to find font override values for font `Bitcount`
+Skipping generating a fallback font.
+
+
+[00:24:05.559] Server  WARN     ⚠ ./
+Failed to find font override values for font `Bitcount`
+Skipping generating a fallback font.
+
+
+[00:24:08.557] Server  WARN     ⚠ ./
+Failed to find font override values for font `Bitcount`
+Skipping generating a fallback font.
+
+
+[00:24:22.804] Server  WARN     ⚠ ./
+Failed to find font override values for font `Bitcount`
+Skipping generating a fallback font.
+
+
+[00:24:30.084] Server  WARN     ⚠ ./
+Failed to find font override values for font `Bitcount`
+Skipping generating a fallback font.
+
+
+[00:24:35.496] Server  WARN     ⚠ ./
+Failed to find font override values for font `Bitcount`
+Skipping generating a fallback font.
+
+

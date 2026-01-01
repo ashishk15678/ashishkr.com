@@ -4,9 +4,9 @@ export const SITE_CONFIG = {
   lastName: "KUMAR",
   email: "15678ashish@gmail.com",
   location: "Gr Noida, INDIA",
-  credentials: "Student — B.TECH",
+  credentials: "Student of B.TECH",
   tagline:
-    "Full-stack & Backend Engineer turning complex problems into elegant solutions.",
+    "Full-stack & Backend Engineer turning complex problems into elegant solutions. A dev who designs and designs awesome designs.",
   bio: "Building scalable systems and intelligent applications with a focus on user experience and performance.",
   openToWork: true,
   copyright: `© ${new Date().getFullYear()} ASHISH KUMAR`,

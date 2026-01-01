@@ -1,20 +1,20 @@
-import { blogPosts, type BlogPostData } from "./blog-data"
+import { blogPosts, type BlogPostData } from "./blog-data";
 
 export interface BlogPost {
-  slug: string
-  title: string
-  excerpt: string
-  date: string
-  readTime: string
-  tags: string[]
-  content: string
-  rawContent: string
+  slug: string;
+  title: string;
+  excerpt: string;
+  date: string;
+  readTime: string;
+  tags: string[];
+  content: string;
+  rawContent: string;
 }
 
 function calculateReadTime(content: string): string {
-  const wordCount = content.split(/\s+/).length
-  const minutes = Math.ceil(wordCount / 200)
-  return `${minutes} min read`
+  const wordCount = content.split(/\s+/).length;
+  const minutes = Math.ceil(wordCount / 200);
+  return `${minutes} min read`;
 }
 
 function generateRawMarkdown(post: BlogPostData): string {
@@ -25,18 +25,18 @@ date: "${post.date}"
 tags: [${post.tags.map((t) => `"${t}"`).join(", ")}]
 ---
 
-${post.content}`
+${post.content}`;
 }
 
 export function getAllBlogSlugs(): string[] {
-  return blogPosts.map((post) => post.slug)
+  return blogPosts.map((post) => post.slug);
 }
 
 export function getBlogBySlug(slug: string): BlogPost | null {
-  const post = blogPosts.find((p) => p.slug === slug)
+  const post = blogPosts.find((p) => p.slug === slug);
 
   if (!post) {
-    return null
+    return null;
   }
 
   return {
@@ -48,12 +48,12 @@ export function getBlogBySlug(slug: string): BlogPost | null {
     tags: post.tags,
     content: post.content,
     rawContent: generateRawMarkdown(post),
-  }
+  };
 }
 
 export function getAllBlogs(): BlogPost[] {
   return blogPosts
     .map((post) => getBlogBySlug(post.slug))
     .filter((blog): blog is BlogPost => blog !== null)
-    .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
+    .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 }
