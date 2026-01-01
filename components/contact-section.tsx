@@ -22,8 +22,8 @@ export function ContactSection() {
         <h2 className="text-[12vw] sm:text-[10vw] md:text-[8vw] font-bold tracking-tighter leading-none section-title">
           <TextReveal>{"LET'S BUILD"}</TextReveal>
         </h2>
-        <h2 className="text-[12vw] sm:text-[10vw] md:text-[8vw] font-bold tracking-tighter leading-none text-muted-foreground/20">
-          <TextReveal delay={200}>THE FUTURE.</TextReveal>
+        <h2 className="text-[12vw] sm:text-[10vw] md:text-[8vw] font-bold tracking-wider leading-none text-primary/50">
+          <TextReveal delay={200}>{"THE FUTURE."}</TextReveal>
         </h2>
       </div>
 
@@ -43,22 +43,33 @@ export function ContactSection() {
               </span>
             </div>
           </MagneticButton>
-          <div className="flex gap-3">
-            <MagneticButton
-              as="a"
-              href={SOCIAL_LINKS.linkedin}
-              external
-              strength={0.4}
-            >
-              <div className="w-12 h-12 md:w-14 md:h-14 rounded-full border border-border flex items-center justify-center hover:bg-foreground hover:text-background hover:scale-110 hover:rotate-12 transition-all duration-300">
-                <ArrowUpRight className="w-4 h-4 md:w-5 md:h-5" />
-              </div>
-            </MagneticButton>
-            <MagneticButton as="button" strength={0.4}>
-              <div className="w-12 h-12 md:w-14 md:h-14 rounded-full border border-border flex items-center justify-center hover:bg-foreground hover:text-background hover:scale-110 hover:-rotate-12 transition-all duration-300">
-                <Settings className="w-4 h-4 md:w-5 md:h-5" />
-              </div>
-            </MagneticButton>
+          <div className="flex flex-row">
+            <div className="flex gap-3">
+              <MagneticButton
+                as="a"
+                href={SOCIAL_LINKS.peerlist}
+                external
+                strength={0.4}
+              >
+                <div className="w-12 h-12 md:w-14 md:h-14 rounded-full border border-border flex items-center justify-center bg-green-500 hover:bg-green-500 hover:text-background hover:scale-110 hover:rotate-12 transition-all duration-300">
+                  <ArrowUpRight className="w-4 h-4 md:w-5 md:h-5" />
+                </div>
+                <p className="text-sm text-primary/40">Peerlist</p>
+              </MagneticButton>
+            </div>
+            <div>
+              <MagneticButton
+                as="a"
+                href={SOCIAL_LINKS.linkedin}
+                external
+                strength={0.4}
+              >
+                <div className="w-12 h-12 md:w-14 md:h-14 rounded-full border border-border flex items-center bg-blue-500 hover:bg-blue-500 justify-center hover:text-background hover:scale-110 hover:rotate-12 transition-all duration-300">
+                  <ArrowUpRight className="w-4 h-4 md:w-5 md:h-5" />
+                </div>
+                <p className="text-sm text-primary/40">Linkedin</p>
+              </MagneticButton>
+            </div>
           </div>
         </div>
       </div>

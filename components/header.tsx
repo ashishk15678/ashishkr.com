@@ -100,14 +100,14 @@ export function Header() {
 
       {/* Mobile navigation overlay */}
       {isMenuOpen && (
-        <div className="fixed inset-0 top-[60px] bg-background z-40 md:hidden animate-in fade-in slide-in-from-top-2 duration-200">
-          <nav className="flex flex-col p-6 gap-2">
+        <div className="fixed inset-0 top-[60px] z-40 md:hidden  animate-in fade-in slide-in-from-top-2 duration-200">
+          <nav className="flex flex-col p-6  bg-background/80">
             {NAV_LINKS.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
                 onClick={() => setIsMenuOpen(false)}
-                className={`text-2xl font-medium py-4 border-b border-border transition-colors ${
+                className={`text-2xl font-medium py-4 border-b backdrop-blur-2xl border-border transition-colors ${
                   pathname === link.href
                     ? "text-foreground"
                     : "text-muted-foreground"

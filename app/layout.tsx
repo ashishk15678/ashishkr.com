@@ -18,11 +18,10 @@ export const metadata: Metadata = {
   icons: {
     icon: [
       {
-        url: "/favicon.jpeg",
-        media: "/favicon.jpeg",
+        url: "https://avatars.githubusercontent.com/u/147980956?v=4",
+        media: "https://avatars.githubusercontent.com/u/147980956?v=4",
       },
     ],
-    apple: "/favicon.jpeg",
   },
 };
 

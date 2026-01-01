@@ -1,477 +1,381 @@
-[00:00:01.524] Server  LOG      ✓ Ready in 1050ms
-[00:00:05.898] Server  LOG      ○ Compiling / ...
-[00:00:09.136] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[00:00:09.136] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/","route":"/"}
-[00:00:09.136] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1767275928301}
-[00:08:24.324] Server  ERROR    ⨯ ./app/layout.tsx:40:14
+[00:00:00.945] Server  LOG      ✓ Ready in 582ms
+[00:00:04.700] Server  LOG      ○ Compiling / ...
+[00:00:10.493] Server  ERROR    ⨯ ./components
+Invalid import
+'client-only' cannot be imported from a Server Component module. It should only be used from a Client Component.
+The error was caused by using 'styled-jsx'. It only works in a Client Component but none of its parents are marked with "use client", so they're Server Components by default.
+
+
+
+[00:00:10.495] Server  WARN     ⚠ ./
+Failed to find font override values for font `Bitcount`
+Skipping generating a fallback font.
+
+
+[00:00:12.153] Server  WARN     ⚠ ./
+Failed to find font override values for font `Bitcount`
+Skipping generating a fallback font.
+
+
+[00:00:12.263] Browser ERROR   uncaughtError: Error: ./components
+Invalid import
+'client-only' cannot be imported from a Server Component module. It should only be used from a Client Component.
+The error was caused by using 'styled-jsx'. It only works in a Client Component but none of its parents are marked with "use client", so they're Server Components by default.
+
+
+
+[00:00:12.374] Browser ERROR   ./components
+Invalid import
+'client-only' cannot be imported from a Server Component module. It should only be used from a Client Component.
+The error was caused by using 'styled-jsx'. It only works in a Client Component but none of its parents are marked with "use client", so they're Server Components by default.
+[00:00:12.829] Browser ERROR   ./components
+Invalid import
+'client-only' cannot be imported from a Server Component module. It should only be used from a Client Component.
+The error was caused by using 'styled-jsx'. It only works in a Client Component but none of its parents are marked with "use client", so they're Server Components by default.
+[00:00:36.587] Server  LOG      ✓ Compiled in 112ms
+[00:00:36.704] Server  WARN     ⚠ ./
+Failed to find font override values for font `Bitcount`
+Skipping generating a fallback font.
+
+
+[00:00:37.843] Server  WARN     ⚠ ./
+Failed to find font override values for font `Bitcount`
+Skipping generating a fallback font.
+
+
+[00:00:38.125] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[00:00:38.125] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/","route":"/"}
+[00:00:38.125] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1767295732317}
+[00:00:38.199] Server  WARN     ⚠ ./
+Failed to find font override values for font `Bitcount`
+Skipping generating a fallback font.
+
+
+[00:00:38.704] Server  WARN     ⚠ ./
+Failed to find font override values for font `Bitcount`
+Skipping generating a fallback font.
+
+
+[00:01:35.238] Server  LOG      ✓ Compiled in 283ms
+[00:01:35.506] Browser ERROR   ./components
+Invalid import
+'client-only' cannot be imported from a Server Component module. It should only be used from a Client Component.
+The error was caused by using 'styled-jsx'. It only works in a Client Component but none of its parents are marked with "use client", so they're Server Components by default.
+[00:01:36.332] Server  WARN     ⚠ ./
+Failed to find font override values for font `Bitcount`
+Skipping generating a fallback font.
+
+
+[00:01:36.469] Browser ERROR   ./components
+Invalid import
+'client-only' cannot be imported from a Server Component module. It should only be used from a Client Component.
+The error was caused by using 'styled-jsx'. It only works in a Client Component but none of its parents are marked with "use client", so they're Server Components by default.
+[00:01:44.420] Server  WARN     ⚠ ./
+Failed to find font override values for font `Bitcount`
+Skipping generating a fallback font.
+
+
+[00:01:45.407] Server  WARN     ⚠ ./
+Failed to find font override values for font `Bitcount`
+Skipping generating a fallback font.
+
+
+[00:01:47.283] Server  WARN     ⚠ ./
+Failed to find font override values for font `Bitcount`
+Skipping generating a fallback font.
+
+
+[00:01:47.958] Server  WARN     ⚠ ./
+Failed to find font override values for font `Bitcount`
+Skipping generating a fallback font.
+
+
+[00:01:48.319] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[00:01:48.319] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/","route":"/"}
+[00:01:48.319] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1767295802522}
+[00:01:48.447] Browser WARN    Image with src "https://avatars.githubusercontent.com/u/147980956?v=4" has "fill" and parent element with invalid "position". Provided "static" should be one of absolute,fixed,relative.
+[00:02:03.529] Server  LOG      ✓ Compiled in 73ms
+[00:02:10.551] Server  WARN     ⚠ ./
+Failed to find font override values for font `Bitcount`
+Skipping generating a fallback font.
+
+
+[00:02:10.879] Browser WARN    Image with src "https://avatars.githubusercontent.com/u/147980956?v=4" has "fill" and a height value of 0. This is likely because the parent element of the image has not been styled to have a set height.
+[00:02:13.432] Server  WARN     ⚠ ./
+Failed to find font override values for font `Bitcount`
+Skipping generating a fallback font.
+
+
+[00:02:14.154] Server  WARN     ⚠ ./
+Failed to find font override values for font `Bitcount`
+Skipping generating a fallback font.
+
+
+[00:02:14.423] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[00:02:14.423] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/","route":"/"}
+[00:02:14.423] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1767295828623}
+[00:02:23.799] Server  WARN     ⚠ ./
+Failed to find font override values for font `Bitcount`
+Skipping generating a fallback font.
+
+
+[00:02:34.992] Server  WARN     ⚠ ./
+Failed to find font override values for font `Bitcount`
+Skipping generating a fallback font.
+
+
+[00:03:14.648] Browser ERROR   ./components
+Invalid import
+'client-only' cannot be imported from a Server Component module. It should only be used from a Client Component.
+The error was caused by using 'styled-jsx'. It only works in a Client Component but none of its parents are marked with "use client", so they're Server Components by default.
+[00:03:21.021] Browser ERROR   ./components
+Invalid import
+'client-only' cannot be imported from a Server Component module. It should only be used from a Client Component.
+The error was caused by using 'styled-jsx'. It only works in a Client Component but none of its parents are marked with "use client", so they're Server Components by default.
+[00:03:28.085] Browser ERROR   ./components
+Invalid import
+'client-only' cannot be imported from a Server Component module. It should only be used from a Client Component.
+The error was caused by using 'styled-jsx'. It only works in a Client Component but none of its parents are marked with "use client", so they're Server Components by default.
+[00:03:37.458] Server  WARN     ⚠ ./
+Failed to find font override values for font `Bitcount`
+Skipping generating a fallback font.
+
+
+[00:03:37.801] Browser WARN    Image with src "https://avatars.githubusercontent.com/u/147980956?v=4" has "fill" and parent element with invalid "position". Provided "static" should be one of absolute,fixed,relative.
+[00:05:52.821] Server  LOG      ✓ Compiled in 101ms
+[00:05:52.832] Server  WARN     ⚠ ./
+Failed to find font override values for font `Bitcount`
+Skipping generating a fallback font.
+
+
+[00:06:06.228] Browser ERROR   ./components/hero-section.tsx:80:7
 Parsing ecmascript source code failed
-  38 |         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  39 |         <link href="https://fonts.googleapis.com/css2?family=Bitcount:wght@100..900&display=swap" rel="stylesheet">
-> 40 |       </head>
-     |              ^
-> 41 |       <body className="font-sans antialiased">
-     | ^^^^^^^
-  42 |         <Suspense fallback={<div>Loading...</div>}>
-  43 |           <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-  44 |             {children}
+  78 |           />
+  79 |         </div>
+> 80 |       </div>*/}
+     |       ^
+  81 |     </section>
+  82 |   );
+  83 | }
 
-Expected '</', got 'jsx text (
-      )'
-
-
-[00:08:26.108] Browser ERROR   uncaughtError: Error: ./app/layout.tsx:40:14
-Parsing ecmascript source code failed
-  38 |         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  39 |         <link href="https://fonts.googleapis.com/css2?family=Bitcount:wght@100..900&display=swap" rel="stylesheet">
-> 40 |       </head>
-     |              ^
-> 41 |       <body className="font-sans antialiased">
-     | ^^^^^^^
-  42 |         <Suspense fallback={<div>Loading...</div>}>
-  43 |           <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-  44 |             {children}
-
-Expected '</', got 'jsx text (
-      )'
-
-
-[00:08:26.108] Browser ERROR   ./app/layout.tsx:40:14
-Parsing ecmascript source code failed
-  38 |         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  39 |         <link href="https://fonts.googleapis.com/css2?family=Bitcount:wght@100..900&display=swap" rel="stylesheet">
-> 40 |       </head>
-     |              ^
-> 41 |       <body className="font-sans antialiased">
-     | ^^^^^^^
-  42 |         <Suspense fallback={<div>Loading...</div>}>
-  43 |           <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-  44 |             {children}
-
-Expected '</', got 'jsx text (
-      )'
-[00:08:26.108] Browser ERROR   ./app/layout.tsx:40:14
-Parsing ecmascript source code failed
-  38 |         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  39 |         <link href="https://fonts.googleapis.com/css2?family=Bitcount:wght@100..900&display=swap" rel="stylesheet">
-> 40 |       </head>
-     |              ^
-> 41 |       <body className="font-sans antialiased">
-     | ^^^^^^^
-  42 |         <Suspense fallback={<div>Loading...</div>}>
-  43 |           <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-  44 |             {children}
-
-Expected '</', got 'jsx text (
-      )'
-[00:08:26.108] Browser ERROR   ./app/layout.tsx:40:14
-Parsing ecmascript source code failed
-  38 |         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  39 |         <link href="https://fonts.googleapis.com/css2?family=Bitcount:wght@100..900&display=swap" rel="stylesheet">
-> 40 |       </head>
-     |              ^
-> 41 |       <body className="font-sans antialiased">
-     | ^^^^^^^
-  42 |         <Suspense fallback={<div>Loading...</div>}>
-  43 |           <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-  44 |             {children}
-
-Expected '</', got 'jsx text (
-      )'
-[00:08:32.721] Browser ERROR   ./app/layout.tsx:40:14
-Parsing ecmascript source code failed
-  38 |         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  39 |         <link href="https://fonts.googleapis.com/css2?family=Bitcount:wght@100..900&display=swap" rel="stylesheet">
-> 40 |       </head>
-     |              ^
-> 41 |
-     | ^
-> 42 |       <body className="font-sans antialiased">
-     | ^^^^^^^
-  43 |         <Suspense fallback={<div>Loading...</div>}>
-  44 |           <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-  45 |             {children}
-
-Expected '</', got 'jsx text (
-
-      )'
-[00:08:34.794] Browser ERROR   ./app/layout.tsx:41:14
-Parsing ecmascript source code failed
-  39 |         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  40 |         <link href="https://fonts.googleapis.com/css2?family=Bitcount:wght@100..900&display=swap" rel="stylesheet">
-> 41 |       </head>
-     |              ^
-> 42 |
-     | ^
-> 43 |       <body className="font-sans antialiased">
-     | ^^^^^^^
-  44 |         <Suspense fallback={<div>Loading...</div>}>
-  45 |           <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-  46 |             {children}
-
-Expected '</', got 'jsx text (
-
-      )'
-[00:09:02.578] Browser ERROR   ./app/layout.tsx:40:16
-Parsing ecmascript source code failed
-  38 |           <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  39 |           <link href="https://fonts.googleapis.com/css2?family=Bitcount:wght@100..900&display=swap" rel="stylesheet">
-> 40 |         </head>
-     |                ^
-> 41 |
-     | ^
-> 42 |       <body className="font-sans antialiased">
-     | ^^^^^^^
-  43 |         <Suspense fallback={<div>Loading...</div>}>
-  44 |           <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-  45 |             {children}
-
-Expected '</', got 'jsx text (
-
-      )'
-[00:09:03.793] Browser ERROR   ./app/layout.tsx:51:1
-Parsing ecmascript source code failed
-  49 |     </html>
-  50 |   );
-> 51 | }
-     | ^
-  52 |
-
-Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
-[00:09:10.446] Browser ERROR   ./app/layout.tsx:51:1
-Parsing ecmascript source code failed
-  49 |     </html>
-  50 |   );
-> 51 | }
-     | ^
-  52 |
-
-Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
-[00:09:53.889] Server  LOG      ✓ Compiled in 55ms
-[00:09:57.637] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[00:09:57.637] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/","route":"/"}
-[00:09:57.637] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1767276516794}
-[00:10:25.379] Server  ERROR    ⨯ ReferenceError: Bitcount is not defined
-[00:10:47.301] Browser ERROR   ./components/hero-section.tsx:7:20
-Ecmascript file had an error
-   5 |
-   6 | export function HeroSection() {
->  7 |   const bitcount = Bitcount({
-     |                    ^^^^^^^^
-   8 |     subsets: ["latin"],
-   9 |     weight: ["100", "400", "900"], // Choose specific weights or a range
-  10 |     variable: "--font-bitcount", // Define a CSS variable name
-
-Font loaders must be called and assigned to a const in the module scope
+Expression expected
 
 Import trace:
   Server Component:
     ./components/hero-section.tsx
     ./app/page.tsx
-[00:11:01.238] Server  ERROR    ⨯ ./components/hero-section.tsx:7:20
-Ecmascript file had an error
-   5 |
-   6 | export function HeroSection() {
->  7 |   const bitcount = Bitcount({
-     |                    ^^^^^^^^
-   8 |     subsets: ["latin"],
-   9 |     weight: ["100", "400", "900"], // Choose specific weights or a range
-  10 |     variable: "--font-bitcount", // Define a CSS variable name
-
-Font loaders must be called and assigned to a const in the module scope
-
-Import trace:
-  Server Component:
-    ./components/hero-section.tsx
-    ./app/page.tsx
-
-
-[00:11:01.731] Browser ERROR   uncaughtError: Error: ./components/hero-section.tsx:7:20
-Ecmascript file had an error
-   5 |
-   6 | export function HeroSection() {
->  7 |   const bitcount = Bitcount({
-     |                    ^^^^^^^^
-   8 |     subsets: ["latin"],
-   9 |     weight: ["100", "400", "900"], // Choose specific weights or a range
-  10 |     variable: "--font-bitcount", // Define a CSS variable name
-
-Font loaders must be called and assigned to a const in the module scope
-
-Import trace:
-  Server Component:
-    ./components/hero-section.tsx
-    ./app/page.tsx
-
-
-[00:11:01.906] Browser ERROR   ./components/hero-section.tsx:7:20
-Ecmascript file had an error
-   5 |
-   6 | export function HeroSection() {
->  7 |   const bitcount = Bitcount({
-     |                    ^^^^^^^^
-   8 |     subsets: ["latin"],
-   9 |     weight: ["100", "400", "900"], // Choose specific weights or a range
-  10 |     variable: "--font-bitcount", // Define a CSS variable name
-
-Font loaders must be called and assigned to a const in the module scope
-
-Import trace:
-  Server Component:
-    ./components/hero-section.tsx
-    ./app/page.tsx
-[00:11:01.906] Browser ERROR   ./components/hero-section.tsx:7:20
-Ecmascript file had an error
-   5 |
-   6 | export function HeroSection() {
->  7 |   const bitcount = Bitcount({
-     |                    ^^^^^^^^
-   8 |     subsets: ["latin"],
-   9 |     weight: ["100", "400", "900"], // Choose specific weights or a range
-  10 |     variable: "--font-bitcount", // Define a CSS variable name
-
-Font loaders must be called and assigned to a const in the module scope
-
-Import trace:
-  Server Component:
-    ./components/hero-section.tsx
-    ./app/page.tsx
-[00:11:07.620] Browser ERROR   ./components/hero-section.tsx:7:20
-Ecmascript file had an error
-   5 |
-   6 | export function HeroSection() {
->  7 |   const bitcount = Bitcount({
-     |                    ^^^^^^^^
-   8 |     subsets: ["latin"],
-   9 |     weight: ["100", "400", "900"], // Choose specific weights or a range
-  10 |     variable: "--font-bitcount", // Define a CSS variable name
-
-Font loaders must be called and assigned to a const in the module scope
-
-Import trace:
-  Server Component:
-    ./components/hero-section.tsx
-    ./app/page.tsx
-[00:11:43.332] Server  LOG      ✓ Compiled in 296ms
-[00:11:43.355] Server  WARN     ⚠ ./
+[00:06:13.131] Server  WARN     ⚠ ./
 Failed to find font override values for font `Bitcount`
 Skipping generating a fallback font.
 
 
-[00:11:44.265] Server  WARN     ⚠ ./
+[00:06:16.694] Server  WARN     ⚠ ./
 Failed to find font override values for font `Bitcount`
 Skipping generating a fallback font.
 
 
-[00:11:44.402] Server  WARN     ⚠ ./
+[00:06:30.819] Server  WARN     ⚠ ./
 Failed to find font override values for font `Bitcount`
 Skipping generating a fallback font.
 
 
-[00:11:44.670] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[00:11:44.670] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/","route":"/"}
-[00:11:44.670] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1767276623804}
-[00:11:45.538] Server  WARN     ⚠ ./
+[00:06:33.441] Server  WARN     ⚠ ./
 Failed to find font override values for font `Bitcount`
 Skipping generating a fallback font.
 
 
-[00:12:26.388] Server  WARN     ⚠ ./
+[00:08:46.060] Server  WARN     ⚠ ./
 Failed to find font override values for font `Bitcount`
 Skipping generating a fallback font.
 
 
-[00:12:26.493] Server  LOG      ✓ Compiled in 42.1s
-[00:12:27.097] Server  WARN     ⚠ ./
+[00:08:55.823] Server  WARN     ⚠ ./
 Failed to find font override values for font `Bitcount`
 Skipping generating a fallback font.
 
 
-[00:12:27.552] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[00:12:27.552] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/","route":"/"}
-[00:12:27.552] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1767276666724}
-[00:12:47.710] Server  WARN     ⚠ ./
+[00:09:12.944] Server  WARN     ⚠ ./
 Failed to find font override values for font `Bitcount`
 Skipping generating a fallback font.
 
 
-[00:12:48.264] Server  WARN     ⚠ ./
+[00:10:36.908] Server  WARN     ⚠ ./
 Failed to find font override values for font `Bitcount`
 Skipping generating a fallback font.
 
 
-[00:12:48.585] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[00:12:48.585] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/","route":"/"}
-[00:12:48.586] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1767276687741}
-[00:14:39.939] Server  WARN     ⚠ ./
+[00:10:37.646] Server  WARN     ⚠ ./
 Failed to find font override values for font `Bitcount`
 Skipping generating a fallback font.
 
 
-[00:14:51.322] Server  WARN     ⚠ ./
+[00:10:37.943] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[00:10:37.943] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/","route":"/"}
+[00:10:37.943] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1767296332120}
+[00:10:48.344] Server  WARN     ⚠ ./
 Failed to find font override values for font `Bitcount`
 Skipping generating a fallback font.
 
 
-[00:14:52.140] Server  WARN     ⚠ ./
+[00:11:08.602] Server  WARN     ⚠ ./
 Failed to find font override values for font `Bitcount`
 Skipping generating a fallback font.
 
 
-[00:14:52.492] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[00:14:52.492] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/","route":"/"}
-[00:14:52.492] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1767276811661}
-[00:15:10.788] Server  WARN     ⚠ ./
+[00:11:15.695] Server  WARN     ⚠ ./
 Failed to find font override values for font `Bitcount`
 Skipping generating a fallback font.
 
 
-[00:15:52.513] Server  LOG      ✓ Compiled in 60.3s
-[00:15:52.616] Browser ERROR   ./components/hero-section.tsx:28:11
-Parsing ecmascript source code failed
-  26 |           className={
-  27 |             "text-[18vw] sm:text-[15vw] md:text-[12vw] lg:text-[11vw] tracking-tighter text-foreground transition-transform duration-100 ease-out" +
-> 28 |           }
-     |           ^
-  29 |         >
-  30 |           <TextReveal className={bitcount.className} delay={100}>
-  31 |             {SITE_CONFIG.firstName}
-
-Expected '</', got '}'
-
-Import trace:
-  Server Component:
-    ./components/hero-section.tsx
-    ./app/page.tsx
-[00:16:08.800] Server  WARN     ⚠ ./
+[00:11:18.674] Server  WARN     ⚠ ./
 Failed to find font override values for font `Bitcount`
 Skipping generating a fallback font.
 
 
-[00:16:16.910] Server  WARN     ⚠ ./
+[00:11:33.195] Server  WARN     ⚠ ./
 Failed to find font override values for font `Bitcount`
 Skipping generating a fallback font.
 
 
-[00:16:23.137] Server  WARN     ⚠ ./
+[00:11:42.640] Server  WARN     ⚠ ./
 Failed to find font override values for font `Bitcount`
 Skipping generating a fallback font.
 
 
-[00:19:38.489] Server  WARN     ⚠ ./
+[00:11:42.879] Browser WARN    Image with src "http://localhost:3000/aizen-image.png" has "fill" and parent element with invalid "position". Provided "static" should be one of absolute,fixed,relative.
+[00:11:45.774] Server  WARN     ⚠ ./
 Failed to find font override values for font `Bitcount`
 Skipping generating a fallback font.
 
 
-[00:19:55.618] Server  WARN     ⚠ ./
+[00:13:44.929] Server  WARN     ⚠ ./
 Failed to find font override values for font `Bitcount`
 Skipping generating a fallback font.
 
 
-[00:20:02.499] Server  WARN     ⚠ ./
+[00:16:52.908] Server  WARN     ⚠ ./
 Failed to find font override values for font `Bitcount`
 Skipping generating a fallback font.
 
 
-[00:20:29.635] Server  WARN     ⚠ ./
+[00:17:14.330] Server  WARN     ⚠ ./
 Failed to find font override values for font `Bitcount`
 Skipping generating a fallback font.
 
 
-[00:20:30.080] Browser ERROR   An empty string ("") was passed to the %s attribute. This may cause the browser to download the whole page again over the network. To fix this, either do not render the element at all or pass null to %s instead of an empty string. src src {"name":"Stack","stack":"\nimg@unknown:0:0\n"}
-[00:20:30.080] Browser ERROR   Image is missing required "src" property: <img> {"name":"Stack","stack":"\nimg@unknown:0:0\n"}
-[00:20:30.080] Browser WARN    Image with src "" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
-[00:20:30.080] Browser ERROR   %c%s %o %o %o color: rgba(124, 124, 124, 0.75) Image is missing required "src" property: <img> {"name":"Stack","stack":"\nimg@unknown:0:0\n"}
-[00:20:58.392] Server  WARN     ⚠ ./
+[00:17:23.627] Server  WARN     ⚠ ./
 Failed to find font override values for font `Bitcount`
 Skipping generating a fallback font.
 
 
-[00:21:19.081] Server  WARN     ⚠ ./
+[00:17:27.283] Server  WARN     ⚠ ./
 Failed to find font override values for font `Bitcount`
 Skipping generating a fallback font.
 
 
-[00:21:27.615] Server  WARN     ⚠ ./
+[00:17:35.706] Server  WARN     ⚠ ./
 Failed to find font override values for font `Bitcount`
 Skipping generating a fallback font.
 
 
-[00:21:36.107] Server  WARN     ⚠ ./
+[00:17:50.284] Server  WARN     ⚠ ./
 Failed to find font override values for font `Bitcount`
 Skipping generating a fallback font.
 
 
-[00:21:50.898] Server  WARN     ⚠ ./
+[00:17:53.404] Server  WARN     ⚠ ./
 Failed to find font override values for font `Bitcount`
 Skipping generating a fallback font.
 
 
-[00:21:53.873] Server  WARN     ⚠ ./
+[00:17:54.010] Server  WARN     ⚠ ./
 Failed to find font override values for font `Bitcount`
 Skipping generating a fallback font.
 
 
-[00:22:06.627] Server  WARN     ⚠ ./
+[00:18:25.741] Server  WARN     ⚠ ./
 Failed to find font override values for font `Bitcount`
 Skipping generating a fallback font.
 
 
-[00:22:50.487] Server  WARN     ⚠ ./
+[00:19:00.301] Server  WARN     ⚠ ./
 Failed to find font override values for font `Bitcount`
 Skipping generating a fallback font.
 
 
-[00:22:56.489] Server  WARN     ⚠ ./
+[00:19:00.382] Server  WARN     ⚠ ./
 Failed to find font override values for font `Bitcount`
 Skipping generating a fallback font.
 
 
-[00:23:10.408] Server  WARN     ⚠ ./
+[00:19:23.679] Server  WARN     ⚠ ./
 Failed to find font override values for font `Bitcount`
 Skipping generating a fallback font.
 
 
-[00:23:14.864] Server  WARN     ⚠ ./
+[00:19:23.772] Server  WARN     ⚠ ./
 Failed to find font override values for font `Bitcount`
 Skipping generating a fallback font.
 
 
-[00:23:36.415] Server  WARN     ⚠ ./
+[00:19:24.902] Server  WARN     ⚠ ./
 Failed to find font override values for font `Bitcount`
 Skipping generating a fallback font.
 
 
-[00:23:53.863] Server  WARN     ⚠ ./
+[00:19:25.657] Server  WARN     ⚠ ./
 Failed to find font override values for font `Bitcount`
 Skipping generating a fallback font.
 
 
-[00:24:01.305] Server  WARN     ⚠ ./
+[00:19:25.865] Server  WARN     ⚠ ./
 Failed to find font override values for font `Bitcount`
 Skipping generating a fallback font.
 
 
-[00:24:05.559] Server  WARN     ⚠ ./
+[00:19:26.128] Server  WARN     ⚠ ./
 Failed to find font override values for font `Bitcount`
 Skipping generating a fallback font.
 
 
-[00:24:08.557] Server  WARN     ⚠ ./
+[00:19:26.484] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[00:19:26.484] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/","route":"/"}
+[00:19:26.484] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1767296860687}
+[00:19:31.931] Server  WARN     ⚠ ./
 Failed to find font override values for font `Bitcount`
 Skipping generating a fallback font.
 
 
-[00:24:22.804] Server  WARN     ⚠ ./
+[00:19:32.015] Server  WARN     ⚠ ./
 Failed to find font override values for font `Bitcount`
 Skipping generating a fallback font.
 
 
-[00:24:30.084] Server  WARN     ⚠ ./
+[00:19:33.074] Server  WARN     ⚠ ./
 Failed to find font override values for font `Bitcount`
 Skipping generating a fallback font.
 
 
-[00:24:35.496] Server  WARN     ⚠ ./
+[00:19:33.756] Server  WARN     ⚠ ./
+Failed to find font override values for font `Bitcount`
+Skipping generating a fallback font.
+
+
+[00:19:34.087] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[00:19:34.087] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/","route":"/"}
+[00:19:34.087] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1767296868291}
+[00:21:38.155] Server  LOG      ✓ Compiled in 65ms
+[00:21:38.345] Server  WARN     ⚠ ./
+Failed to find font override values for font `Bitcount`
+Skipping generating a fallback font.
+
+
+[00:22:52.877] Server  WARN     ⚠ ./
+Failed to find font override values for font `Bitcount`
+Skipping generating a fallback font.
+
+
+[00:22:57.330] Server  WARN     ⚠ ./
 Failed to find font override values for font `Bitcount`
 Skipping generating a fallback font.
 

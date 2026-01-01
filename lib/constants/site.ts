@@ -18,6 +18,7 @@ export const SOCIAL_LINKS = {
   linkedin: "https://www.linkedin.com/in/ashishk15678/",
   twitter: "https://twitter.com/ashishonsol",
   email: `mailto:${SITE_CONFIG.email}`,
+  peerlist: "https://peerlist.io/ashishk",
 };
 
 export const NAV_LINKS = [
