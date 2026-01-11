@@ -1,5 +1,5 @@
 export const SITE_CONFIG = {
-  name: "Ashish Kumar",
+  name: "Ashish Kr"
   firstName: "ASHISH",
   lastName: "KUMAR",
   email: "15678ashish@gmail.com",
