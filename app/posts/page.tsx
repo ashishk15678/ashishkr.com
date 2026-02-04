@@ -19,6 +19,14 @@ export default function PostsPage() {
             Thoughts on software engineering, design, and building products that
             matter.
           </p>
+          <Link
+            href={"https://peerlist.io/ashishk/articles"}
+            prefetch
+            target="_blank"
+            className="font-bold text-md my-4"
+          >
+            I write most of articles on Peerlist . Click here please .
+          </Link>
           <p className="text-xs text-muted-foreground/60 mt-4 uppercase tracking-widest">
             {blogs.length} Articles Found
           </p>
@@ -54,23 +62,25 @@ export default function PostsPage() {
                   <div className="flex flex-col pr-4">
                     <span className="font-semibold text-base md:text-lg leading-tight group-hover:text-primary transition-colors flex items-center gap-2">
                       {blog.title}
-                      <ArrowUpRight className="w-4 h-4 opacity-0 -translate-y-1 translate-x-1 group-hover:opacity-100 group-hover:translate-y-0 group-hover:translate-x-0 transition-all text-primary" />
+                      <ArrowUpRight className="w-8 h-8 opacity-0 -translate-y-1 translate-x-1 group-hover:opacity-100 group-hover:translate-y-0 group-hover:translate-x-0 transition-all text-primary" />
                     </span>
                     <span className="text-xs text-muted-foreground md:hidden mt-2 font-medium">
-                      {blog.category || "Engineering"}
+                      {blog.tags || "Engineering"}
                     </span>
                   </div>
 
                   {/* Category Column (Tablet/Desktop) */}
                   <div className="hidden md:flex text-sm text-muted-foreground font-medium">
-                    <span className="px-2 py-1 bg-muted rounded text-[10px] border border-border">
-                      {blog.category || "General"}
-                    </span>
+                    {blog.tags.map((val) => (
+                      <span className="px-1 py-0.5 bg-muted rounded text-[10px] border border-border">
+                        {val}
+                      </span>
+                    ))}
                   </div>
 
                   {/* Read Time Column (Desktop Only) */}
                   <div className="hidden lg:flex text-sm text-muted-foreground italic">
-                    {blog.readingTime || "5 min read"}
+                    {blog.readTime || "5 min read"}
                   </div>
 
                   {/* Date Column */}

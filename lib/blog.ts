@@ -9,6 +9,7 @@ export interface BlogPost {
   tags: string[];
   content: string;
   rawContent: string;
+  type: "peerlist" | "here";
 }
 
 function calculateReadTime(content: string): string {
@@ -48,11 +49,15 @@ export function getBlogBySlug(slug: string): BlogPost | null {
     tags: post.tags,
     content: post.content,
     rawContent: generateRawMarkdown(post),
+    type: "here",
   };
 }
 
+export const peerlistBlogs: BlogPost[] = [];
+
 export function getAllBlogs(): BlogPost[] {
-  return blogPosts
+  const allblogs = [...blogPosts, ...peerlistBlogs];
+  return allblogs
     .map((post) => getBlogBySlug(post.slug))
     .filter((blog): blog is BlogPost => blog !== null)
     .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());

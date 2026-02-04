@@ -1,17 +1,16 @@
-[00:00:01.073] Server  LOG      ✓ Ready in 705ms
-[00:00:05.342] Server  LOG      ○ Compiling / ...
-[00:00:05.652] Server  WARN     ⚠ ./
+[00:00:01.507] Server  LOG      ✓ Ready in 972ms
+[00:10:05.095] Server  WARN     ⚠ ./
 Failed to find font override values for font `Bitcount`
 Skipping generating a fallback font.
 
 
-[00:00:06.542] Server  WARN     ⚠ ./
+[00:10:06.190] Server  WARN     ⚠ ./
 Failed to find font override values for font `Bitcount`
 Skipping generating a fallback font.
 
 
-[00:00:06.697] Browser ERROR   Cannot render a sync or defer <script> outside the main document without knowing its order. Try adding async="" or moving it into the root <head> tag.
-[00:00:06.697] Browser ERROR   In HTML, %s cannot be a child of <%s>.%s
+[00:10:06.466] Browser ERROR   Cannot render a sync or defer <script> outside the main document without knowing its order. Try adding async="" or moving it into the root <head> tag.
+[00:10:06.466] Browser ERROR   In HTML, %s cannot be a child of <%s>.%s
 This will cause a hydration error.%s <script> html  
 
   ...
@@ -40,21 +39,330 @@ This will cause a hydration error.%s <script> html
 >                         >
                   ...
 
-[00:00:07.138] Server  WARN     ⚠ ./
+[00:10:07.046] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[00:10:07.046] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/","route":"/"}
+[00:10:07.046] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1770203736445}
+[00:10:13.836] Server  WARN     ⚠ ./
 Failed to find font override values for font `Bitcount`
 Skipping generating a fallback font.
 
 
-[00:00:07.369] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[00:00:07.369] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/","route":"/"}
-[00:00:07.369] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1768482655901}
-[00:00:08.297] Server  WARN     ⚠ ./
+[00:10:14.142] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+[00:10:14.142] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/designs color: rgb(120, 120, 120) color: inherit {"dp":"/designs","o":"http://localhost:3000/designs","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1770203743550}
+[00:10:16.218] Server  WARN     ⚠ ./
 Failed to find font override values for font `Bitcount`
 Skipping generating a fallback font.
 
 
-[00:00:09.891] Server  WARN     ⚠ ./
+[00:10:16.741] Server  WARN     ⚠ ./
 Failed to find font override values for font `Bitcount`
 Skipping generating a fallback font.
 
 
+[00:10:16.826] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:10:17.058] Browser ERROR   Cannot render a sync or defer <script> outside the main document without knowing its order. Try adding async="" or moving it into the root <head> tag.
+[00:10:17.058] Browser ERROR   In HTML, %s cannot be a child of <%s>.%s
+This will cause a hydration error.%s <script> html  
+
+  ...
+    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>
+      <AppDevOverlayErrorBoundary globalError={[...]}>
+        <ReplaySsrOnlyErrors>
+        <DevRootHTTPAccessFallbackBoundary>
+          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
+            <HTTPAccessFallbackErrorBoundary pathname="/designs" notFound={<NotAllowedRootHTTPFallbackError>} ...>
+              <RedirectBoundary>
+                <RedirectErrorBoundary router={{...}}>
+                  <Head>
+                  <__next_root_layout_boundary__>
+                    <SegmentViewNode type="layout" pagePath="layout.tsx">
+                      <SegmentTrieNode>
+                      <link>
+                      <script>
+                      <script>
+                      <RootLayout>
+>                       <html lang="en" suppressHydrationWarning={true}>
+                          <body>
+>                         <script
+>                           defer={true}
+>                           src="https://static.cloudflareinsights.com/beacon.min.js"
+>                           data-cf-beacon={"{\"token\": \"10955f53d5ee4f5880bcbf7725c1febc\"}"}
+>                         >
+                  ...
+
+[00:10:17.302] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[00:10:17.302] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/designs","route":"/designs"}
+[00:10:17.302] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/designs color: rgb(120, 120, 120) color: inherit {"dp":"/designs","o":"http://localhost:3000/designs","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1770203746712}
+[00:10:19.828] Server  WARN    Error: Route "/designs/[slug]" used `params.slug`. `params` is a Promise and must be unwrapped with `await` or `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
+[00:10:19.874] Server  WARN    Error: Route "/designs/[slug]" used `params.slug`. `params` is a Promise and must be unwrapped with `await` or `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
+[00:10:20.091] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/designs/aurora-landing color: rgb(120, 120, 120) color: inherit {"dp":"/designs/[slug]","o":"http://localhost:3000/designs/aurora-landing","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1770203749496}
+[00:10:23.111] Server  WARN     ⚠ ./
+Failed to find font override values for font `Bitcount`
+Skipping generating a fallback font.
+
+
+[00:10:23.365] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/designs color: rgb(120, 120, 120) color: inherit {"dp":"/designs","o":"http://localhost:3000/designs","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1770203752775}
+[00:10:29.450] Server  WARN    Error: Route "/designs/[slug]" used `params.slug`. `params` is a Promise and must be unwrapped with `await` or `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
+[00:10:29.479] Server  WARN    Error: Route "/designs/[slug]" used `params.slug`. `params` is a Promise and must be unwrapped with `await` or `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
+[00:10:29.643] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/designs/nebula-dashboard color: rgb(120, 120, 120) color: inherit {"dp":"/designs/[slug]","o":"http://localhost:3000/designs/nebula-dashboard","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1770203759053}
+[00:10:33.945] Server  WARN     ⚠ ./
+Failed to find font override values for font `Bitcount`
+Skipping generating a fallback font.
+
+
+[00:10:34.152] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/designs color: rgb(120, 120, 120) color: inherit {"dp":"/designs","o":"http://localhost:3000/designs","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1770203763559}
+[00:10:37.847] Server  WARN    Error: Route "/designs/[slug]" used `params.slug`. `params` is a Promise and must be unwrapped with `await` or `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
+[00:10:37.901] Server  WARN    Error: Route "/designs/[slug]" used `params.slug`. `params` is a Promise and must be unwrapped with `await` or `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
+[00:10:38.115] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/designs/nebula-dashboard color: rgb(120, 120, 120) color: inherit {"dp":"/designs/[slug]","o":"http://localhost:3000/designs/nebula-dashboard","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1770203767524}
+[00:11:02.527] Browser LOG     http://localhost:3000/designs/nebula-dashboard
+[00:11:09.127] Server  WARN    Error: Route "/designs/[slug]" used `params.slug`. `params` is a Promise and must be unwrapped with `await` or `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
+[00:11:09.164] Server  WARN    Error: Route "/designs/[slug]" used `params.slug`. `params` is a Promise and must be unwrapped with `await` or `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
+[00:11:09.678] Server  WARN     ⚠ ./
+Failed to find font override values for font `Bitcount`
+Skipping generating a fallback font.
+
+
+[00:11:09.731] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:11:10.050] Browser ERROR   Cannot render a sync or defer <script> outside the main document without knowing its order. Try adding async="" or moving it into the root <head> tag.
+[00:11:10.050] Browser ERROR   In HTML, %s cannot be a child of <%s>.%s
+This will cause a hydration error.%s <script> html  
+
+  ...
+    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>
+      <AppDevOverlayErrorBoundary globalError={[...]}>
+        <ReplaySsrOnlyErrors>
+        <DevRootHTTPAccessFallbackBoundary>
+          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
+            <HTTPAccessFallbackErrorBoundary pathname="/designs/a..." notFound={<NotAllowedRootHTTPFallbackError>} ...>
+              <RedirectBoundary>
+                <RedirectErrorBoundary router={{...}}>
+                  <Head>
+                  <__next_root_layout_boundary__>
+                    <SegmentViewNode type="layout" pagePath="layout.tsx">
+                      <SegmentTrieNode>
+                      <link>
+                      <script>
+                      <script>
+                      <RootLayout>
+>                       <html lang="en" suppressHydrationWarning={true}>
+                          <body>
+>                         <script
+>                           defer={true}
+>                           src="https://static.cloudflareinsights.com/beacon.min.js"
+>                           data-cf-beacon={"{\"token\": \"10955f53d5ee4f5880bcbf7725c1febc\"}"}
+>                         >
+                  ...
+
+[00:11:10.050] Browser ERROR   A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+%s%s https://react.dev/link/hydration-mismatch 
+
+  ...
+    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>
+      <AppDevOverlayErrorBoundary globalError={[...]}>
+        <ReplaySsrOnlyErrors>
+        <DevRootHTTPAccessFallbackBoundary>
+          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
+            <HTTPAccessFallbackErrorBoundary pathname="/designs/a..." notFound={<NotAllowedRootHTTPFallbackError>} ...>
+              <RedirectBoundary>
+                <RedirectErrorBoundary router={{...}}>
+                  <Head>
+                  <__next_root_layout_boundary__>
+                    <SegmentViewNode type="layout" pagePath="layout.tsx">
+                      <SegmentTrieNode>
+                      <link>
+                      <script>
+                      <script>
+                      <RootLayout>
+                        <html lang="en" suppressHydrationWarning={true}>
+                          <body
++                           className="font-sans antialiased"
+-                           className="font-sans antialiased antigravity-scroll-lock"
+                          >
+                          ...
+                  ...
+
+[00:11:10.179] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[00:11:10.179] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/designs/aurora-landing","route":"/designs/[slug]"}
+[00:11:10.179] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/designs/aurora-landing color: rgb(120, 120, 120) color: inherit {"dp":"/designs/[slug]","o":"http://localhost:3000/designs/aurora-landing","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1770203799587}
+[00:11:18.387] Server  WARN    Error: Route "/designs/[slug]" used `params.slug`. `params` is a Promise and must be unwrapped with `await` or `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
+[00:11:18.430] Server  WARN    Error: Route "/designs/[slug]" used `params.slug`. `params` is a Promise and must be unwrapped with `await` or `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
+[00:11:18.923] Server  WARN     ⚠ ./
+Failed to find font override values for font `Bitcount`
+Skipping generating a fallback font.
+
+
+[00:11:18.972] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:11:19.223] Browser ERROR   Cannot render a sync or defer <script> outside the main document without knowing its order. Try adding async="" or moving it into the root <head> tag.
+[00:11:19.224] Browser ERROR   In HTML, %s cannot be a child of <%s>.%s
+This will cause a hydration error.%s <script> html  
+
+  ...
+    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>
+      <AppDevOverlayErrorBoundary globalError={[...]}>
+        <ReplaySsrOnlyErrors>
+        <DevRootHTTPAccessFallbackBoundary>
+          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
+            <HTTPAccessFallbackErrorBoundary pathname="/designs/n..." notFound={<NotAllowedRootHTTPFallbackError>} ...>
+              <RedirectBoundary>
+                <RedirectErrorBoundary router={{...}}>
+                  <Head>
+                  <__next_root_layout_boundary__>
+                    <SegmentViewNode type="layout" pagePath="layout.tsx">
+                      <SegmentTrieNode>
+                      <link>
+                      <script>
+                      <script>
+                      <RootLayout>
+>                       <html lang="en" suppressHydrationWarning={true}>
+                          <body>
+>                         <script
+>                           defer={true}
+>                           src="https://static.cloudflareinsights.com/beacon.min.js"
+>                           data-cf-beacon={"{\"token\": \"10955f53d5ee4f5880bcbf7725c1febc\"}"}
+>                         >
+                  ...
+
+[00:11:19.347] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[00:11:19.347] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/designs/nebula-dashboard","route":"/designs/[slug]"}
+[00:11:19.347] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/designs/nebula-dashboard color: rgb(120, 120, 120) color: inherit {"dp":"/designs/[slug]","o":"http://localhost:3000/designs/nebula-dashboard","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1770203808757}
+[00:11:22.672] Server  WARN     ⚠ ./
+Failed to find font override values for font `Bitcount`
+Skipping generating a fallback font.
+
+
+[00:11:23.184] Server  WARN     ⚠ ./
+Failed to find font override values for font `Bitcount`
+Skipping generating a fallback font.
+
+
+[00:11:23.312] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:11:23.534] Browser ERROR   Cannot render a sync or defer <script> outside the main document without knowing its order. Try adding async="" or moving it into the root <head> tag.
+[00:11:23.534] Browser ERROR   In HTML, %s cannot be a child of <%s>.%s
+This will cause a hydration error.%s <script> html  
+
+  ...
+    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>
+      <AppDevOverlayErrorBoundary globalError={[...]}>
+        <ReplaySsrOnlyErrors>
+        <DevRootHTTPAccessFallbackBoundary>
+          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
+            <HTTPAccessFallbackErrorBoundary pathname="/designs" notFound={<NotAllowedRootHTTPFallbackError>} ...>
+              <RedirectBoundary>
+                <RedirectErrorBoundary router={{...}}>
+                  <Head>
+                  <__next_root_layout_boundary__>
+                    <SegmentViewNode type="layout" pagePath="layout.tsx">
+                      <SegmentTrieNode>
+                      <link>
+                      <script>
+                      <script>
+                      <RootLayout>
+>                       <html lang="en" suppressHydrationWarning={true}>
+                          <body>
+>                         <script
+>                           defer={true}
+>                           src="https://static.cloudflareinsights.com/beacon.min.js"
+>                           data-cf-beacon={"{\"token\": \"10955f53d5ee4f5880bcbf7725c1febc\"}"}
+>                         >
+                  ...
+
+[00:11:23.767] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[00:11:23.767] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/designs","route":"/designs"}
+[00:11:23.767] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/designs color: rgb(120, 120, 120) color: inherit {"dp":"/designs","o":"http://localhost:3000/designs","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1770203813178}
+[00:12:36.510] Server  WARN     ⚠ ./
+Failed to find font override values for font `Bitcount`
+Skipping generating a fallback font.
+
+
+[00:12:36.552] Server  LOG      ✓ Compiled in 129ms
+[00:12:48.003] Server  WARN     ⚠ ./
+Failed to find font override values for font `Bitcount`
+Skipping generating a fallback font.
+
+
+[00:12:48.206] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1770203897612}
+[00:12:58.169] Server  WARN     ⚠ ./
+Failed to find font override values for font `Bitcount`
+Skipping generating a fallback font.
+
+
+[00:12:58.216] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:12:58.486] Browser ERROR   Cannot render a sync or defer <script> outside the main document without knowing its order. Try adding async="" or moving it into the root <head> tag.
+[00:12:58.486] Browser ERROR   In HTML, %s cannot be a child of <%s>.%s
+This will cause a hydration error.%s <script> html  
+
+  ...
+    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>
+      <AppDevOverlayErrorBoundary globalError={[...]}>
+        <ReplaySsrOnlyErrors>
+        <DevRootHTTPAccessFallbackBoundary>
+          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
+            <HTTPAccessFallbackErrorBoundary pathname="/designs/n..." notFound={<NotAllowedRootHTTPFallbackError>} ...>
+              <RedirectBoundary>
+                <RedirectErrorBoundary router={{...}}>
+                  <Head>
+                  <__next_root_layout_boundary__>
+                    <SegmentViewNode type="layout" pagePath="layout.tsx">
+                      <SegmentTrieNode>
+                      <link>
+                      <script>
+                      <script>
+                      <RootLayout>
+>                       <html lang="en" suppressHydrationWarning={true}>
+                          <body>
+>                         <script
+>                           defer={true}
+>                           src="https://static.cloudflareinsights.com/beacon.min.js"
+>                           data-cf-beacon={"{\"token\": \"10955f53d5ee4f5880bcbf7725c1febc\"}"}
+>                         >
+                  ...
+
+[00:12:58.486] Browser ERROR   A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+%s%s https://react.dev/link/hydration-mismatch 
+
+  ...
+    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>
+      <AppDevOverlayErrorBoundary globalError={[...]}>
+        <ReplaySsrOnlyErrors>
+        <DevRootHTTPAccessFallbackBoundary>
+          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
+            <HTTPAccessFallbackErrorBoundary pathname="/designs/n..." notFound={<NotAllowedRootHTTPFallbackError>} ...>
+              <RedirectBoundary>
+                <RedirectErrorBoundary router={{...}}>
+                  <Head>
+                  <__next_root_layout_boundary__>
+                    <SegmentViewNode type="layout" pagePath="layout.tsx">
+                      <SegmentTrieNode>
+                      <link>
+                      <script>
+                      <script>
+                      <RootLayout>
+                        <html lang="en" suppressHydrationWarning={true}>
+                          <body
++                           className="font-sans antialiased"
+-                           className="font-sans antialiased antigravity-scroll-lock"
+                          >
+                          ...
+                  ...
+
+[00:12:58.646] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[00:12:58.646] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/designs/nebula-dashboard","route":"/designs/[slug]"}
+[00:12:58.646] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/designs/nebula-dashboard color: rgb(120, 120, 120) color: inherit {"dp":"/designs/[slug]","o":"http://localhost:3000/designs/nebula-dashboard","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1770203908055}

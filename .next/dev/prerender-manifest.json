@@ -1,11 +1,1 @@
-{
-  "version": 4,
-  "routes": {},
-  "dynamicRoutes": {},
-  "notFoundRoutes": [],
-  "preview": {
-    "previewModeId": "99c66c7980878cf7f3800888222d8c7b",
-    "previewModeSigningKey": "7450ed62d0fafab10e289d31d4ece855471c4c5d8be325adfcd33cbad3a1b8bf",
-    "previewModeEncryptionKey": "52f122cdf0fc837379180cd028c0e75f6630cd2741a68fd8f804dbf9bbfa160a"
-  }
-}
+{"version":4,"routes":{"/designs/nebula-dashboard":{},"/designs/aurora-landing":{}},"dynamicRoutes":{"/designs/[slug]":{"dataRoute":null,"dataRouteRegex":null,"fallback":null,"fallbackRevalidate":false,"fallbackSourceRoute":"/designs/[slug]","routeRegex":"^\\/designs\\/([^/]+?)(?:\\/)?$","allowHeader":[]}},"notFoundRoutes":[],"preview":{"previewModeId":"700611211ccef1e0e6f4d85235455eda","previewModeSigningKey":"848b786f20c17d433c6e2d08614dcd6f6c43df7f02ba0312bf6675dd7e0d9d1b","previewModeEncryptionKey":"21af78a350576f80f5acf9977a6b279ef56d918186a71e0c124815490e414944"}}

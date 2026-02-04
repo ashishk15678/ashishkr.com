@@ -19,7 +19,7 @@ export function HeroSection() {
         data-inspectable
       >
         <div className="space-y-0 leading-none hero-name " id="header-name">
-          <div className="md:text-4xl text-primary/50 text-md font-bold flex items-center">
+          <div className="md:text-4xl text-primary/50 text-md font-bold flex items-center mb-10">
             <Link
               href={"https://github.com/ashishk15678"}
               target="_blank"
@@ -37,7 +37,7 @@ export function HeroSection() {
             Hello, I am
           </div>
 
-          <h1 className="text-[18vw] sm:text-[15vw] md:text-[12vw] lg:text-[8vw] tracking-tighter text-foreground transition-transform duration-100 ease-out">
+          <h1 className="text-[18vw] sm:text-[15vw] md:text-[12vw] lg:text-[8vw] tracking-tighter text-foreground transition-transform duration-100 ease-out mt-12">
             <TextReveal className={bitcount.className} delay={100}>
               {SITE_CONFIG.firstName}
             </TextReveal>
@@ -68,7 +68,9 @@ export function HeroSection() {
             src={"/aizen-image.png"}
             fill
             priority
-            className="rounded-3xl bg-transparent object-cover grayscale group-hover:grayscale-0 transition-all duration-500 "
+            className="
+            rounded-bl-[14rem] bg-secondary rounded-tr-[14rem] border border-border
+           object-cover grayscale group-hover:grayscale-0 transition-all duration-500 "
           />
         </div>
       </div>
