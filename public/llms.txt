@@ -1,0 +1,18 @@
+# [Your Name] - Portfolio & Blog
+
+This is the professional portfolio and technical blog of Ashish Kumar, a 2nd-year computer science student specializing in Next.js and modern web development.
+
+## Core Pages
+- [Home](https://ashishkr.com/): Overview of my skills and featured projects.
+- [Designs](https://ashishkr.com/about): A few designs (coded , non coded) that i made.
+- [Projects](https://ashishkr.com/simulations): Few simulations that i made using HTML5 and javascript.
+- [Posts](https://ashishkr.com/posts): Technical articles and dev logs.
+
+## Technical Skills
+- **Frameworks:** Next.js (App Router), React.
+- **Languages:** JavaScript, TypeScript, [Other languages you know].
+- **Tools:** Git, Vercel, Tailwind CSS.
+
+## Recent Posts
+- [My First Next.js Project](https://ashishkr.com/posts/my-first-nextjs-project): A deep dive into building my first app.
+- [Learning Web Development](https://ashishkr.com/posts/learning-web-development): Insights into my 2nd-year journey.

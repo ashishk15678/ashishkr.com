@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+
+# Disallow private or internal routes
+Disallow: /api/
+Disallow: /admin/
+
+# Point to your sitemap
+Sitemap: https://ashishkr.com/sitemap.xml
