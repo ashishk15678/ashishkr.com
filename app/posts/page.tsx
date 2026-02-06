@@ -12,7 +12,7 @@ export default function PostsPage() {
       <div className="px-4 sm:px-6 md:px-12 lg:px-20 pt-24 md:pt-32 pb-16 md:pb-20 max-w-7xl">
         {/* Page header */}
         <div className="mb-10 md:mb-16" data-inspectable>
-          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tighter mb-3 md:mb-4 section-title">
+          <h1 className="text-4xl font-bold tracking-tighter mb-3 md:mb-4 section-title">
             Posts
           </h1>
           <p className="text-sm md:text-lg text-muted-foreground max-w-xl">

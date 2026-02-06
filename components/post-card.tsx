@@ -1,13 +1,13 @@
-"use client"
+"use client";
 
-import type { Post } from "@/lib/constants/posts"
-import { ArrowUpRight } from "lucide-react"
-import Link from "next/link"
-import { HoverCard } from "./hover-card"
-import { MagneticButton } from "./magnetic-button"
+import type { Post } from "@/lib/constants/posts";
+import { ArrowUpRight } from "lucide-react";
+import Link from "next/link";
+import { HoverCard } from "./hover-card";
+import { MagneticButton } from "./magnetic-button";
 
 interface PostCardProps {
-  post: Post
+  post: Post;
 }
 
 export function PostCard({ post }: PostCardProps) {
@@ -67,5 +67,5 @@ export function PostCard({ post }: PostCardProps) {
         </div>
       </article>
     </HoverCard>
-  )
+  );
 }

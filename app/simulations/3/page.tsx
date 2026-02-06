@@ -1,249 +1,137 @@
 "use client";
-import { Header } from "@/components/header";
-import { useEffect, useRef } from "react";
+
+import { SimulationWrapper, SimulationParameter } from "@/components/simulation-wrapper";
+import { useCallback, useRef } from "react";
+
+const parameters: SimulationParameter[] = [
+  { name: "feed", label: "Feed Rate", min: 0.02, max: 0.08, step: 0.005, defaultValue: 0.055 },
+  { name: "kill", label: "Kill Rate", min: 0.04, max: 0.08, step: 0.005, defaultValue: 0.06 },
+  { name: "diffA", label: "Diffusion A", min: 0.5, max: 1.5, step: 0.1, defaultValue: 1.0 },
+  { name: "diffB", label: "Diffusion B", min: 0.2, max: 0.8, step: 0.05, defaultValue: 0.5 },
+];
+
+interface Cell {
+  a: number;
+  b: number;
+}
 
 export default function ReactionDiffusionPage() {
-  const canvasRef = useRef(null);
+  const gridRef = useRef<Cell[][] | null>(null);
+  const nextRef = useRef<Cell[][] | null>(null);
+  const initializedRef = useRef(false);
 
-  useEffect(() => {
-    // --- START OF YOUR ORIGINAL LOGIC ---
-    const canvas = canvasRef.current;
-    const ctx = canvas.getContext("2d");
-    const BACKGROUND = "black";
+  const renderSimulation = useCallback(
+    (
+      ctx: CanvasRenderingContext2D,
+      canvas: HTMLCanvasElement,
+      params: Record<string, number>,
+      _deltaTime: number
+    ) => {
+      const { feed, kill, diffA, diffB } = params;
+      const w = canvas.width;
+      const h = canvas.height;
 
-    // Setting canvas size
-    canvas.width = 400; // Adjusted for performance
-    canvas.height = 300;
-
-    const DIFF_A = 1.0;
-    const DIFF_B = 0.5;
-    const FEED = 0.055;
-    const KILL = 0.06;
-
-    class PetriDish {
-      constructor(w, h) {
-        this.w = w;
-        this.h = h;
-        this.grid = [];
-        this.next = [];
-
+      // Initialize grids
+      if (!initializedRef.current || !gridRef.current || !nextRef.current) {
+        gridRef.current = [];
+        nextRef.current = [];
+        
         for (let x = 0; x < w; x++) {
-          this.grid[x] = [];
-          this.next[x] = [];
+          gridRef.current[x] = [];
+          nextRef.current[x] = [];
           for (let y = 0; y < h; y++) {
-            this.grid[x][y] = { a: 1, b: 0 };
-            this.next[x][y] = { a: 1, b: 0 };
+            gridRef.current[x][y] = { a: 1, b: 0 };
+            nextRef.current[x][y] = { a: 1, b: 0 };
           }
         }
-      }
-
-      seed(x, y, radius = 5) {
-        for (let i = x - radius; i < x + radius; i++) {
-          for (let j = y - radius; j < y + radius; j++) {
-            if (i > 0 && i < this.w && j > 0 && j < this.h) {
-              this.grid[i][j].b = 1;
+        
+        // Seed center
+        const cx = Math.floor(w / 2);
+        const cy = Math.floor(h / 2);
+        const radius = 15;
+        for (let i = cx - radius; i < cx + radius; i++) {
+          for (let j = cy - radius; j < cy + radius; j++) {
+            if (i > 0 && i < w && j > 0 && j < h) {
+              gridRef.current[i][j].b = 1;
             }
           }
         }
+        initializedRef.current = true;
       }
 
-      laplace(x, y, chemical) {
+      const grid = gridRef.current;
+      const next = nextRef.current;
+
+      // Laplacian function
+      const laplace = (x: number, y: number, chemical: "a" | "b") => {
         let sum = 0;
-        sum += this.grid[x][y][chemical] * -1;
-        sum += this.grid[x - 1][y][chemical] * 0.2;
-        sum += this.grid[x + 1][y][chemical] * 0.2;
-        sum += this.grid[x][y - 1][chemical] * 0.2;
-        sum += this.grid[x][y + 1][chemical] * 0.2;
-        sum += this.grid[x - 1][y - 1][chemical] * 0.05;
-        sum += this.grid[x + 1][y - 1][chemical] * 0.05;
-        sum += this.grid[x - 1][y + 1][chemical] * 0.05;
-        sum += this.grid[x + 1][y + 1][chemical] * 0.05;
+        sum += grid[x][y][chemical] * -1;
+        sum += grid[x - 1][y][chemical] * 0.2;
+        sum += grid[x + 1][y][chemical] * 0.2;
+        sum += grid[x][y - 1][chemical] * 0.2;
+        sum += grid[x][y + 1][chemical] * 0.2;
+        sum += grid[x - 1][y - 1][chemical] * 0.05;
+        sum += grid[x + 1][y - 1][chemical] * 0.05;
+        sum += grid[x - 1][y + 1][chemical] * 0.05;
+        sum += grid[x + 1][y + 1][chemical] * 0.05;
         return sum;
-      }
+      };
 
-      update() {
-        for (let x = 1; x < this.w - 1; x++) {
-          for (let y = 1; y < this.h - 1; y++) {
-            let a = this.grid[x][y].a;
-            let b = this.grid[x][y].b;
+      // Update simulation
+      for (let x = 1; x < w - 1; x++) {
+        for (let y = 1; y < h - 1; y++) {
+          const a = grid[x][y].a;
+          const b = grid[x][y].b;
 
-            let reaction = a * b * b;
-            this.next[x][y].a =
-              a + DIFF_A * this.laplace(x, y, "a") - reaction + FEED * (1 - a);
-            this.next[x][y].b =
-              b +
-              DIFF_B * this.laplace(x, y, "b") +
-              reaction -
-              (KILL + FEED) * b;
+          const reaction = a * b * b;
+          next[x][y].a = a + diffA * laplace(x, y, "a") - reaction + feed * (1 - a);
+          next[x][y].b = b + diffB * laplace(x, y, "b") + reaction - (kill + feed) * b;
 
-            this.next[x][y].a = Math.max(0, Math.min(1, this.next[x][y].a));
-            this.next[x][y].b = Math.max(0, Math.min(1, this.next[x][y].b));
-          }
+          next[x][y].a = Math.max(0, Math.min(1, next[x][y].a));
+          next[x][y].b = Math.max(0, Math.min(1, next[x][y].b));
         }
-        let temp = this.grid;
-        this.grid = this.next;
-        this.next = temp;
       }
 
-      draw() {
-        const imgData = ctx.createImageData(this.w, this.h);
-        for (let x = 0; x < this.w; x++) {
-          for (let y = 0; y < this.h; y++) {
-            let pos = (x + y * this.w) * 4;
-            let val = Math.floor((this.grid[x][y].a - this.grid[x][y].b) * 255);
+      // Swap buffers
+      const temp = gridRef.current;
+      gridRef.current = nextRef.current;
+      nextRef.current = temp;
 
-            imgData.data[pos] = val;
-            imgData.data[pos + 1] = val / 2;
-            imgData.data[pos + 2] = 255 - val;
-            imgData.data[pos + 3] = 255;
-          }
+      // Draw
+      const imgData = ctx.createImageData(w, h);
+      for (let x = 0; x < w; x++) {
+        for (let y = 0; y < h; y++) {
+          const pos = (x + y * w) * 4;
+          const val = gridRef.current[x][y].a - gridRef.current[x][y].b;
+          
+          // Color scheme: cyan to violet
+          const intensity = Math.floor(val * 255);
+          imgData.data[pos] = Math.floor(intensity * 0.5 + 50);     // R
+          imgData.data[pos + 1] = Math.floor(intensity * 0.8 + 30); // G
+          imgData.data[pos + 2] = 255 - Math.floor(intensity * 0.3); // B
+          imgData.data[pos + 3] = 255;
         }
-        ctx.putImageData(imgData, 0, 0);
       }
-    }
+      ctx.putImageData(imgData, 0, 0);
 
-    const dish = new PetriDish(canvas.width, canvas.height);
-    dish.seed(Math.floor(canvas.width / 2), Math.floor(canvas.height / 2), 10);
-
-    let requestRef;
-    function loop() {
-      dish.update();
-      dish.draw();
-      requestRef = requestAnimationFrame(loop);
-    }
-    // --- END OF YOUR ORIGINAL LOGIC ---
-
-    requestRef = requestAnimationFrame(loop);
-    return () => cancelAnimationFrame(requestRef);
-  }, []);
+      // Overlay info
+      ctx.fillStyle = "rgba(0, 0, 0, 0.6)";
+      ctx.fillRect(10, canvas.height - 35, 180, 25);
+      ctx.fillStyle = "rgba(255, 255, 255, 0.7)";
+      ctx.font = "11px monospace";
+      ctx.fillText(`Feed: ${feed.toFixed(3)} | Kill: ${kill.toFixed(3)}`, 15, canvas.height - 18);
+    },
+    []
+  );
 
   return (
-    <div className="flex flex-row h-screen w-full bg-background overflow-hidden font-mono">
-      {/* LEFT: ANIMATION */}
-      <Header />
-      <div className="w-1/2 h-full flex flex-col items-center justify-center border-r border-border bg-background p-4">
-        <h1 className="text-zinc-500 text-xs mb-4 tracking-widest uppercase">
-          Morphogenesis Simulator
-        </h1>
-        <canvas
-          ref={canvasRef}
-          className="border border-border shadow-2xl shadow-blue-900/20"
-        />
-      </div>
-
-      {/* RIGHT: CODE DISPLAY */}
-      <div className="w-1/2 h-full overflow-y-auto p-8 bg-background text-green-500">
-        <pre className="text-sm leading-relaxed whitespace-pre-wrap">
-          {`
-
-            game.height = 400;
-            game.width = 500;
-            const BACKGROUND = "black";
-
-            const ctx = game.getContext("2d");
-            const DIFF_A = 1.0;
-            const DIFF_B = 0.5;
-            const FEED = 0.055;
-            const KILL = 0.06;
-
-            class PetriDish {
-              constructor(w, h) {
-                this.w = w;
-                this.h = h;
-                this.grid = [];
-                this.next = [];
-
-                for (let x = 0; x < w; x++) {
-                  this.grid[x] = [];
-                  this.next[x] = [];
-                  for (let y = 0; y < h; y++) {
-                    // Start with full Chemical A (1) and no Chemical B (0)
-                    this.grid[x][y] = { a: 1, b: 0 };
-                    this.next[x][y] = { a: 1, b: 0 };
-                  }
-                }
-              }
-
-              seed(x, y, radius = 5) {
-                for (let i = x - radius; i < x + radius; i++) {
-                  for (let j = y - radius; j < y + radius; j++) {
-                    if (i > 0 && i < this.w && j > 0 && j < this.h) {
-                      this.grid[i][j].b = 1;
-                    }
-                  }
-                }
-              }
-
-              // The Laplacian function: checks 8 neighbors to see how chemicals spread
-              laplace(x, y, chemical) {
-                let sum = 0;
-                sum += this.grid[x][y][chemical] * -1;
-                sum += this.grid[x - 1][y][chemical] * 0.2;
-                sum += this.grid[x + 1][y][chemical] * 0.2;
-                sum += this.grid[x][y - 1][chemical] * 0.2;
-                sum += this.grid[x][y + 1][chemical] * 0.2;
-                sum += this.grid[x - 1][y - 1][chemical] * 0.05;
-                sum += this.grid[x + 1][y - 1][chemical] * 0.05;
-                sum += this.grid[x - 1][y + 1][chemical] * 0.05;
-                sum += this.grid[x + 1][y + 1][chemical] * 0.05;
-                return sum;
-              }
-
-              update() {
-                for (let x = 1; x < this.w - 1; x++) {
-                  for (let y = 1; y < this.h - 1; y++) {
-                    let a = this.grid[x][y].a;
-                    let b = this.grid[x][y].b;
-
-                    let reaction = a * b * b;
-                    this.next[x][y].a =
-                      a + DIFF_A * this.laplace(x, y, "a") - reaction + FEED * (1 - a);
-                    this.next[x][y].b =
-                      b + DIFF_B * this.laplace(x, y, "b") + reaction - (KILL + FEED) * b;
-
-                    // Clamp values between 0 and 1
-                    this.next[x][y].a = Math.max(0, Math.min(1, this.next[x][y].a));
-                    this.next[x][y].b = Math.max(0, Math.min(1, this.next[x][y].b));
-                  }
-                }
-                // Swap grids
-                let temp = this.grid;
-                this.grid = this.next;
-                this.next = temp;
-              }
-
-              draw() {
-                const imgData = ctx.createImageData(this.w, this.h);
-                for (let x = 0; x < this.w; x++) {
-                  for (let y = 0; y < this.h; y++) {
-                    let pos = (x + y * this.w) * 4;
-                    let val = Math.floor((this.grid[x][y].a - this.grid[x][y].b) * 255);
-
-                    imgData.data[pos] = val; // Red
-                    imgData.data[pos + 1] = val / 2; // Green (makes it look organic/yellow)
-                    imgData.data[pos + 2] = 255 - val; // Blue
-                    imgData.data[pos + 3] = 255; // Alpha
-                  }
-                }
-                ctx.putImageData(imgData, 0, 0);
-              }
-            }
-
-            const dish = new PetriDish(game.width, game.height);
-            dish.seed(game.width / 2, game.height / 2, 10);
-
-            function loop() {
-              dish.update();
-              dish.draw();
-              requestAnimationFrame(loop);
-            }
-
-            loop();
-
-
-            `}
-        </pre>
-      </div>
-    </div>
+    <SimulationWrapper
+      title="Petri Dish"
+      description="A reaction-diffusion simulation modeling morphogenesis patterns found in nature. Two chemicals (A and B) diffuse and react, creating organic Turing patterns. Adjust the feed and kill rates to discover coral, spots, stripes, and labyrinthine patterns that emerge from simple rules."
+      category="Biology"
+      parameters={parameters}
+      accentColor="cyan"
+      renderSimulation={renderSimulation}
+    />
   );
 }

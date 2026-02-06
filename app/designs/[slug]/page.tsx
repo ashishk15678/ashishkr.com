@@ -1,11 +1,9 @@
-import { Metadata } from "next";
-import { notFound } from "next/navigation";
+"use client";
+
 import Link from "next/link";
-import Image from "next/image";
 import {
   DESIGNS,
   getDesignBySlug,
-  getAllDesignSlugs,
 } from "@/lib/constants/designs";
 import {
   ArrowLeft,
@@ -14,55 +12,61 @@ import {
   Calendar,
   Layers,
   Wrench,
+  Play,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Header } from "@/components/header";
+import {
+  NebulaDashboard,
+  AuroraHero,
+  MinimalDashboard,
+  GradientLanding,
+  FeatureHero,
+  SaasLanding,
+} from "@/components/design-demos";
+import { use } from "react";
 
-// Static generation
-export function generateStaticParams() {
-  return getAllDesignSlugs().map((slug) => ({ slug }));
-}
+// Map slugs to demo components
+const demoComponents: Record<string, React.ComponentType> = {
+  "nebula-dashboard": NebulaDashboard,
+  "aurora-hero": AuroraHero,
+  "minimal-dashboard": MinimalDashboard,
+  "gradient-landing": GradientLanding,
+  "feature-hero": FeatureHero,
+  "saas-landing": SaasLanding,
+};
 
-// Dynamic metadata
-export async function generateMetadata({
-  params,
-}: {
-  params: Promise<{ slug: string }>;
-}): Promise<Metadata> {
-  const { slug } = await params;
-  const design = getDesignBySlug(slug);
-  if (!design) {
-    return { title: "Design Not Found" };
-  }
-  return {
-    title: `${design.title} | Ashish Kumar Designs`,
-    description: design.description,
-  };
-}
-
-export default async function DesignPage({
+export default function DesignPage({
   params,
 }: {
   params: Promise<{ slug: string }>;
 }) {
-  const { slug } = await params;
+  const { slug } = use(params);
   const design = getDesignBySlug(slug);
 
   if (!design) {
-    notFound();
+    return (
+      <main className="min-h-screen bg-background text-foreground flex items-center justify-center">
+        <div className="text-center">
+          <h1 className="text-4xl font-bold mb-4">Design Not Found</h1>
+          <Link href="/designs" className="text-primary hover:underline">
+            Back to Designs
+          </Link>
+        </div>
+      </main>
+    );
   }
 
-  // Find next/prev designs for navigation
   const currentIndex = DESIGNS.findIndex((d) => d.slug === slug);
   const prevDesign = currentIndex > 0 ? DESIGNS[currentIndex - 1] : null;
-  const nextDesign =
-    currentIndex < DESIGNS.length - 1 ? DESIGNS[currentIndex + 1] : null;
+  const nextDesign = currentIndex < DESIGNS.length - 1 ? DESIGNS[currentIndex + 1] : null;
+
+  const DemoComponent = demoComponents[slug];
 
   return (
     <main className="min-h-screen bg-background text-foreground">
       <Header />
 
-      {/* Hero Section */}
       <section className="relative min-h-screen pt-24 overflow-hidden">
         {/* Background Gradients */}
         <div className="absolute inset-0 pointer-events-none">
@@ -95,7 +99,7 @@ export default async function DesignPage({
           </Link>
 
           {/* Header */}
-          <div className="max-w-5xl mb-16">
+          <div className="max-w-5xl mb-12">
             <div className="flex items-center gap-4 mb-6">
               <span className="text-xs text-muted-foreground tracking-widest font-mono">
                 {design.number}
@@ -108,7 +112,7 @@ export default async function DesignPage({
 
             <h1
               className={cn(
-                "text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold tracking-tighter mb-6",
+                "text-4xl sm:text-5xl md:text-6xl font-bold tracking-tighter mb-4",
                 "bg-gradient-to-r bg-clip-text text-transparent",
                 design.accentColor === "violet"
                   ? "from-foreground via-violet-400 to-fuchsia-400"
@@ -118,58 +122,52 @@ export default async function DesignPage({
               {design.title}
             </h1>
 
-            <div className="flex items-center gap-2 mb-4">
+            <div className="flex items-center gap-2 mb-3">
               <Sparkles className="w-4 h-4 text-muted-foreground" />
-              <p className="text-lg text-muted-foreground">{design.subtitle}</p>
+              <p className="text-muted-foreground">{design.subtitle}</p>
             </div>
 
-            <p className="text-xl text-muted-foreground leading-relaxed max-w-3xl">
+            <p className="text-lg text-muted-foreground leading-relaxed max-w-3xl">
               {design.description}
             </p>
           </div>
 
-          {/* Preview Image */}
-          {design.previewImage && (
-            <div className="relative mb-20">
+          {/* Live Demo Section */}
+          {DemoComponent && (
+            <div className="mb-16">
+              <div className="flex items-center gap-2 mb-4">
+                <Play className="w-4 h-4 text-primary" />
+                <span className="text-sm font-medium text-primary uppercase tracking-wider">
+                  Live Demo
+                </span>
+              </div>
               <div
                 className={cn(
-                  "absolute -inset-4 rounded-3xl blur-2xl opacity-30",
-                  design.accentColor === "violet"
-                    ? "bg-gradient-to-r from-violet-500 to-fuchsia-500"
-                    : "bg-gradient-to-r from-cyan-500 to-blue-500"
+                  "relative rounded-2xl overflow-hidden border border-border/50",
+                  "shadow-2xl"
                 )}
-              />
-              <div className="relative rounded-2xl overflow-hidden border border-border/50 bg-background/50 backdrop-blur-sm">
-                <Image
-                  src={design.previewImage}
-                  alt={design.title}
-                  width={1400}
-                  height={800}
-                  className="w-full object-cover"
-                  priority
-                />
+              >
+                <DemoComponent />
               </div>
             </div>
           )}
 
           {/* Stats & Meta Info */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-20">
-            {/* Stats */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-16">
             {Object.entries(design.stats).map(([key, value]) => (
               <div
                 key={key}
-                className="p-6 rounded-2xl border border-border/50 bg-background/50 backdrop-blur-sm"
+                className="p-4 rounded-xl border border-border/50 bg-background/50 backdrop-blur-sm"
               >
-                <div className="text-3xl font-bold mb-1">{value}</div>
+                <div className="text-2xl font-bold mb-1">{value}</div>
                 <div className="text-xs text-muted-foreground uppercase tracking-wider">
                   {key}
                 </div>
               </div>
             ))}
-            {/* Year */}
-            <div className="p-6 rounded-2xl border border-border/50 bg-background/50 backdrop-blur-sm">
-              <div className="flex items-center gap-2 text-3xl font-bold mb-1">
-                <Calendar className="w-5 h-5" />
+            <div className="p-4 rounded-xl border border-border/50 bg-background/50 backdrop-blur-sm">
+              <div className="flex items-center gap-2 text-2xl font-bold mb-1">
+                <Calendar className="w-4 h-4" />
                 {design.year}
               </div>
               <div className="text-xs text-muted-foreground uppercase tracking-wider">
@@ -179,32 +177,32 @@ export default async function DesignPage({
           </div>
 
           {/* Content Grid */}
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 mb-20">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-16">
             {/* Long Description */}
             <div className="lg:col-span-2">
-              <h2 className="text-2xl font-bold mb-6">About this design</h2>
-              <p className="text-muted-foreground leading-relaxed text-lg">
+              <h2 className="text-xl font-bold mb-4">About this design</h2>
+              <p className="text-muted-foreground leading-relaxed">
                 {design.longDescription}
               </p>
             </div>
 
             {/* Sidebar */}
-            <div className="space-y-8">
+            <div className="space-y-6">
               {/* Features */}
               <div>
-                <h3 className="text-sm text-muted-foreground uppercase tracking-wider mb-4 flex items-center gap-2">
-                  <Layers className="w-4 h-4" />
+                <h3 className="text-xs text-muted-foreground uppercase tracking-wider mb-3 flex items-center gap-2">
+                  <Layers className="w-3 h-3" />
                   Key Features
                 </h3>
-                <div className="space-y-3">
+                <div className="space-y-2">
                   {design.features.map((feature) => (
                     <div
                       key={feature}
-                      className="flex items-center gap-3 text-sm"
+                      className="flex items-center gap-2 text-sm"
                     >
                       <div
                         className={cn(
-                          "w-2 h-2 rounded-full",
+                          "w-1.5 h-1.5 rounded-full",
                           design.accentColor === "violet"
                             ? "bg-violet-500"
                             : "bg-cyan-500"
@@ -218,15 +216,15 @@ export default async function DesignPage({
 
               {/* Tools */}
               <div>
-                <h3 className="text-sm text-muted-foreground uppercase tracking-wider mb-4 flex items-center gap-2">
-                  <Wrench className="w-4 h-4" />
-                  Tools Used
+                <h3 className="text-xs text-muted-foreground uppercase tracking-wider mb-3 flex items-center gap-2">
+                  <Wrench className="w-3 h-3" />
+                  Built With
                 </h3>
                 <div className="flex flex-wrap gap-2">
                   {design.tools.map((tool) => (
                     <span
                       key={tool}
-                      className="px-3 py-1.5 text-xs rounded-full border border-border/50 bg-background/50"
+                      className="px-2 py-1 text-xs rounded border border-border/50 bg-background/50"
                     >
                       {tool}
                     </span>
@@ -236,7 +234,7 @@ export default async function DesignPage({
 
               {/* Tags */}
               <div>
-                <h3 className="text-sm text-muted-foreground uppercase tracking-wider mb-4">
+                <h3 className="text-xs text-muted-foreground uppercase tracking-wider mb-3">
                   Tags
                 </h3>
                 <div className="flex flex-wrap gap-2">
@@ -244,7 +242,7 @@ export default async function DesignPage({
                     <span
                       key={tag}
                       className={cn(
-                        "px-3 py-1.5 text-[10px] tracking-wider rounded-full",
+                        "px-2 py-1 text-[10px] tracking-wider rounded",
                         design.accentColor === "violet"
                           ? "bg-violet-500/10 text-violet-400"
                           : "bg-cyan-500/10 text-cyan-400"
@@ -259,18 +257,18 @@ export default async function DesignPage({
           </div>
 
           {/* Navigation */}
-          <div className="flex items-center justify-between pt-12 border-t border-border/50">
+          <div className="flex items-center justify-between pt-8 border-t border-border/50">
             {prevDesign ? (
               <Link
                 href={`/designs/${prevDesign.slug}`}
-                className="group flex items-center gap-4"
+                className="group flex items-center gap-3"
               >
-                <ArrowLeft className="w-5 h-5 transition-transform group-hover:-translate-x-1" />
+                <ArrowLeft className="w-4 h-4 transition-transform group-hover:-translate-x-1" />
                 <div>
-                  <div className="text-xs text-muted-foreground uppercase tracking-wider mb-1">
+                  <div className="text-xs text-muted-foreground uppercase tracking-wider">
                     Previous
                   </div>
-                  <div className="font-semibold group-hover:text-muted-foreground transition-colors">
+                  <div className="font-medium group-hover:text-muted-foreground transition-colors">
                     {prevDesign.title}
                   </div>
                 </div>
@@ -282,17 +280,17 @@ export default async function DesignPage({
             {nextDesign ? (
               <Link
                 href={`/designs/${nextDesign.slug}`}
-                className="group flex items-center gap-4 text-right"
+                className="group flex items-center gap-3 text-right"
               >
                 <div>
-                  <div className="text-xs text-muted-foreground uppercase tracking-wider mb-1">
+                  <div className="text-xs text-muted-foreground uppercase tracking-wider">
                     Next
                   </div>
-                  <div className="font-semibold group-hover:text-muted-foreground transition-colors">
+                  <div className="font-medium group-hover:text-muted-foreground transition-colors">
                     {nextDesign.title}
                   </div>
                 </div>
-                <ArrowUpRight className="w-5 h-5 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
+                <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
               </Link>
             ) : (
               <div />
