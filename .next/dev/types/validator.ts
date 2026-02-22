@@ -146,6 +146,42 @@ type RouteHandlerConfig<Route extends AppRouteHandlerRoutes = AppRouteHandlerRou
   type __Unused = __Check
 }
 
+// Validate ../../../app/simulations/5/page.tsx
+{
+  type __IsExpected<Specific extends AppPageConfig<"/simulations/5">> = Specific
+  const handler = {} as typeof import("../../../app/simulations/5/page.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
+// Validate ../../../app/simulations/6/page.tsx
+{
+  type __IsExpected<Specific extends AppPageConfig<"/simulations/6">> = Specific
+  const handler = {} as typeof import("../../../app/simulations/6/page.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
+// Validate ../../../app/simulations/7/page.tsx
+{
+  type __IsExpected<Specific extends AppPageConfig<"/simulations/7">> = Specific
+  const handler = {} as typeof import("../../../app/simulations/7/page.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
+// Validate ../../../app/simulations/8/page.tsx
+{
+  type __IsExpected<Specific extends AppPageConfig<"/simulations/8">> = Specific
+  const handler = {} as typeof import("../../../app/simulations/8/page.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
 // Validate ../../../app/simulations/page.tsx
 {
   type __IsExpected<Specific extends AppPageConfig<"/simulations">> = Specific
