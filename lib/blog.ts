@@ -9,6 +9,7 @@ export interface BlogPost {
   tags: string[];
   content: string;
   rawContent: string;
+  heroImage?: string;
   type: "peerlist" | "here";
 }
 
@@ -49,6 +50,7 @@ export function getBlogBySlug(slug: string): BlogPost | null {
     tags: post.tags,
     content: post.content,
     rawContent: generateRawMarkdown(post),
+    heroImage: post.heroImage,
     type: "here",
   };
 }

@@ -76,27 +76,4 @@ export const PROJECTS: Project[] = [
       "/sharedcn/sharedcn_new_2.png",
     ],
   },
-  {
-    id: "4",
-    number: "04",
-    year: "2025",
-    title: "Switch",
-    tags: ["NEXTJS", "REACT"],
-    description:
-      "A simple app to switch between different environments and configurations.",
-    longDescription:
-      "Switch is a developer utility for managing multiple environment configurations. Easily switch between development, staging, and production environments with a single click.",
-    link: "https://github.com/ashishk15678/switch",
-  },
-  {
-    id: "5",
-    number: "05",
-    year: "2024",
-    title: "Discord clone",
-    tags: ["NEXTJS", "REACT"],
-    description: "A simple discord clone.",
-    longDescription:
-      "A full-featured Discord clone implementing real-time messaging, voice channels, server management, and user authentication. Built with Next.js and React, featuring WebSocket connections for real-time communication.",
-    link: "https://github.com/ashishk15678/dscord-clone",
-  },
 ];

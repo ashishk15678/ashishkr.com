@@ -377,3 +377,577 @@ html {
     opacity: 0.02;
     pointer-events: none;
 }
+
+/* ============================================
+   BLOG CONTENT — Dark Terminal Monospace Style
+   with side margin-note callouts
+   ============================================ */
+
+.blog-content {
+    font-family:
+        "Geist Mono", "JetBrains Mono", "Fira Code", "SF Mono", "Cascadia Code",
+        ui-monospace, monospace;
+    font-size: 0.9375rem;
+    line-height: 1.85;
+    color: #c9d1d9;
+    position: relative;
+}
+
+/* --- Headings --- */
+
+.blog-content h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #e6edf3;
+    letter-spacing: -0.02em;
+    margin-top: 3.5rem;
+    margin-bottom: 1.25rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid #1c1e26;
+}
+
+.blog-content h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #e6edf3;
+    letter-spacing: -0.01em;
+    margin-top: 3rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.6rem;
+    border-bottom: 1px solid #1c1e26;
+}
+
+.blog-content h3 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #e6edf3;
+    margin-top: 2.25rem;
+    margin-bottom: 0.75rem;
+}
+
+.blog-content h4 {
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: #c9d1d9;
+    margin-top: 1.75rem;
+    margin-bottom: 0.5rem;
+}
+
+/* --- Paragraphs --- */
+
+.blog-content p {
+    color: #c9d1d9;
+    margin-bottom: 1.25rem;
+    line-height: 1.85;
+}
+
+/* --- Links --- */
+
+.blog-content a {
+    color: #e6edf3;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    text-decoration-color: #6e40c9;
+    transition: all 0.2s ease;
+}
+
+.blog-content a:hover {
+    color: #ffffff;
+    text-decoration-color: #8957e5;
+}
+
+/* --- Inline code (badges like nodes/proxy GET) --- */
+
+.blog-content code {
+    font-family: inherit;
+    font-size: 0.825em;
+    background: #1c1e26;
+    color: #d2a8ff;
+    border: 1px solid #2d333b;
+    border-radius: 4px;
+    padding: 0.15em 0.45em;
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+/* =============================================
+   CODE BLOCKS — with header bar, lang, copy btn
+   ============================================= */
+
+.blog-content .code-block-wrapper {
+    position: relative;
+    margin: 1.75rem 0;
+    border: 1px solid #1c1e26;
+    border-left: 3px solid #6e40c9;
+    border-radius: 8px;
+    overflow: hidden;
+    background: #0d1117;
+}
+
+.blog-content .code-block-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #161b22;
+    border-bottom: 1px solid #1c1e26;
+    padding: 6px 16px;
+}
+
+.blog-content .code-block-lang {
+    font-size: 0.65rem;
+    font-weight: 600;
+    color: #7d8590;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.blog-content .code-block-meta {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.625rem;
+    color: #4d5566;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+}
+
+.blog-content .code-block-lines {
+    color: #4d5566;
+}
+
+.blog-content .code-block-separator {
+    color: #2d333b;
+}
+
+.blog-content .code-block-copy {
+    background: none;
+    border: 1px solid #2d333b;
+    border-radius: 3px;
+    color: #7d8590;
+    font-family: inherit;
+    font-size: 0.6rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    padding: 2px 8px;
+    cursor: pointer;
+    transition: all 0.15s ease;
+}
+
+.blog-content .code-block-copy:hover {
+    color: #e6edf3;
+    border-color: #6e40c9;
+    background: rgba(110, 64, 201, 0.1);
+}
+
+/* The actual pre/code inside wrapper */
+.blog-content .code-block-wrapper pre {
+    margin: 0;
+    border: none;
+    border-radius: 0;
+    border-left: none;
+    background: transparent;
+}
+
+.blog-content .code-block-wrapper pre code {
+    display: block;
+    background: none;
+    border: none;
+    border-radius: 0;
+    padding: 1rem 1.25rem;
+    font-size: 0.8125rem;
+    line-height: 1.7;
+    color: #e6edf3;
+    overflow-x: auto;
+    white-space: pre;
+    -webkit-overflow-scrolling: touch;
+}
+
+/* Fallback: bare pre blocks (no wrapper) */
+.blog-content > pre {
+    position: relative;
+    background: #0d1117;
+    border: 1px solid #1c1e26;
+    border-left: 3px solid #6e40c9;
+    border-radius: 8px;
+    padding: 0;
+    margin: 1.75rem 0;
+    overflow: hidden;
+}
+
+.blog-content > pre > code {
+    display: block;
+    background: none;
+    border: none;
+    border-radius: 0;
+    padding: 1rem 1.25rem;
+    font-size: 0.8125rem;
+    line-height: 1.7;
+    color: #e6edf3;
+    overflow-x: auto;
+    white-space: pre;
+}
+
+/* Code block scrollbar */
+.blog-content pre code::-webkit-scrollbar {
+    height: 6px;
+}
+
+.blog-content pre code::-webkit-scrollbar-track {
+    background: #0d1117;
+}
+
+.blog-content pre code::-webkit-scrollbar-thumb {
+    background: #2d333b;
+    border-radius: 3px;
+}
+
+.blog-content pre code::-webkit-scrollbar-thumb:hover {
+    background: #444c56;
+}
+
+/* ==============================================
+   MARGIN CALLOUTS — Side-positioned notes
+   Styled like the reference: right-aligned text
+   on the left margin, italic, with a dash line
+   connecting to the main content column.
+   ============================================== */
+
+.blog-content .margin-callout {
+    position: relative;
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 0;
+    margin: 2.25rem 0;
+    margin-left: -232px;
+    width: calc(100% + 232px);
+    align-items: start;
+}
+
+.blog-content .margin-callout .margin-callout-inner {
+    display: contents;
+}
+
+/* Left column: label + dash line */
+.blog-content .margin-callout .margin-callout-label {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-end;
+    gap: 0;
+    padding-top: 4px;
+    order: -1;
+}
+
+.blog-content .margin-callout .margin-callout-label-text {
+    font-size: 0.8125rem;
+    font-weight: 700;
+    font-style: italic;
+    letter-spacing: 0.02em;
+    white-space: nowrap;
+    text-align: right;
+    flex-shrink: 0;
+}
+
+/* The horizontal dash connecting label to content */
+.blog-content .margin-callout .margin-callout-dash {
+    display: inline-block;
+    width: 32px;
+    height: 1px;
+    margin-left: 10px;
+    margin-top: 0.6em;
+    flex-shrink: 0;
+}
+
+/* Right column: the actual note content */
+.blog-content .margin-callout .margin-callout-body {
+    padding-left: 0;
+}
+
+.blog-content .margin-callout .margin-callout-content {
+    font-size: 0.8125rem;
+    font-style: italic;
+    line-height: 1.6;
+    color: #7d8590;
+}
+
+.blog-content .margin-callout .margin-callout-content p {
+    color: inherit;
+    font-size: inherit;
+    line-height: inherit;
+    margin: 0;
+}
+
+.blog-content .margin-callout .margin-callout-content p + p {
+    margin-top: 0.5rem;
+}
+
+.blog-content .margin-callout .margin-callout-content code {
+    font-size: 0.8em;
+}
+
+/* --- Callout type: Note (default) --- */
+.blog-content .callout-note .margin-callout-label-text {
+    color: #d29922;
+}
+.blog-content .callout-note .margin-callout-dash {
+    background: #d29922;
+}
+
+/* --- Callout type: Warning --- */
+.blog-content .callout-warning .margin-callout-label-text {
+    color: #f85149;
+}
+.blog-content .callout-warning .margin-callout-dash {
+    background: #f85149;
+}
+.blog-content .callout-warning .margin-callout-content {
+    color: #f8878f;
+}
+
+/* --- Callout type: Definition --- */
+.blog-content .callout-definition .margin-callout-label-text {
+    color: #58a6ff;
+}
+.blog-content .callout-definition .margin-callout-dash {
+    background: #58a6ff;
+}
+.blog-content .callout-definition .margin-callout-content {
+    color: #8b949e;
+}
+
+/* --- Callout type: Error --- */
+.blog-content .callout-error .margin-callout-label-text {
+    color: #f85149;
+}
+.blog-content .callout-error .margin-callout-dash {
+    background: #f85149;
+}
+.blog-content .callout-error .margin-callout-content {
+    color: #f8878f;
+}
+
+/* --- Callout type: Tip --- */
+.blog-content .callout-tip .margin-callout-label-text {
+    color: #3fb950;
+}
+.blog-content .callout-tip .margin-callout-dash {
+    background: #3fb950;
+}
+.blog-content .callout-tip .margin-callout-content {
+    color: #7ee787;
+}
+
+/* --- Lists --- */
+
+.blog-content ul,
+.blog-content ol {
+    padding-left: 1.5rem;
+    margin-bottom: 1.25rem;
+}
+
+.blog-content ul {
+    list-style-type: disc;
+}
+
+.blog-content ol {
+    list-style-type: decimal;
+}
+
+.blog-content li {
+    color: #c9d1d9;
+    margin-bottom: 0.5rem;
+    line-height: 1.75;
+    padding-left: 0.25rem;
+}
+
+.blog-content li::marker {
+    color: #6e40c9;
+}
+
+.blog-content ul ul,
+.blog-content ol ol,
+.blog-content ul ol,
+.blog-content ol ul {
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+/* --- Bold text --- */
+
+.blog-content strong {
+    color: #e6edf3;
+    font-weight: 700;
+}
+
+/* --- Emphasis --- */
+
+.blog-content em {
+    color: #8b949e;
+    font-style: italic;
+}
+
+/* --- Horizontal rule --- */
+
+.blog-content hr {
+    border: none;
+    border-top: 1px solid #1c1e26;
+    margin: 2.5rem 0;
+}
+
+/* --- Tables --- */
+
+.blog-content .table-wrapper {
+    overflow-x: auto;
+    margin: 1.75rem 0;
+    -webkit-overflow-scrolling: touch;
+}
+
+.blog-content table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.85rem;
+    border: 1px solid #1c1e26;
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.blog-content thead {
+    background: #161b22;
+}
+
+.blog-content th {
+    padding: 0.75rem 1rem;
+    text-align: left;
+    font-weight: 600;
+    color: #e6edf3;
+    border-bottom: 2px solid #1c1e26;
+    font-size: 0.8rem;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+}
+
+.blog-content td {
+    padding: 0.65rem 1rem;
+    border-bottom: 1px solid #1c1e26;
+    color: #c9d1d9;
+}
+
+.blog-content tr:last-child td {
+    border-bottom: none;
+}
+
+.blog-content tbody tr:hover {
+    background: #0d1117;
+}
+
+/* --- Images --- */
+
+.blog-content img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    border: 1px solid #1c1e26;
+    margin: 2rem 0;
+}
+
+/* --- Selection --- */
+
+.blog-content ::selection {
+    background: #6e40c9;
+    color: #ffffff;
+}
+
+/* --- First paragraph after heading — slightly larger --- */
+
+.blog-content h2 + p,
+.blog-content h3 + p {
+    font-size: 0.95rem;
+}
+
+/* ==================================================
+   RESPONSIVE: margin callouts become inline on small
+   screens, code blocks scale down
+   ================================================== */
+
+/* Below 1200px: not enough room for margin overflow,
+   collapse to stacked inline layout */
+@media (max-width: 1200px) {
+    .blog-content .margin-callout {
+        display: flex;
+        flex-direction: column;
+        margin-left: 0;
+        width: 100%;
+        gap: 0;
+        background: #0d1117;
+        border: 1px solid #1c1e26;
+        border-radius: 6px;
+        padding: 1rem 1.25rem;
+    }
+
+    .blog-content .margin-callout .margin-callout-inner {
+        display: contents;
+    }
+
+    .blog-content .margin-callout .margin-callout-label {
+        justify-content: flex-start;
+        margin-bottom: 0.4rem;
+        padding-top: 0;
+    }
+
+    .blog-content .margin-callout .margin-callout-dash {
+        display: none;
+    }
+
+    .blog-content .margin-callout .margin-callout-body {
+        padding-left: 0;
+    }
+}
+
+@media (max-width: 640px) {
+    .blog-content {
+        font-size: 0.875rem;
+    }
+
+    .blog-content h1 {
+        font-size: 1.5rem;
+    }
+
+    .blog-content h2 {
+        font-size: 1.25rem;
+    }
+
+    .blog-content h3 {
+        font-size: 1.1rem;
+    }
+
+    .blog-content .code-block-wrapper pre code,
+    .blog-content > pre > code {
+        font-size: 0.75rem;
+        padding: 0.75rem 1rem;
+    }
+
+    .blog-content .code-block-header {
+        padding: 5px 12px;
+    }
+
+    .blog-content .code-block-lang {
+        font-size: 0.6rem;
+    }
+
+    .blog-content .code-block-meta {
+        font-size: 0.55rem;
+        gap: 5px;
+    }
+
+    .blog-content .margin-callout {
+        padding: 0.85rem 1rem;
+    }
+
+    .blog-content table {
+        font-size: 0.75rem;
+    }
+
+    .blog-content th,
+    .blog-content td {
+        padding: 0.5rem 0.65rem;
+    }
+}

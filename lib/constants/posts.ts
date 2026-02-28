@@ -10,23 +10,34 @@ export interface Post {
 
 export const POSTS: Post[] = [
   {
-    id: "2",
-    slug: "next-js-15-deep-dive",
-    title: "Next.js 15: A Deep Dive into Server Components",
+    id: "1",
+    slug: "exploiting-virtual-memory-tricks-every-systems-programmer-should-know",
+    title:
+      "Exploiting Virtual Memory: Tricks Every Systems Programmer Should Know",
     excerpt:
-      "Exploring the new features in Next.js 15 and how server components change the way we build React applications.",
-    date: "2024-10-28",
-    readTime: "8 min read",
-    tags: ["NEXT.JS", "REACT", "WEB DEVELOPMENT"],
+      "A deep exploration of virtual memory internals — from page table manipulation and mmap tricks to copy-on-write exploits and zero-copy I/O patterns that can 10x your program's performance.",
+    date: "2026-02-25",
+    readTime: "18 min read",
+    tags: ["SYSTEMS PROGRAMMING", "LINUX", "MEMORY", "C"],
+  },
+  {
+    id: "2",
+    slug: "writing-a-memory-allocator-from-scratch",
+    title: "Writing a Memory Allocator from Scratch in C",
+    excerpt:
+      "Step-by-step construction of a production-quality memory allocator — covering free lists, coalescing, splitting, alignment, and the dark arts of sbrk and mmap.",
+    date: "2026-02-18",
+    readTime: "22 min read",
+    tags: ["C", "MEMORY", "ALLOCATOR", "LOW-LEVEL"],
   },
   {
     id: "3",
-    slug: "rust-for-web-developers",
-    title: "Rust for Web Developers: A Practical Introduction",
+    slug: "inline-assembly-and-compiler-intrinsics-for-performance",
+    title: "Inline Assembly and Compiler Intrinsics: When C Isn't Fast Enough",
     excerpt:
-      "Why Rust is becoming essential for web developers and how to get started with systems programming.",
-    date: "2024-09-12",
-    readTime: "15 min read",
-    tags: ["RUST", "SYSTEMS PROGRAMMING", "WEB ASSEMBLY"],
+      "Practical guide to using GCC/Clang inline assembly, SIMD intrinsics, and compiler built-ins to write code that extracts every last cycle from modern hardware.",
+    date: "2026-02-10",
+    readTime: "20 min read",
+    tags: ["ASSEMBLY", "C", "PERFORMANCE", "x86-64", "SIMD"],
   },
 ];

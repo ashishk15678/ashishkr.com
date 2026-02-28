@@ -1,18 +1,47 @@
-# [Your Name] - Portfolio & Blog
+# Ashish Kumar — Portfolio & Technical Blog
 
-This is the professional portfolio and technical blog of Ashish Kumar, a 2nd-year computer science student specializing in Next.js and modern web development.
+Personal website and technical blog of Ashish Kumar, a full-stack engineer and systems programming enthusiast. The site is built with Next.js 16, React 19, Tailwind CSS 4, and TypeScript.
 
-## Core Pages
-- [Home](https://ashishkr.com/): Overview of my skills and featured projects.
-- [Designs](https://ashishkr.com/about): A few designs (coded , non coded) that i made.
-- [Projects](https://ashishkr.com/simulations): Few simulations that i made using HTML5 and javascript.
-- [Posts](https://ashishkr.com/posts): Technical articles and dev logs.
+## Site Structure
 
-## Technical Skills
-- **Frameworks:** Next.js (App Router), React.
-- **Languages:** JavaScript, TypeScript, [Other languages you know].
-- **Tools:** Git, Vercel, Tailwind CSS.
+- [Home](https://ashishkr.com/): Portfolio overview — skills, projects, designs, recognition.
+- [Posts](https://ashishkr.com/posts): Long-form technical articles on low-level programming and systems engineering.
+- [Designs](https://ashishkr.com/designs): UI/UX design work, coded and non-coded.
+- [Simulations](https://ashishkr.com/simulations): Interactive simulations built with HTML5 and JavaScript.
+- [Portfolio](https://ashishkr.com/portfolio): Project showcase and work history.
 
-## Recent Posts
-- [My First Next.js Project](https://ashishkr.com/posts/my-first-nextjs-project): A deep dive into building my first app.
-- [Learning Web Development](https://ashishkr.com/posts/learning-web-development): Insights into my 2nd-year journey.
+## Technical Blog — Recent Posts
+
+### Exploiting Virtual Memory: Tricks Every Systems Programmer Should Know
+- **URL:** https://ashishkr.com/posts/exploiting-virtual-memory-tricks-every-systems-programmer-should-know
+- **Published:** February 25, 2026
+- **Topics:** Virtual memory internals, page tables, mmap, copy-on-write, zero-copy I/O, guard pages, userfaultfd, huge pages, demand paging, TLB optimization.
+- **Summary:** A deep exploration of virtual memory internals — from page table manipulation and mmap tricks to copy-on-write exploits and zero-copy I/O patterns that can 10x your program's performance. Covers practical C code for lazy allocation, COW snapshots (as used by Redis BGSAVE), sendfile/splice zero-copy, mprotect guard pages, userfaultfd for userspace page fault handling, and huge page allocation for TLB pressure reduction.
+
+### Writing a Memory Allocator from Scratch in C
+- **URL:** https://ashishkr.com/posts/writing-a-memory-allocator-from-scratch
+- **Published:** February 18, 2026
+- **Topics:** Memory allocation, malloc/free implementation, free lists, block splitting, coalescing, alignment, sbrk, mmap, external fragmentation, per-thread arenas.
+- **Summary:** Step-by-step construction of a production-quality memory allocator — covering block headers, free-list management with first-fit search, block splitting to avoid waste, coalescing of adjacent free blocks to combat fragmentation, proper 16-byte alignment, thread safety with mutexes, and calloc/realloc implementations. Compares against production allocators like jemalloc, tcmalloc, and mimalloc.
+
+### Inline Assembly and Compiler Intrinsics: When C Isn't Fast Enough
+- **URL:** https://ashishkr.com/posts/inline-assembly-and-compiler-intrinsics-for-performance
+- **Published:** February 10, 2026
+- **Topics:** GCC extended inline assembly, x86-64 assembly, SIMD/AVX2 intrinsics, compiler built-ins, POPCNT, CRC32C, memory fences, lock-free programming, rdtsc, cmpxchg.
+- **Summary:** Practical guide to using GCC/Clang inline assembly, SIMD intrinsics, and compiler built-ins to extract every last cycle from modern hardware. Covers the asm constraint system, hardware popcount (47x speedup), AVX2 memchr replacement (8x faster), SIMD string-to-uppercase, memory fence instructions for lock-free code, hardware CRC32C acceleration (15x speedup), and guidelines for when to use (and not use) inline assembly.
+
+## Technical Stack
+
+- **Framework:** Next.js 16 (App Router, Server Components, Static Generation)
+- **Language:** TypeScript 5
+- **Styling:** Tailwind CSS 4 with custom dark terminal/monospace aesthetic
+- **UI:** Radix UI primitives, Framer Motion animations
+- **Deployment:** Vercel with Cloudflare analytics
+- **Content:** Markdown rendered via remark with custom post-processing for margin-note callouts, enhanced code blocks, and responsive tables
+
+## Author
+
+Ashish Kumar — Full-stack & ML Engineer. Computer science student specializing in systems programming, web development, and machine learning.
+
+- Website: https://ashishkr.com
+- GitHub: https://github.com/ashishk
