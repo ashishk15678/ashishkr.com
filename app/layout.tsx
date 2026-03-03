@@ -4,6 +4,7 @@ import { Analytics } from "@vercel/analytics/next";
 import { ThemeProvider } from "@/components/theme-provider";
 import "./globals.css";
 import { Suspense } from "react";
+import { GoogleAnalytics } from "@next/third-parties/google";
 
 export const metadata: Metadata = {
   title: "Ashish Kumar | Full-stack & ML Engineer",
@@ -41,11 +42,14 @@ export default function RootLayout({
           </ThemeProvider>
         </Suspense>
       </body>
+      {/*Cloudflare */}
       <script
         defer
         src="https://static.cloudflareinsights.com/beacon.min.js"
         data-cf-beacon='{"token": "10955f53d5ee4f5880bcbf7725c1febc"}'
       ></script>
+      {/*GTAG */}
+      <GoogleAnalytics gaId="G-WKMVNETJP0" />
     </html>
   );
 }
