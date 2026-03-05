@@ -1158,4 +1158,753 @@ But the most important skill is knowing the boundary. Know what your compiler ge
 The machine is not a black box. The instruction set is the API. Learn it, and you control the hardware directly.
     `.trim(),
   },
+  {
+    slug: "got-plt-the-dark-art-of-dynamic-linking",
+    title: "GOT/PLT: The Dark Art of Dynamic Linking on Linux",
+    excerpt:
+      "How your program actually calls shared library functions at runtime — the Global Offset Table, Procedure Linkage Table, lazy binding, and why understanding this machinery is critical for security and performance.",
+    date: "2026-02-03",
+    tags: ["ELF", "LINKER", "LINUX", "x86-64", "SECURITY"],
+    heroImage: "/blog/got-plt-hero.png",
+    content: `
+When you call \`printf("hello")\` in a C program linked against \`libc.so\`, what actually happens at the machine level? The answer involves two of the most elegant — and most exploited — data structures in systems programming: the **Global Offset Table (GOT)** and the **Procedure Linkage Table (PLT)**.
+
+Understanding GOT/PLT is not optional if you work on security, reverse engineering, performance-sensitive code, or anything that touches the ELF loader. This post tears the whole mechanism apart.
+
+## Why Dynamic Linking Needs Indirection
+
+Static linking is simple: the linker resolves every function address at build time and patches it directly into the call instruction. But shared libraries are loaded at arbitrary addresses (thanks to ASLR), so the addresses aren't known until runtime.
+
+> [!definition] ASLR (Address Space Layout Randomization) — A security technique where the OS loads shared libraries, the stack, heap, and the executable itself at randomized virtual addresses on each execution. This makes it harder for attackers to predict the location of code and data.
+
+The naive solution would be: at load time, scan the entire binary for every reference to a shared library symbol and patch them all. This is called **eager relocation**, and it's slow — a large binary might have thousands of such references. It also means every page containing a relocation gets dirtied (written to), defeating shared page mapping between processes.
+
+The real solution: **indirection through tables**. The code never references library addresses directly. Instead, it goes through the GOT and PLT, which are small tables that the dynamic linker patches.
+
+## The Global Offset Table (GOT)
+
+The GOT is an array of pointers in the program's writable data segment. Each entry corresponds to one external symbol (function or global variable). At runtime, the dynamic linker fills each slot with the symbol's actual address.
+
+\`\`\`c
+// Conceptual view of the GOT
+// Located in .got and .got.plt sections
+//
+// .got.plt layout:
+//   GOT[0] → address of _DYNAMIC section
+//   GOT[1] → link_map pointer (for the dynamic linker)
+//   GOT[2] → address of _dl_runtime_resolve
+//   GOT[3] → resolved address of first external function
+//   GOT[4] → resolved address of second external function
+//   ...
+\`\`\`
+
+> [!definition] GOT (Global Offset Table) — A table of pointers in the writable data segment of an ELF binary. Each slot holds the runtime address of an external symbol. The dynamic linker populates it at load time (eager binding) or on first call (lazy binding).
+
+You can inspect the GOT of any binary:
+
+\`\`\`bash
+# Show GOT entries
+$ objdump -R /usr/bin/ls
+
+DYNAMIC RELOCATION RECORDS
+OFFSET           TYPE              VALUE
+000000000021ef08 R_X86_64_GLOB_DAT  __ctype_toupper_loc@GLIBC_2.3
+000000000021ef10 R_X86_64_GLOB_DAT  __ctype_b_loc@GLIBC_2.3
+000000000021ef60 R_X86_64_JUMP_SLOT printf@GLIBC_2.2.5
+000000000021ef68 R_X86_64_JUMP_SLOT fwrite@GLIBC_2.2.5
+\`\`\`
+
+\`R_X86_64_GLOB_DAT\` entries are for global data. \`R_X86_64_JUMP_SLOT\` entries are for functions — these go through the PLT.
+
+## The Procedure Linkage Table (PLT)
+
+The PLT is a table of small code stubs in the executable \`.text\` section (read-only). Each PLT entry is a trampoline that jumps through the corresponding GOT entry.
+
+Here's what a PLT stub looks like in x86-64:
+
+\`\`\`asm
+; PLT entry for printf (PLT[1])
+; Located in the .plt section
+
+printf@plt:
+    jmp    QWORD PTR [rip + 0x200a42]   ; jump through GOT[3]
+    push   0x0                            ; push relocation index
+    jmp    PLT[0]                         ; jump to resolver stub
+
+; PLT[0] — the resolver stub (common to all PLT entries)
+PLT[0]:
+    push   QWORD PTR [rip + 0x200a02]   ; push link_map (GOT[1])
+    jmp    QWORD PTR [rip + 0x200a04]   ; jump to _dl_runtime_resolve (GOT[2])
+\`\`\`
+
+> [!definition] PLT (Procedure Linkage Table) — A table of small assembly trampolines in the read-only code segment. Each entry jumps through a GOT pointer. On the first call, the GOT pointer points back into the PLT stub which triggers the dynamic linker to resolve the symbol. After resolution, the GOT pointer is overwritten with the real address, so subsequent calls jump directly.
+
+## Lazy Binding: The First Call
+
+This is where it gets clever. With lazy binding (the default), the dynamic linker does NOT resolve all function addresses at load time. Instead:
+
+**First call to \`printf\`:**
+
+1. Code calls \`printf@plt\`
+2. PLT stub does \`jmp [GOT[3]]\`
+3. But GOT[3] initially points back to the PLT stub's \`push 0x0\` instruction (the next instruction after the jmp)
+4. The stub pushes the relocation index (0x0 = first function) and the \`link_map\`
+5. It jumps to \`_dl_runtime_resolve\`
+6. The resolver looks up \`printf\` in \`libc.so\`, finds its address
+7. **It overwrites GOT[3] with the real address of \`printf\`**
+8. It jumps to \`printf\` to complete the call
+
+**Second call to \`printf\`:**
+
+1. Code calls \`printf@plt\`
+2. PLT stub does \`jmp [GOT[3]]\`
+3. GOT[3] now contains the real address → **jumps directly to \`printf\`**
+
+> [!tip] After the first call, the PLT stub adds only a single indirect jump (one \`jmp\` through a pointer). This is 1-2 cycles overhead. The lazy resolution path only runs once per symbol, amortizing the cost of dynamic linking across the program's lifetime.
+
+Let's watch this happen in real time:
+
+\`\`\`bash
+# Compile a simple program
+$ cat test.c
+#include <stdio.h>
+int main(void) {
+    printf("first\\n");
+    printf("second\\n");
+    return 0;
+}
+$ gcc -o test test.c -no-pie
+
+# Set breakpoint at printf@plt and watch GOT
+$ gdb ./test
+(gdb) disas 'printf@plt'
+   0x401030 <printf@plt>:    jmp    *0x2fe2(%rip)    # 0x404018 <printf@GOT>
+   0x401036 <printf@plt+6>:  push   $0x0
+   0x40103b <printf@plt+11>: jmp    0x401020
+
+(gdb) x/gx 0x404018
+0x404018 <printf@GOT>:  0x0000000000401036    ← points back into PLT!
+
+(gdb) break printf
+(gdb) run
+Breakpoint hit...
+
+(gdb) x/gx 0x404018
+0x404018 <printf@GOT>:  0x00007ffff7e12e10    ← now points to real printf!
+\`\`\`
+
+## Why GOT/PLT Matters for Security
+
+The GOT is writable. This is by design — the dynamic linker needs to write resolved addresses into it. But it also means an attacker who can write to arbitrary memory can **overwrite a GOT entry** to redirect function calls.
+
+> [!warning] GOT overwrite is one of the oldest and most reliable exploitation techniques. If an attacker can write 8 bytes to a known GOT address, they can redirect the next call to that function anywhere — typically to a \`system("/bin/sh")\` gadget or a ROP chain.
+
+### GOT Overwrite Attack
+
+\`\`\`c
+// Simplified GOT overwrite exploit concept
+//
+// Suppose we have a buffer overflow that lets us
+// write to an arbitrary address.
+//
+// Step 1: Find GOT address of a frequently-called function
+//   $ objdump -R target | grep puts
+//   0x404018  R_X86_64_JUMP_SLOT  puts@GLIBC_2.2.5
+//
+// Step 2: Find address of system()
+//   (leaked or calculated from libc base + offset)
+//
+// Step 3: Overwrite GOT[puts] with address of system()
+//
+// Step 4: Next time the program calls puts(user_input),
+//          it actually calls system(user_input)
+//
+// If user_input = "/bin/sh", you get a shell.
+\`\`\`
+
+### Mitigations
+
+Several defences exist against GOT overwrites:
+
+- **RELRO (Relocation Read-Only):**
+  - **Partial RELRO** (default): the \`.got\` section (for data) is read-only after relocation, but \`.got.plt\` (for functions) stays writable.
+  - **Full RELRO** (\`-Wl,-z,relro,-z,now\`): ALL GOT entries are resolved at load time and the entire GOT is made read-only via \`mprotect\`. No lazy binding — **completely prevents GOT overwrites**.
+
+\`\`\`bash
+# Check RELRO status of a binary
+$ checksec --file=/usr/bin/ls
+    RELRO           STACK CANARY      NX
+    Full RELRO      Canary found      NX enabled
+
+# Compile with full RELRO
+$ gcc -o hardened test.c -Wl,-z,relro,-z,now
+
+# Compile with no RELRO (for testing/CTF)
+$ gcc -o vulnerable test.c -Wl,-z,norelro
+\`\`\`
+
+> [!error] Full RELRO has a startup cost: every external function must be resolved at load time, not lazily. For a program that links thousands of symbols from dozens of shared libraries, this can add noticeable latency to startup. But for security-critical services, it's the right trade-off.
+
+- **PIE (Position-Independent Executable):** Combined with ASLR, makes GOT addresses unpredictable.
+- **Stack canaries, NX, CFI:** Defence-in-depth layers that make exploitation harder even if GOT is writable.
+
+## Performance: GOT and the Data Cache
+
+Every PLT call does an indirect jump through a GOT pointer. This means the GOT entry must be in the data cache (L1d) for the call to be fast. For hot functions called millions of times per second, this matters.
+
+\`\`\`c
+// The cost of a PLT call vs a direct call:
+//
+// Direct call (static linking):
+//     call printf          ; 1 cycle (direct, predicted)
+//
+// PLT call (dynamic linking):
+//     call printf@plt      ; → jmp [GOT entry]
+//     ; indirect branch through GOT pointer
+//     ; 2-3 cycles if GOT entry is in L1 cache
+//     ; 10+ cycles on L1 miss (L2 hit)
+//     ; 50+ cycles on L2 miss (L3/RAM)
+\`\`\`
+
+> [!tip] For extreme performance, use \`-fno-plt\` (GCC 6+). This replaces the PLT trampoline with a direct indirect call: \`call *printf@GOTPCREL(%rip)\`. It eliminates one indirection level and is slightly faster because the branch predictor sees the indirect call directly rather than going through a PLT stub.
+
+\`\`\`bash
+# Compare generated code with and without PLT
+
+# Default (with PLT):
+$ gcc -S -O2 test.c -o with_plt.s
+# Generates: call printf@PLT
+
+# Without PLT:
+$ gcc -S -O2 -fno-plt test.c -o no_plt.s
+# Generates: call *printf@GOTPCREL(%rip)
+\`\`\`
+
+## Writing a GOT/PLT Inspector
+
+Here's a C program that reads its own GOT entries at runtime using \`dl_iterate_phdr\`:
+
+\`\`\`c
+#define _GNU_SOURCE
+#include <link.h>
+#include <stdio.h>
+#include <elf.h>
+#include <string.h>
+
+// Callback for dl_iterate_phdr — called for each loaded shared object
+static int callback(struct dl_phdr_info *info, size_t size, void *data) {
+    const char *name = info->dlpi_name;
+    if (name[0] == '\\0') name = "[main executable]";
+
+    printf("\\n%s (base: %p)\\n", name, (void *)info->dlpi_addr);
+
+    // Walk program headers looking for PT_DYNAMIC
+    for (int i = 0; i < info->dlpi_phnum; i++) {
+        if (info->dlpi_phdr[i].p_type != PT_DYNAMIC)
+            continue;
+
+        ElfW(Dyn) *dyn = (ElfW(Dyn) *)(
+            info->dlpi_addr + info->dlpi_phdr[i].p_vaddr
+        );
+
+        ElfW(Addr) jmprel = 0, pltgot = 0;
+        size_t pltrelsz = 0;
+        char *strtab = NULL;
+        ElfW(Sym) *symtab = NULL;
+
+        // Parse dynamic section entries
+        for (; dyn->d_tag != DT_NULL; dyn++) {
+            switch (dyn->d_tag) {
+                case DT_JMPREL:  jmprel  = dyn->d_un.d_ptr; break;
+                case DT_PLTGOT:  pltgot  = dyn->d_un.d_ptr; break;
+                case DT_PLTRELSZ: pltrelsz = dyn->d_un.d_val; break;
+                case DT_STRTAB:  strtab  = (char *)dyn->d_un.d_ptr; break;
+                case DT_SYMTAB:  symtab  = (ElfW(Sym) *)dyn->d_un.d_ptr; break;
+            }
+        }
+
+        if (!jmprel || !strtab || !symtab) break;
+
+        printf("  GOT.PLT at %p\\n", (void *)pltgot);
+
+        // Walk JMPREL relocations
+        size_t count = pltrelsz / sizeof(ElfW(Rela));
+        ElfW(Rela) *rela = (ElfW(Rela) *)jmprel;
+
+        for (size_t j = 0; j < count; j++) {
+            unsigned long sym_idx = ELF64_R_SYM(rela[j].r_info);
+            const char *sym_name = strtab + symtab[sym_idx].st_name;
+            void **got_entry = (void **)(rela[j].r_offset);
+
+            printf("  [%zu] %-30s GOT@%p → %p\\n",
+                   j, sym_name, (void *)got_entry, *got_entry);
+        }
+        break;
+    }
+    return 0;
+}
+
+int main(void) {
+    printf("=== GOT/PLT Inspector ===\\n");
+    printf("PID: %d\\n", getpid());
+
+    // Call printf once to trigger lazy resolution
+    // Then the GOT entry will point to the real printf
+
+    dl_iterate_phdr(callback, NULL);
+    return 0;
+}
+\`\`\`
+
+\`\`\`bash
+$ gcc -o gotinspect gotinspect.c -ldl
+$ ./gotinspect
+=== GOT/PLT Inspector ===
+PID: 12345
+
+[main executable] (base: 0x555555554000)
+  GOT.PLT at 0x555555557fd8
+  [0] printf                         GOT@0x555555558018 → 0x7ffff7e12e10
+  [1] dl_iterate_phdr                GOT@0x555555558020 → 0x7ffff7fce230
+  [2] getpid                         GOT@0x555555558028 → 0x555555555036
+\`\`\`
+
+Notice that \`getpid\` still points back into the PLT (\`0x5555...\`) because we haven't called it yet at that point. After the call, the GOT would be updated.
+
+## LD_BIND_NOW and LD_DEBUG
+
+Two environment variables give you deep visibility into the dynamic linker:
+
+\`\`\`bash
+# Force eager binding (resolve everything at load time)
+$ LD_BIND_NOW=1 ./test
+
+# Watch the dynamic linker resolve every symbol
+$ LD_DEBUG=bindings ./test 2>&1 | head -20
+     12345: binding file ./test [0] to /lib/x86_64-linux-gnu/libc.so.6 [0]:
+            normal symbol \`printf' [GLIBC_2.2.5]
+     12345: binding file ./test [0] to /lib/x86_64-linux-gnu/libc.so.6 [0]:
+            normal symbol \`__libc_start_main' [GLIBC_2.34]
+
+# See ALL dynamic linker activity
+$ LD_DEBUG=all ./test 2>&1 | wc -l
+4217    ← a simple "hello world" triggers thousands of linker events
+\`\`\`
+
+> [!warning] Never set \`LD_DEBUG\` in production. It writes massive amounts of output to stderr and significantly slows execution. It is also a security risk — it leaks internal addresses that could help an attacker defeat ASLR.
+
+## Conclusion
+
+The GOT/PLT mechanism is a masterwork of engineering trade-offs. It gives us shared libraries with lazy binding, ASLR compatibility, and memory savings from shared code pages — at the cost of one level of indirection per external call and a writable data section that attackers love to target.
+
+When you type \`gcc -o hello hello.c\`, the linker generates PLT stubs, allocates GOT entries, emits relocation records, and sets up the dynamic section — all so that at runtime, the first call to \`printf\` triggers a chain reaction of symbol lookup, GOT patching, and transparent redirection that makes it look like the function was always there.
+
+Know your GOT. Know your PLT. They are the seams of every dynamically-linked program on Linux, and understanding them gives you power over both performance and security.
+    `.trim(),
+  },
+  {
+    slug: "linux-syscalls-from-userspace-to-kernel-and-back",
+    title: "Linux Syscalls: From Userspace to Kernel and Back",
+    excerpt:
+      "Tracing the full lifecycle of a system call on x86-64 Linux — from the userspace wrapper through VDSO, the syscall instruction, kernel entry, dispatch tables, and the return path. With code to make raw syscalls without libc.",
+    date: "2026-01-27",
+    tags: ["LINUX", "KERNEL", "SYSCALL", "x86-64", "C"],
+    heroImage: "/blog/syscall-hero.png",
+    content: `
+Every interaction your program has with the outside world — opening a file, sending a network packet, allocating memory, spawning a thread — goes through a system call. It's the only legal gateway between unprivileged userspace code and the kernel.
+
+Most programmers use syscalls through libc wrappers (\`read()\`, \`write()\`, \`open()\`) and never think about what happens beneath. This post traces the full path of a syscall on x86-64 Linux, from the C library down to the kernel dispatch table and back.
+
+## What Is a System Call, Really?
+
+A syscall is a controlled transition from user mode (Ring 3) to kernel mode (Ring 0). The CPU provides a dedicated instruction for this — \`syscall\` on x86-64 — that atomically:
+
+1. Saves the user return address (\`RIP\`) into \`RCX\`
+2. Saves \`RFLAGS\` into \`R11\`
+3. Loads the kernel entry point from \`IA32_LSTAR\` MSR
+4. Loads the kernel code segment from \`IA32_STAR\` MSR
+5. Masks \`RFLAGS\` with \`IA32_FMASK\` MSR (disables interrupts)
+6. Jumps to kernel code
+
+> [!definition] Ring 0 / Ring 3 — x86 privilege levels. Ring 0 (kernel mode) can execute any instruction and access any memory. Ring 3 (user mode) is restricted — it cannot directly access hardware, other processes' memory, or kernel data structures. The \`syscall\` instruction is the controlled transition between them.
+
+The return is done with the \`sysret\` instruction, which reverses the process — restoring \`RIP\` from \`RCX\` and \`RFLAGS\` from \`R11\`.
+
+## The Calling Convention
+
+On x86-64 Linux, the syscall ABI uses these registers:
+
+\`\`\`c
+// x86-64 Linux syscall calling convention:
+//
+// RAX = syscall number
+// RDI = arg1
+// RSI = arg2
+// RDX = arg3
+// R10 = arg4    (NOTE: not RCX — the syscall instruction clobbers RCX)
+// R8  = arg5
+// R9  = arg6
+//
+// Return value: RAX
+//   Negative values in range [-4095, -1] indicate errors
+//   (the negated errno value)
+//
+// Clobbered by kernel: RCX, R11
+// Preserved: all others (RBX, RBP, RSP, R12-R15)
+\`\`\`
+
+> [!warning] The syscall convention uses \`R10\` for the 4th argument, NOT \`RCX\`. This is because the \`syscall\` instruction itself overwrites \`RCX\` with the return address. The libc wrapper for any 4+ argument syscall must move \`RCX\` to \`R10\` before issuing the instruction. Getting this wrong causes silent corruption.
+
+## Making Raw Syscalls Without libc
+
+You don't need libc to make syscalls. Here's how to do it with inline assembly:
+
+\`\`\`c
+#include <stdint.h>
+#include <sys/syscall.h>  // for SYS_write, SYS_exit, etc.
+
+// Generic syscall wrapper — up to 6 arguments
+static inline long raw_syscall(long nr,
+    long a1, long a2, long a3,
+    long a4, long a5, long a6)
+{
+    long ret;
+    register long r10 __asm__("r10") = a4;
+    register long r8  __asm__("r8")  = a5;
+    register long r9  __asm__("r9")  = a6;
+
+    __asm__ __volatile__ (
+        "syscall"
+        : "=a"(ret)
+        : "a"(nr), "D"(a1), "S"(a2), "d"(a3),
+          "r"(r10), "r"(r8), "r"(r9)
+        : "rcx", "r11", "memory"
+    );
+    return ret;
+}
+
+// Convenience wrappers
+static inline long sys_write(int fd, const void *buf, long len) {
+    return raw_syscall(SYS_write, fd, (long)buf, len, 0, 0, 0);
+}
+
+static inline long sys_exit(int code) {
+    return raw_syscall(SYS_exit_group, code, 0, 0, 0, 0, 0);
+}
+
+static inline long sys_open(const char *path, int flags, int mode) {
+    return raw_syscall(SYS_openat, -100 /*AT_FDCWD*/, (long)path, flags, mode, 0, 0);
+}
+
+static inline long sys_read(int fd, void *buf, long len) {
+    return raw_syscall(SYS_read, fd, (long)buf, len, 0, 0, 0);
+}
+
+static inline long sys_close(int fd) {
+    return raw_syscall(SYS_close, fd, 0, 0, 0, 0, 0);
+}
+
+// A "hello world" with zero libc dependency
+// Compile: gcc -nostdlib -static -o hello hello.c
+void _start(void) {
+    const char msg[] = "hello from raw syscall\\n";
+    sys_write(1, msg, sizeof(msg) - 1);
+    sys_exit(0);
+}
+\`\`\`
+
+\`\`\`bash
+$ gcc -nostdlib -static -o hello hello.c
+$ ./hello
+hello from raw syscall
+$ strace ./hello
+execve("./hello", ...) = 0
+write(1, "hello from raw syscall\\n", 23) = 23
+exit_group(0)                           = ?
+$ ls -la hello
+-rwxr-xr-x 1 user user 9.2K  hello    ← 9KB, no libc!
+\`\`\`
+
+> [!tip] Building with \`-nostdlib -static\` produces tiny binaries with zero dependencies. This technique is used by container base images (\`scratch\`), embedded systems, and exploit payloads. The entire binary is just your code and the raw syscall instructions.
+
+## The Kernel Side: Entry and Dispatch
+
+When the \`syscall\` instruction fires, the CPU jumps to the address in the \`IA32_LSTAR\` MSR. On Linux, this is \`entry_SYSCALL_64\`:
+
+\`\`\`c
+// Simplified kernel entry path (arch/x86/entry/entry_64.S)
+//
+// entry_SYSCALL_64:
+//   swapgs                    ; switch to kernel GS base (per-CPU data)
+//   mov %rsp, PER_CPU(rsp_scratch)  ; save user stack pointer
+//   mov PER_CPU(cpu_tss + TSS_sp0), %rsp  ; load kernel stack
+//
+//   ; Push a pt_regs frame on the kernel stack
+//   push $__USER_DS            ; user SS
+//   push PER_CPU(rsp_scratch)  ; user RSP
+//   push %r11                  ; user RFLAGS (saved by syscall)
+//   push $__USER_CS            ; user CS
+//   push %rcx                  ; user RIP (saved by syscall)
+//   push %rax                  ; orig_rax = syscall number
+//   ; ... push all general registers ...
+//
+//   ; Dispatch
+//   mov %rax, %rdi
+//   call do_syscall_64
+\`\`\`
+
+> [!definition] swapgs — An x86-64 instruction that swaps the \`GS\` base register between userspace and kernel values. The kernel uses GS-relative addressing to access per-CPU data structures. \`swapgs\` runs at kernel entry and exit to switch between user and kernel GS bases.
+
+The dispatch function looks up the syscall number in the syscall table:
+
+\`\`\`c
+// Simplified from arch/x86/entry/common.c
+__visible noinstr void do_syscall_64(struct pt_regs *regs, int nr) {
+    // Bounds check the syscall number
+    if (likely(nr < NR_syscalls)) {
+        nr = array_index_nospec(nr, NR_syscalls);
+        regs->ax = sys_call_table[nr](regs);
+    } else {
+        regs->ax = -ENOSYS;  // "Function not implemented"
+    }
+
+    // regs->ax now contains the return value
+    // The asm stub will sysret back to userspace
+}
+
+// The syscall table (auto-generated from syscall_64.tbl)
+const sys_call_ptr_t sys_call_table[NR_syscalls] = {
+    [0]   = sys_read,
+    [1]   = sys_write,
+    [2]   = sys_open,
+    [3]   = sys_close,
+    // ...
+    [59]  = sys_execve,
+    [60]  = sys_exit,
+    // ...
+    [435] = sys_cachestat,     // added in Linux 6.5
+};
+\`\`\`
+
+> [!error] If you pass a syscall number that's out of range, the kernel returns \`-ENOSYS\` (errno 38, "Function not implemented"). Your program won't crash — the syscall just fails. But if you pass valid-looking but wrong arguments to a valid syscall, you can corrupt kernel state or hit a kernel bug. The kernel validates arguments, but edge cases exist.
+
+## The VDSO: Syscalls That Don't Enter the Kernel
+
+Some "syscalls" are so frequent that the cost of a real kernel transition is unacceptable. \`gettimeofday()\` and \`clock_gettime()\` are called millions of times per second by some workloads. For these, the kernel provides the **VDSO** (Virtual Dynamic Shared Object).
+
+The VDSO is a small shared library that the kernel maps into every process's address space. It contains userspace implementations of certain syscalls that read kernel data structures directly, without a ring transition.
+
+\`\`\`c
+// The VDSO for clock_gettime:
+// 1. Kernel updates a shared page with current time data
+// 2. VDSO code reads that shared page from userspace
+// 3. No syscall instruction needed — pure userspace read
+// 4. Result: ~20ns instead of ~200ns
+
+#include <time.h>
+#include <stdio.h>
+
+int main(void) {
+    struct timespec ts;
+
+    // This does NOT enter the kernel!
+    // It calls the VDSO implementation which reads
+    // a kernel-mapped shared page directly.
+    clock_gettime(CLOCK_MONOTONIC, &ts);
+
+    printf("Time: %ld.%09ld\\n", ts.tv_sec, ts.tv_nsec);
+    return 0;
+}
+\`\`\`
+
+You can see the VDSO in any process's memory map:
+
+\`\`\`bash
+$ cat /proc/self/maps | grep vdso
+7ffd12ffe000-7ffd13000000 r-xp 00000000 00:00 0  [vdso]
+
+# Dump and disassemble the VDSO
+$ dd if=/proc/self/mem bs=1 skip=$((0x7ffd12ffe000)) count=8192 2>/dev/null > vdso.so
+$ objdump -d vdso.so | head -40
+\`\`\`
+
+> [!definition] VDSO (Virtual Dynamic Shared Object) — A kernel-provided shared library mapped into every process at a random address. Contains userspace implementations of high-frequency syscalls like \`clock_gettime\` and \`gettimeofday\` that avoid the overhead of a real ring transition by reading kernel-updated shared memory directly.
+
+## Tracing Syscalls: strace Internals
+
+\`strace\` uses the \`ptrace\` syscall to intercept every syscall a program makes. It stops the process at syscall entry and exit, inspects the registers, and prints the decoded call.
+
+\`\`\`bash
+# Basic syscall trace
+$ strace -c ./my_program
+% time     seconds  usecs/call     calls    errors syscall
+------ ----------- ----------- --------- --------- ------
+ 45.23    0.002341          23       102           read
+ 30.12    0.001558          15       104           write
+ 12.45    0.000644          32        20           openat
+  8.67    0.000448          22        20           close
+  3.53    0.000183          91         2           mmap
+
+# Filter for specific syscalls
+$ strace -e trace=write,read ./my_program
+
+# Show timing per syscall
+$ strace -T ./my_program 2>&1 | head -5
+write(1, "hello\\n", 6)  = 6 <0.000023>
+read(0, "", 4096)       = 0 <0.000004>
+\`\`\`
+
+> [!warning] \`ptrace\`-based tracing is invasive. It stops the process twice per syscall (entry and exit), copies register state to the tracer, and resumes. This can slow programs by 10-100x. For production profiling, use eBPF-based tools like \`bpftrace\` or \`perf\` instead — they run inside the kernel with no context-switch overhead.
+
+## Writing a Minimal Syscall Tracer
+
+Here's a simplified \`strace\` in under 80 lines:
+
+\`\`\`c
+#include <sys/ptrace.h>
+#include <sys/wait.h>
+#include <sys/user.h>
+#include <sys/syscall.h>
+#include <unistd.h>
+#include <stdio.h>
+#include <stdlib.h>
+
+// Syscall name table (partial)
+static const char *syscall_names[] = {
+    [SYS_read]  = "read",  [SYS_write] = "write",
+    [SYS_openat]= "openat",[SYS_close] = "close",
+    [SYS_mmap]  = "mmap",  [SYS_brk]   = "brk",
+    [SYS_exit_group] = "exit_group",
+};
+#define MAX_NAMES (sizeof(syscall_names) / sizeof(syscall_names[0]))
+
+int main(int argc, char **argv) {
+    if (argc < 2) {
+        fprintf(stderr, "Usage: %s <program> [args...]\\n", argv[0]);
+        return 1;
+    }
+
+    pid_t child = fork();
+    if (child == 0) {
+        // Child: request tracing, then exec the target
+        ptrace(PTRACE_TRACEME, 0, NULL, NULL);
+        execvp(argv[1], argv + 1);
+        perror("execvp");
+        _exit(1);
+    }
+
+    // Parent: trace syscalls
+    int status;
+    waitpid(child, &status, 0);  // wait for exec stop
+
+    // Set options to stop at syscall entry/exit
+    ptrace(PTRACE_SETOPTIONS, child, 0, PTRACE_O_TRACESYSGOOD);
+
+    int entering = 1;  // toggle: entry vs exit
+    long syscall_count = 0;
+
+    while (1) {
+        // Resume until next syscall
+        ptrace(PTRACE_SYSCALL, child, NULL, NULL);
+        waitpid(child, &status, 0);
+
+        if (WIFEXITED(status)) {
+            printf("\\n--- %s exited (code %d) ---\\n",
+                   argv[1], WEXITSTATUS(status));
+            printf("Total syscalls: %ld\\n", syscall_count);
+            break;
+        }
+
+        if (entering) {
+            // Syscall entry: read the syscall number from RAX
+            struct user_regs_struct regs;
+            ptrace(PTRACE_GETREGS, child, NULL, &regs);
+
+            long nr = regs.orig_rax;
+            const char *name = (nr < (long)MAX_NAMES && syscall_names[nr])
+                               ? syscall_names[nr] : "???";
+
+            printf("[%3ld] %s(%lld, %lld, %lld)",
+                   nr, name,
+                   (long long)regs.rdi,
+                   (long long)regs.rsi,
+                   (long long)regs.rdx);
+            fflush(stdout);
+            syscall_count++;
+        } else {
+            // Syscall exit: read the return value from RAX
+            struct user_regs_struct regs;
+            ptrace(PTRACE_GETREGS, child, NULL, &regs);
+            printf(" = %lld\\n", (long long)regs.rax);
+        }
+
+        entering = !entering;
+    }
+
+    return 0;
+}
+\`\`\`
+
+\`\`\`bash
+$ gcc -o minitrace minitrace.c
+$ ./minitrace /bin/echo "hello"
+[  1] write(1, 140234871234560, 6) = 6
+[ 12] brk(0, 0, 0) = 94287361847296
+[  3] close(1, 0, 0) = 0
+[231] exit_group(0, 0, 0)
+--- /bin/echo exited (code 0) ---
+Total syscalls: 42
+\`\`\`
+
+## Syscall Cost: How Expensive Is a Ring Transition?
+
+The cost varies by CPU and kernel configuration:
+
+| CPU | syscall + sysret | With KPTI (Meltdown fix) |
+|-----|-----------------|--------------------------|
+| Intel Skylake | ~100 ns | ~700 ns |
+| Intel Alder Lake | ~80 ns | ~400 ns |
+| AMD Zen 3 | ~70 ns | ~90 ns (not affected) |
+| AMD Zen 4 | ~60 ns | ~65 ns |
+
+> [!definition] KPTI (Kernel Page Table Isolation) — A mitigation for the Meltdown vulnerability that maintains separate page tables for user and kernel mode. On every syscall entry/exit, the CPU must switch page tables and flush TLB entries, adding significant overhead. AMD processors are mostly unaffected by Meltdown and can skip KPTI.
+
+The Meltdown mitigation (KPTI) nearly 7x-ed the cost of syscalls on affected Intel CPUs. This is why \`io_uring\` was invented — it amortizes syscall overhead by batching I/O operations in a shared ring buffer, avoiding per-operation transitions.
+
+\`\`\`bash
+# Check if KPTI is active on your system
+$ cat /sys/devices/system/cpu/vulnerabilities/meltdown
+Mitigation: PTI
+
+# Benchmark raw syscall cost
+$ cat bench.c
+#include <unistd.h>
+#include <time.h>
+#include <stdio.h>
+int main(void) {
+    struct timespec t1, t2;
+    int N = 1000000;
+    clock_gettime(CLOCK_MONOTONIC, &t1);
+    for (int i = 0; i < N; i++)
+        getpid();  // minimal syscall
+    clock_gettime(CLOCK_MONOTONIC, &t2);
+    double ns = ((t2.tv_sec - t1.tv_sec) * 1e9 + t2.tv_nsec - t1.tv_nsec) / N;
+    printf("%.0f ns/syscall\\n", ns);
+    return 0;
+}
+$ gcc -O2 -o bench bench.c && ./bench
+87 ns/syscall
+\`\`\`
+
+## Conclusion
+
+A system call is a handshake between two worlds. Userspace sets up registers according to a rigid convention, executes a single privileged instruction, and the CPU atomically transitions to kernel code that validates, dispatches, and returns a result — all in a few hundred nanoseconds.
+
+This machinery — the \`syscall\`/\`sysret\` instructions, the kernel entry trampoline, the dispatch table, the VDSO fast path, the \`ptrace\` interception layer — is the foundation of everything Linux does. Every file read, every network packet, every process fork goes through this exact path.
+
+Understanding syscalls at this level means you can write programs that minimize kernel transitions, debug impossible-looking failures with \`strace\`, build custom tracing tools, and reason about the performance characteristics of your system from first principles.
+
+The kernel is not magic. It's a function call with a very expensive calling convention.
+    `.trim(),
+  },
 ];

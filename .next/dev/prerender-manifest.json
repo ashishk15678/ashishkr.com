@@ -1,11 +1,1 @@
-{
-  "version": 4,
-  "routes": {},
-  "dynamicRoutes": {},
-  "notFoundRoutes": [],
-  "preview": {
-    "previewModeId": "6f0fa235e3466e970734e98a166e773c",
-    "previewModeSigningKey": "36e9b1cd076b747a8fb13de465dbdc29f56d186109d1dfba6898c00eafa7d5fd",
-    "previewModeEncryptionKey": "f6c948d044d216bc28353d42e8d4ab850070cdc9b708990b8641253ced9e54e1"
-  }
-}
+{"version":4,"routes":{"/posts/exploiting-virtual-memory-tricks-every-systems-programmer-should-know":{},"/posts/writing-a-memory-allocator-from-scratch":{},"/posts/inline-assembly-and-compiler-intrinsics-for-performance":{},"/posts/got-plt-the-dark-art-of-dynamic-linking":{},"/posts/linux-syscalls-from-userspace-to-kernel-and-back":{}},"dynamicRoutes":{"/posts/[slug]":{"dataRoute":null,"dataRouteRegex":null,"fallback":null,"fallbackRevalidate":false,"fallbackSourceRoute":"/posts/[slug]","routeRegex":"^\\/posts\\/([^/]+?)(?:\\/)?$","allowHeader":[]}},"notFoundRoutes":[],"preview":{"previewModeId":"4e78870706c54e1f19e79dc413d60d18","previewModeSigningKey":"655ddf4279a2dc06ccc31b9780300bcb96ee8df2bc74c2733fe0893e88af1d16","previewModeEncryptionKey":"585bba3b68a16f278e646fd5c3a3ba5d3bb35e44bad8027ef4c9b2960f5e6a19"}}

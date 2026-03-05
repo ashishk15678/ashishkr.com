@@ -1,6 +1,6 @@
 "use client";
 
-import { FileText, Code, Download } from "lucide-react";
+import { FileText, Code } from "lucide-react";
 
 interface BlogDownloadButtonsProps {
   slug: string;
@@ -27,16 +27,22 @@ export function BlogDownloadButtons({ slug, title }: BlogDownloadButtonsProps) {
     <div className="flex flex-wrap gap-3">
       <button
         onClick={() => handleDownload("html")}
-        className="inline-flex items-center gap-2 px-3.5 py-2 bg-[#161b22] border border-[#2d333b] rounded-md text-xs font-mono text-[#7d8590] hover:text-[#e6edf3] hover:border-[#6e40c9] hover:bg-[#1c1e26] transition-all duration-200 group"
+        className="inline-flex items-center gap-2 px-3.5 py-2 bg-muted border border-border rounded-md text-xs font-mono text-muted-foreground hover:text-foreground hover:border-foreground/30 hover:bg-accent transition-all duration-200 group"
       >
-        <FileText className="w-3.5 h-3.5 text-[#6e40c9] group-hover:text-[#8957e5] transition-colors" />
+        <FileText
+          className="w-3.5 h-3.5 transition-colors"
+          style={{ color: "var(--blog-accent)" }}
+        />
         <span>Download HTML</span>
       </button>
       <button
         onClick={() => handleDownload("md")}
-        className="inline-flex items-center gap-2 px-3.5 py-2 bg-[#161b22] border border-[#2d333b] rounded-md text-xs font-mono text-[#7d8590] hover:text-[#e6edf3] hover:border-[#6e40c9] hover:bg-[#1c1e26] transition-all duration-200 group"
+        className="inline-flex items-center gap-2 px-3.5 py-2 bg-muted border border-border rounded-md text-xs font-mono text-muted-foreground hover:text-foreground hover:border-foreground/30 hover:bg-accent transition-all duration-200 group"
       >
-        <Code className="w-3.5 h-3.5 text-[#6e40c9] group-hover:text-[#8957e5] transition-colors" />
+        <Code
+          className="w-3.5 h-3.5 transition-colors"
+          style={{ color: "var(--blog-accent)" }}
+        />
         <span>Download Markdown</span>
       </button>
     </div>

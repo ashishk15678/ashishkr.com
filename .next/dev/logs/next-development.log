@@ -1,2 +1,895 @@
-[00:00:00.951] Server  WARN     ⚠ The "middleware" file convention is deprecated. Please use "proxy" instead. Learn more: https://nextjs.org/docs/messages/middleware-to-proxy
-[00:00:01.059] Server  LOG      ✓ Ready in 741ms
+[00:00:01.756] Server  WARN     ⚠ The "middleware" file convention is deprecated. Please use "proxy" instead. Learn more: https://nextjs.org/docs/messages/middleware-to-proxy
+[00:00:02.010] Server  LOG      ✓ Ready in 1555ms
+[00:08:26.391] Server  LOG      ○ Compiling / ...
+[00:08:30.289] Server  WARN     ⚠ ./
+Failed to find font override values for font `Bitcount`
+Skipping generating a fallback font.
+
+
+[00:08:32.335] Server  WARN     ⚠ ./
+Failed to find font override values for font `Bitcount`
+Skipping generating a fallback font.
+
+
+[00:08:32.688] Browser ERROR   Cannot render a sync or defer <script> outside the main document without knowing its order. Try adding async="" or moving it into the root <head> tag.
+[00:08:32.688] Browser ERROR   In HTML, %s cannot be a child of <%s>.%s
+This will cause a hydration error.%s <header> html  
+
+  ...
+    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>
+      <AppDevOverlayErrorBoundary globalError={[...]}>
+        <ReplaySsrOnlyErrors>
+        <DevRootHTTPAccessFallbackBoundary>
+          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
+            <HTTPAccessFallbackErrorBoundary pathname="/" notFound={<NotAllowedRootHTTPFallbackError>} ...>
+              <RedirectBoundary>
+                <RedirectErrorBoundary router={{...}}>
+                  <Head>
+                  <__next_root_layout_boundary__>
+                    <SegmentViewNode type="layout" pagePath="layout.tsx">
+                      <SegmentTrieNode>
+                      <link>
+                      <script>
+                      <script>
+                      <RootLayout>
+>                       <html lang="en" suppressHydrationWarning={true}>
+>                         <header>
+                          ...
+                  ...
+
+[00:08:32.688] Browser ERROR   In HTML, %s cannot be a child of <%s>.%s
+This will cause a hydration error.%s <script> html  
+
+  ...
+    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>
+      <AppDevOverlayErrorBoundary globalError={[...]}>
+        <ReplaySsrOnlyErrors>
+        <DevRootHTTPAccessFallbackBoundary>
+          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
+            <HTTPAccessFallbackErrorBoundary pathname="/" notFound={<NotAllowedRootHTTPFallbackError>} ...>
+              <RedirectBoundary>
+                <RedirectErrorBoundary router={{...}}>
+                  <Head>
+                  <__next_root_layout_boundary__>
+                    <SegmentViewNode type="layout" pagePath="layout.tsx">
+                      <SegmentTrieNode>
+                      <link>
+                      <script>
+                      <script>
+                      <RootLayout>
+>                       <html lang="en" suppressHydrationWarning={true}>
+                          <header>
+                          <body>
+>                         <script
+>                           defer={true}
+>                           src="https://static.cloudflareinsights.com/beacon.min.js"
+>                           data-cf-beacon={"{\"token\": \"10955f53d5ee4f5880bcbf7725c1febc\"}"}
+>                         >
+                          ...
+                  ...
+
+[00:08:33.108] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[00:08:33.109] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/","route":"/"}
+[00:08:33.109] Browser LOG     %c[Vercel Web Analytics]%c [view] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1772703759732} /_vercel/insights/view
+[00:08:37.848] Server  WARN     ⚠ ./
+Failed to find font override values for font `Bitcount`
+Skipping generating a fallback font.
+
+
+[00:08:38.265] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+[00:08:38.265] Browser LOG     %c[Vercel Web Analytics]%c [view] http://localhost:3000/posts color: rgb(120, 120, 120) color: inherit {"dp":"/posts","o":"http://localhost:3000/posts","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1772703764889} /_vercel/insights/view
+[00:08:42.173] Browser LOG     %c[Vercel Web Analytics]%c [view] http://localhost:3000/posts/exploiting-virtual-memory-tricks-every-systems-programmer-should-know color: rgb(120, 120, 120) color: inherit {"dp":"/posts/[slug]","o":"http://localhost:3000/posts/exploiting-virtual-memory-tricks-every-systems-programmer-should-know","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1772703768797} /_vercel/insights/view
+[00:10:25.810] Server  WARN     ⚠ ./
+Failed to find font override values for font `Bitcount`
+Skipping generating a fallback font.
+
+
+[00:10:25.986] Browser ERROR   Cannot render a sync or defer <script> outside the main document without knowing its order. Try adding async="" or moving it into the root <head> tag.
+[00:10:25.986] Browser ERROR   In HTML, %s cannot be a child of <%s>.%s
+This will cause a hydration error.%s <header> html  
+
+  ...
+    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>
+      <AppDevOverlayErrorBoundary globalError={[...]}>
+        <ReplaySsrOnlyErrors>
+        <DevRootHTTPAccessFallbackBoundary>
+          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
+            <HTTPAccessFallbackErrorBoundary pathname="/posts/exp..." notFound={<NotAllowedRootHTTPFallbackError>} ...>
+              <RedirectBoundary>
+                <RedirectErrorBoundary router={{...}}>
+                  <Head>
+                  <__next_root_layout_boundary__>
+                    <SegmentViewNode type="layout" pagePath="layout.tsx">
+                      <SegmentTrieNode>
+                      <link>
+                      <script>
+                      <script>
+                      <RootLayout>
+>                       <html lang="en" suppressHydrationWarning={true}>
+>                         <header>
+                          ...
+                  ...
+
+[00:10:25.986] Browser ERROR   In HTML, %s cannot be a child of <%s>.%s
+This will cause a hydration error.%s <script> html  
+
+  ...
+    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>
+      <AppDevOverlayErrorBoundary globalError={[...]}>
+        <ReplaySsrOnlyErrors>
+        <DevRootHTTPAccessFallbackBoundary>
+          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
+            <HTTPAccessFallbackErrorBoundary pathname="/posts/exp..." notFound={<NotAllowedRootHTTPFallbackError>} ...>
+              <RedirectBoundary>
+                <RedirectErrorBoundary router={{...}}>
+                  <Head>
+                  <__next_root_layout_boundary__>
+                    <SegmentViewNode type="layout" pagePath="layout.tsx">
+                      <SegmentTrieNode>
+                      <link>
+                      <script>
+                      <script>
+                      <RootLayout>
+>                       <html lang="en" suppressHydrationWarning={true}>
+                          <header>
+                          <body>
+>                         <script
+>                           defer={true}
+>                           src="https://static.cloudflareinsights.com/beacon.min.js"
+>                           data-cf-beacon={"{\"token\": \"10955f53d5ee4f5880bcbf7725c1febc\"}"}
+>                         >
+                          ...
+                  ...
+
+[00:10:26.207] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[00:10:26.207] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/posts/exploiting-virtual-memory-tricks-every-systems-programmer-should-know","route":"/posts/[slug]"}
+[00:10:26.207] Browser LOG     %c[Vercel Web Analytics]%c [view] http://localhost:3000/posts/exploiting-virtual-memory-tricks-every-systems-programmer-should-know color: rgb(120, 120, 120) color: inherit {"dp":"/posts/[slug]","o":"http://localhost:3000/posts/exploiting-virtual-memory-tricks-every-systems-programmer-should-know","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1772703872832} /_vercel/insights/view
+[00:10:29.490] Server  LOG      ✓ Compiled in 406ms
+[00:11:03.396] Server  LOG      ✓ Compiled in 545ms
+[00:12:55.579] Server  WARN     ⚠ ./
+Failed to find font override values for font `Bitcount`
+Skipping generating a fallback font.
+
+
+[00:12:55.830] Browser ERROR   Cannot render a sync or defer <script> outside the main document without knowing its order. Try adding async="" or moving it into the root <head> tag.
+[00:12:55.830] Browser ERROR   In HTML, %s cannot be a child of <%s>.%s
+This will cause a hydration error.%s <header> html  
+
+  ...
+    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>
+      <AppDevOverlayErrorBoundary globalError={[...]}>
+        <ReplaySsrOnlyErrors>
+        <DevRootHTTPAccessFallbackBoundary>
+          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
+            <HTTPAccessFallbackErrorBoundary pathname="/posts/exp..." notFound={<NotAllowedRootHTTPFallbackError>} ...>
+              <RedirectBoundary>
+                <RedirectErrorBoundary router={{...}}>
+                  <Head>
+                  <__next_root_layout_boundary__>
+                    <SegmentViewNode type="layout" pagePath="layout.tsx">
+                      <SegmentTrieNode>
+                      <link>
+                      <script>
+                      <script>
+                      <RootLayout>
+>                       <html lang="en" suppressHydrationWarning={true}>
+>                         <header>
+                          ...
+                  ...
+
+[00:12:55.830] Browser ERROR   In HTML, %s cannot be a child of <%s>.%s
+This will cause a hydration error.%s <script> html  
+
+  ...
+    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>
+      <AppDevOverlayErrorBoundary globalError={[...]}>
+        <ReplaySsrOnlyErrors>
+        <DevRootHTTPAccessFallbackBoundary>
+          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
+            <HTTPAccessFallbackErrorBoundary pathname="/posts/exp..." notFound={<NotAllowedRootHTTPFallbackError>} ...>
+              <RedirectBoundary>
+                <RedirectErrorBoundary router={{...}}>
+                  <Head>
+                  <__next_root_layout_boundary__>
+                    <SegmentViewNode type="layout" pagePath="layout.tsx">
+                      <SegmentTrieNode>
+                      <link>
+                      <script>
+                      <script>
+                      <RootLayout>
+>                       <html lang="en" suppressHydrationWarning={true}>
+                          <header>
+                          <body>
+>                         <script
+>                           defer={true}
+>                           src="https://static.cloudflareinsights.com/beacon.min.js"
+>                           data-cf-beacon={"{\"token\": \"10955f53d5ee4f5880bcbf7725c1febc\"}"}
+>                         >
+                          ...
+                  ...
+
+[00:12:56.077] Browser ERROR   A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+%s%s https://react.dev/link/hydration-mismatch 
+
+  ...
+    <InnerScrollAndFocusHandler segmentPath={[...]} focusAndScrollRef={{apply:false, ...}}>
+      <ErrorBoundary errorComponent={undefined} errorStyles={undefined} errorScripts={undefined}>
+        <LoadingBoundary name="exploiting..." loading={null}>
+          <HTTPAccessFallbackBoundary notFound={undefined} forbidden={undefined} unauthorized={undefined}>
+            <RedirectBoundary>
+              <RedirectErrorBoundary router={{...}}>
+                <InnerLayoutRouter url="/posts/exp..." tree={[...]} params={{slug:"expl..."}} ...>
+                  <SegmentViewNode type="page" pagePath="posts/[slu...">
+                    <SegmentTrieNode>
+                    <BlogPostPage>
+                      <main className="blog-page ...">
+                        <script>
+                        <Header>
+                        <div>
+                        <article className="blog-artic...">
+                          <LinkComponent>
+                          <div>
+                          <header className="mb-12">
+                            <h1>
+                            <p>
+                            <div>
+                            <BlogDownloadButtons slug="exploiting..." title="Exploiting...">
+                              <div className="flex flex-...">
+                                <button
+                                  onClick={function onClick}
++                                 className="inline-flex items-center gap-2 px-3.5 py-2 bg-[#161b22] border border-[#2..."
+-                                 className="inline-flex items-center gap-2 px-3.5 py-2 bg-muted border border-border ..."
+                                >
+                                  <FileText className="w-3.5 h-3....">
+                                    <svg
+                                      ref={null}
+                                      xmlns="http://www.w3.org/2000/svg"
+                                      width={24}
+                                      height={24}
+                                      viewBox="0 0 24 24"
+                                      fill="none"
+                                      stroke="currentColor"
+                                      strokeWidth={2}
+                                      strokeLinecap="round"
+                                      strokeLinejoin="round"
++                                     className="lucide lucide-file-text w-3.5 h-3.5 text-[#6e40c9] group-hover:text-[..."
+-                                     className="lucide lucide-file-text w-3.5 h-3.5 transition-colors"
+-                                     style={{color:"var(--blog..."}}
+                                    >
+                                  ...
+                                <button
+                                  onClick={function onClick}
++                                 className="inline-flex items-center gap-2 px-3.5 py-2 bg-[#161b22] border border-[#2..."
+-                                 className="inline-flex items-center gap-2 px-3.5 py-2 bg-muted border border-border ..."
+                                >
+                                  <Code className="w-3.5 h-3....">
+                                    <svg
+                                      ref={null}
+                                      xmlns="http://www.w3.org/2000/svg"
+                                      width={24}
+                                      height={24}
+                                      viewBox="0 0 24 24"
+                                      fill="none"
+                                      stroke="currentColor"
+                                      strokeWidth={2}
+                                      strokeLinecap="round"
+                                      strokeLinejoin="round"
++                                     className="lucide lucide-code w-3.5 h-3.5 text-[#6e40c9] group-hover:text-[#8957..."
+-                                     className="lucide lucide-code w-3.5 h-3.5 transition-colors"
+-                                     style={{color:"var(--blog..."}}
+                                    >
+                                  ...
+                          ...
+                  ...
+                ...
+      ...
+
+[00:12:56.077] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[00:12:56.077] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/posts/exploiting-virtual-memory-tricks-every-systems-programmer-should-know","route":"/posts/[slug]"}
+[00:12:56.077] Browser LOG     %c[Vercel Web Analytics]%c [view] http://localhost:3000/posts/exploiting-virtual-memory-tricks-every-systems-programmer-should-know color: rgb(120, 120, 120) color: inherit {"dp":"/posts/[slug]","o":"http://localhost:3000/posts/exploiting-virtual-memory-tricks-every-systems-programmer-should-know","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1772704022703} /_vercel/insights/view
+[00:14:46.667] Server  LOG      ✓ Compiled in 310ms
+[00:15:54.041] Server  WARN     ⚠ ./
+Failed to find font override values for font `Bitcount`
+Skipping generating a fallback font.
+
+
+[00:15:54.239] Browser ERROR   Cannot render a sync or defer <script> outside the main document without knowing its order. Try adding async="" or moving it into the root <head> tag.
+[00:15:54.239] Browser ERROR   In HTML, %s cannot be a child of <%s>.%s
+This will cause a hydration error.%s <header> html  
+
+  ...
+    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>
+      <AppDevOverlayErrorBoundary globalError={[...]}>
+        <ReplaySsrOnlyErrors>
+        <DevRootHTTPAccessFallbackBoundary>
+          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
+            <HTTPAccessFallbackErrorBoundary pathname="/posts/exp..." notFound={<NotAllowedRootHTTPFallbackError>} ...>
+              <RedirectBoundary>
+                <RedirectErrorBoundary router={{...}}>
+                  <Head>
+                  <__next_root_layout_boundary__>
+                    <SegmentViewNode type="layout" pagePath="layout.tsx">
+                      <SegmentTrieNode>
+                      <link>
+                      <script>
+                      <script>
+                      <RootLayout>
+>                       <html lang="en" suppressHydrationWarning={true}>
+>                         <header>
+                          ...
+                  ...
+
+[00:15:54.239] Browser ERROR   In HTML, %s cannot be a child of <%s>.%s
+This will cause a hydration error.%s <script> html  
+
+  ...
+    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>
+      <AppDevOverlayErrorBoundary globalError={[...]}>
+        <ReplaySsrOnlyErrors>
+        <DevRootHTTPAccessFallbackBoundary>
+          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
+            <HTTPAccessFallbackErrorBoundary pathname="/posts/exp..." notFound={<NotAllowedRootHTTPFallbackError>} ...>
+              <RedirectBoundary>
+                <RedirectErrorBoundary router={{...}}>
+                  <Head>
+                  <__next_root_layout_boundary__>
+                    <SegmentViewNode type="layout" pagePath="layout.tsx">
+                      <SegmentTrieNode>
+                      <link>
+                      <script>
+                      <script>
+                      <RootLayout>
+>                       <html lang="en" suppressHydrationWarning={true}>
+                          <header>
+                          <body>
+>                         <script
+>                           defer={true}
+>                           src="https://static.cloudflareinsights.com/beacon.min.js"
+>                           data-cf-beacon={"{\"token\": \"10955f53d5ee4f5880bcbf7725c1febc\"}"}
+>                         >
+                          ...
+                  ...
+
+[00:15:54.392] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[00:15:54.392] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/posts/exploiting-virtual-memory-tricks-every-systems-programmer-should-know","route":"/posts/[slug]"}
+[00:15:54.392] Browser LOG     %c[Vercel Web Analytics]%c [view] http://localhost:3000/posts/exploiting-virtual-memory-tricks-every-systems-programmer-should-know color: rgb(120, 120, 120) color: inherit {"dp":"/posts/[slug]","o":"http://localhost:3000/posts/exploiting-virtual-memory-tricks-every-systems-programmer-should-know","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1772704201019} /_vercel/insights/view
+[00:15:59.558] Server  WARN     ⚠ ./
+Failed to find font override values for font `Bitcount`
+Skipping generating a fallback font.
+
+
+[00:15:59.854] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+[00:15:59.854] Browser LOG     %c[Vercel Web Analytics]%c [view] http://localhost:3000/posts color: rgb(120, 120, 120) color: inherit {"dp":"/posts","o":"http://localhost:3000/posts","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1772704206478} /_vercel/insights/view
+[00:16:04.146] Browser LOG     %c[Vercel Web Analytics]%c [view] http://localhost:3000/posts/got-plt-the-dark-art-of-dynamic-linking color: rgb(120, 120, 120) color: inherit {"dp":"/posts/[slug]","o":"http://localhost:3000/posts/got-plt-the-dark-art-of-dynamic-linking","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1772704210769} /_vercel/insights/view
+[00:16:12.208] Server  LOG      ✓ Compiled in 549ms
+[00:16:28.318] Server  WARN     ⚠ ./
+Failed to find font override values for font `Bitcount`
+Skipping generating a fallback font.
+
+
+[00:16:28.564] Browser LOG     %c[Vercel Web Analytics]%c [view] http://localhost:3000/posts color: rgb(120, 120, 120) color: inherit {"dp":"/posts","o":"http://localhost:3000/posts","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1772704235188} /_vercel/insights/view
+[00:17:17.324] Server  LOG      ✓ Compiled in 291ms
+[00:17:56.125] Browser LOG     %c[Vercel Web Analytics]%c [view] http://localhost:3000/posts/inline-assembly-and-compiler-intrinsics-for-performance color: rgb(120, 120, 120) color: inherit {"dp":"/posts/[slug]","o":"http://localhost:3000/posts/inline-assembly-and-compiler-intrinsics-for-performance","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1772704322750} /_vercel/insights/view
+[00:18:12.677] Server  WARN     ⚠ ./
+Failed to find font override values for font `Bitcount`
+Skipping generating a fallback font.
+
+
+[00:18:12.884] Browser LOG     %c[Vercel Web Analytics]%c [view] http://localhost:3000/posts color: rgb(120, 120, 120) color: inherit {"dp":"/posts","o":"http://localhost:3000/posts","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1772704339509} /_vercel/insights/view
+[00:25:26.141] Browser LOG     %c[Vercel Web Analytics]%c [view] http://localhost:3000/posts/exploiting-virtual-memory-tricks-every-systems-programmer-should-know color: rgb(120, 120, 120) color: inherit {"dp":"/posts/[slug]","o":"http://localhost:3000/posts/exploiting-virtual-memory-tricks-every-systems-programmer-should-know","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1772704772766} /_vercel/insights/view
+[00:26:22.663] Server  LOG      ✓ Compiled in 270ms
+[00:28:24.671] Server  WARN     ⚠ ./
+Failed to find font override values for font `Bitcount`
+Skipping generating a fallback font.
+
+
+[00:28:24.970] Browser ERROR   Cannot render a sync or defer <script> outside the main document without knowing its order. Try adding async="" or moving it into the root <head> tag.
+[00:28:24.970] Browser ERROR   In HTML, %s cannot be a child of <%s>.%s
+This will cause a hydration error.%s <header> html  
+
+  ...
+    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>
+      <AppDevOverlayErrorBoundary globalError={[...]}>
+        <ReplaySsrOnlyErrors>
+        <DevRootHTTPAccessFallbackBoundary>
+          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
+            <HTTPAccessFallbackErrorBoundary pathname="/posts/exp..." notFound={<NotAllowedRootHTTPFallbackError>} ...>
+              <RedirectBoundary>
+                <RedirectErrorBoundary router={{...}}>
+                  <Head>
+                  <__next_root_layout_boundary__>
+                    <SegmentViewNode type="layout" pagePath="layout.tsx">
+                      <SegmentTrieNode>
+                      <link>
+                      <script>
+                      <script>
+                      <RootLayout>
+>                       <html lang="en" suppressHydrationWarning={true}>
+>                         <header>
+                          ...
+                  ...
+
+[00:28:24.970] Browser ERROR   In HTML, %s cannot be a child of <%s>.%s
+This will cause a hydration error.%s <script> html  
+
+  ...
+    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>
+      <AppDevOverlayErrorBoundary globalError={[...]}>
+        <ReplaySsrOnlyErrors>
+        <DevRootHTTPAccessFallbackBoundary>
+          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
+            <HTTPAccessFallbackErrorBoundary pathname="/posts/exp..." notFound={<NotAllowedRootHTTPFallbackError>} ...>
+              <RedirectBoundary>
+                <RedirectErrorBoundary router={{...}}>
+                  <Head>
+                  <__next_root_layout_boundary__>
+                    <SegmentViewNode type="layout" pagePath="layout.tsx">
+                      <SegmentTrieNode>
+                      <link>
+                      <script>
+                      <script>
+                      <RootLayout>
+>                       <html lang="en" suppressHydrationWarning={true}>
+                          <header>
+                          <body>
+>                         <script
+>                           defer={true}
+>                           src="https://static.cloudflareinsights.com/beacon.min.js"
+>                           data-cf-beacon={"{\"token\": \"10955f53d5ee4f5880bcbf7725c1febc\"}"}
+>                         >
+                          ...
+                  ...
+
+[00:28:25.193] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[00:28:25.194] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/posts/exploiting-virtual-memory-tricks-every-systems-programmer-should-know","route":"/posts/[slug]"}
+[00:28:25.194] Browser LOG     %c[Vercel Web Analytics]%c [view] http://localhost:3000/posts/exploiting-virtual-memory-tricks-every-systems-programmer-should-know color: rgb(120, 120, 120) color: inherit {"dp":"/posts/[slug]","o":"http://localhost:3000/posts/exploiting-virtual-memory-tricks-every-systems-programmer-should-know","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1772704951819} /_vercel/insights/view
+[00:32:59.016] Server  WARN     ⚠ ./
+Failed to find font override values for font `Bitcount`
+Skipping generating a fallback font.
+
+
+[00:32:59.310] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+[00:32:59.310] Browser LOG     %c[Vercel Web Analytics]%c [view] http://localhost:3000/posts color: rgb(120, 120, 120) color: inherit {"dp":"/posts","o":"http://localhost:3000/posts","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1772705225933} /_vercel/insights/view
+[00:34:04.033] Server  LOG      ✓ Compiled in 343ms
+[00:34:15.221] Browser LOG     %c[Vercel Web Analytics]%c [view] http://localhost:3000/posts/exploiting-virtual-memory-tricks-every-systems-programmer-should-know color: rgb(120, 120, 120) color: inherit {"dp":"/posts/[slug]","o":"http://localhost:3000/posts/exploiting-virtual-memory-tricks-every-systems-programmer-should-know","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1772705301844} /_vercel/insights/view
+[00:34:17.515] Server  WARN     ⚠ ./
+Failed to find font override values for font `Bitcount`
+Skipping generating a fallback font.
+
+
+[00:34:17.683] Browser ERROR   Cannot render a sync or defer <script> outside the main document without knowing its order. Try adding async="" or moving it into the root <head> tag.
+[00:34:17.683] Browser ERROR   In HTML, %s cannot be a child of <%s>.%s
+This will cause a hydration error.%s <header> html  
+
+  ...
+    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>
+      <AppDevOverlayErrorBoundary globalError={[...]}>
+        <ReplaySsrOnlyErrors>
+        <DevRootHTTPAccessFallbackBoundary>
+          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
+            <HTTPAccessFallbackErrorBoundary pathname="/posts/exp..." notFound={<NotAllowedRootHTTPFallbackError>} ...>
+              <RedirectBoundary>
+                <RedirectErrorBoundary router={{...}}>
+                  <Head>
+                  <__next_root_layout_boundary__>
+                    <SegmentViewNode type="layout" pagePath="layout.tsx">
+                      <SegmentTrieNode>
+                      <link>
+                      <script>
+                      <script>
+                      <RootLayout>
+>                       <html lang="en" suppressHydrationWarning={true}>
+>                         <header>
+                          ...
+                  ...
+
+[00:34:17.683] Browser ERROR   In HTML, %s cannot be a child of <%s>.%s
+This will cause a hydration error.%s <script> html  
+
+  ...
+    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>
+      <AppDevOverlayErrorBoundary globalError={[...]}>
+        <ReplaySsrOnlyErrors>
+        <DevRootHTTPAccessFallbackBoundary>
+          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
+            <HTTPAccessFallbackErrorBoundary pathname="/posts/exp..." notFound={<NotAllowedRootHTTPFallbackError>} ...>
+              <RedirectBoundary>
+                <RedirectErrorBoundary router={{...}}>
+                  <Head>
+                  <__next_root_layout_boundary__>
+                    <SegmentViewNode type="layout" pagePath="layout.tsx">
+                      <SegmentTrieNode>
+                      <link>
+                      <script>
+                      <script>
+                      <RootLayout>
+>                       <html lang="en" suppressHydrationWarning={true}>
+                          <header>
+                          <body>
+>                         <script
+>                           defer={true}
+>                           src="https://static.cloudflareinsights.com/beacon.min.js"
+>                           data-cf-beacon={"{\"token\": \"10955f53d5ee4f5880bcbf7725c1febc\"}"}
+>                         >
+                          ...
+                  ...
+
+[00:34:18.211] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[00:34:18.211] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/posts/exploiting-virtual-memory-tricks-every-systems-programmer-should-know","route":"/posts/[slug]"}
+[00:34:18.211] Browser LOG     %c[Vercel Web Analytics]%c [view] http://localhost:3000/posts/exploiting-virtual-memory-tricks-every-systems-programmer-should-know color: rgb(120, 120, 120) color: inherit {"dp":"/posts/[slug]","o":"http://localhost:3000/posts/exploiting-virtual-memory-tricks-every-systems-programmer-should-know","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1772705304838} /_vercel/insights/view
+[00:34:23.689] Server  WARN     ⚠ ./
+Failed to find font override values for font `Bitcount`
+Skipping generating a fallback font.
+
+
+[00:34:23.922] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+[00:34:23.922] Browser LOG     %c[Vercel Web Analytics]%c [view] http://localhost:3000/posts color: rgb(120, 120, 120) color: inherit {"dp":"/posts","o":"http://localhost:3000/posts","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1772705310545} /_vercel/insights/view
+[00:34:57.581] Server  WARN     ⚠ ./
+Failed to find font override values for font `Bitcount`
+Skipping generating a fallback font.
+
+
+[00:34:57.787] Server  LOG      ✓ Compiled in 681ms
+[00:34:57.804] Server  WARN     ⚠ ./
+Failed to find font override values for font `Bitcount`
+Skipping generating a fallback font.
+
+
+[00:34:57.911] Server  LOG      ✓ Compiled in 1ms
+[00:34:58.408] Server  WARN     ⚠ ./
+Failed to find font override values for font `Bitcount`
+Skipping generating a fallback font.
+
+
+[00:34:58.940] Server  WARN     ⚠ ./
+Failed to find font override values for font `Bitcount`
+Skipping generating a fallback font.
+
+
+[00:34:59.129] Browser ERROR   Cannot render a sync or defer <script> outside the main document without knowing its order. Try adding async="" or moving it into the root <head> tag.
+[00:34:59.129] Browser ERROR   In HTML, %s cannot be a child of <%s>.%s
+This will cause a hydration error.%s <header> html  
+
+  ...
+    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>
+      <AppDevOverlayErrorBoundary globalError={[...]}>
+        <ReplaySsrOnlyErrors>
+        <DevRootHTTPAccessFallbackBoundary>
+          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
+            <HTTPAccessFallbackErrorBoundary pathname="/posts" notFound={<NotAllowedRootHTTPFallbackError>} ...>
+              <RedirectBoundary>
+                <RedirectErrorBoundary router={{...}}>
+                  <Head>
+                  <__next_root_layout_boundary__>
+                    <SegmentViewNode type="layout" pagePath="layout.tsx">
+                      <SegmentTrieNode>
+                      <link>
+                      <script>
+                      <script>
+                      <RootLayout>
+>                       <html
+>                         lang="en"
+>                         suppressHydrationWarning={true}
+>                         className="inter_f78823fd-module__vG9ymG__variable"
+>                       >
+>                         <header>
+                          ...
+                  ...
+
+[00:34:59.129] Browser ERROR   In HTML, %s cannot be a child of <%s>.%s
+This will cause a hydration error.%s <script> html  
+
+  ...
+    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>
+      <AppDevOverlayErrorBoundary globalError={[...]}>
+        <ReplaySsrOnlyErrors>
+        <DevRootHTTPAccessFallbackBoundary>
+          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
+            <HTTPAccessFallbackErrorBoundary pathname="/posts" notFound={<NotAllowedRootHTTPFallbackError>} ...>
+              <RedirectBoundary>
+                <RedirectErrorBoundary router={{...}}>
+                  <Head>
+                  <__next_root_layout_boundary__>
+                    <SegmentViewNode type="layout" pagePath="layout.tsx">
+                      <SegmentTrieNode>
+                      <link>
+                      <script>
+                      <script>
+                      <RootLayout>
+>                       <html
+>                         lang="en"
+>                         suppressHydrationWarning={true}
+>                         className="inter_f78823fd-module__vG9ymG__variable"
+>                       >
+                          <header>
+                          <body>
+>                         <script
+>                           defer={true}
+>                           src="https://static.cloudflareinsights.com/beacon.min.js"
+>                           data-cf-beacon={"{\"token\": \"10955f53d5ee4f5880bcbf7725c1febc\"}"}
+>                         >
+                          ...
+                  ...
+
+[00:34:59.352] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[00:34:59.352] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/posts","route":"/posts"}
+[00:34:59.352] Browser LOG     %c[Vercel Web Analytics]%c [view] http://localhost:3000/posts color: rgb(120, 120, 120) color: inherit {"dp":"/posts","o":"http://localhost:3000/posts","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1772705345978} /_vercel/insights/view
+[00:35:08.910] Server  WARN     ⚠ ./
+Failed to find font override values for font `Bitcount`
+Skipping generating a fallback font.
+
+
+[00:35:09.312] Server  WARN     ⚠ ./
+Failed to find font override values for font `Bitcount`
+Skipping generating a fallback font.
+
+
+[00:35:09.489] Browser ERROR   Cannot render a sync or defer <script> outside the main document without knowing its order. Try adding async="" or moving it into the root <head> tag.
+[00:35:09.489] Browser ERROR   In HTML, %s cannot be a child of <%s>.%s
+This will cause a hydration error.%s <header> html  
+
+  ...
+    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>
+      <AppDevOverlayErrorBoundary globalError={[...]}>
+        <ReplaySsrOnlyErrors>
+        <DevRootHTTPAccessFallbackBoundary>
+          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
+            <HTTPAccessFallbackErrorBoundary pathname="/posts" notFound={<NotAllowedRootHTTPFallbackError>} ...>
+              <RedirectBoundary>
+                <RedirectErrorBoundary router={{...}}>
+                  <Head>
+                  <__next_root_layout_boundary__>
+                    <SegmentViewNode type="layout" pagePath="layout.tsx">
+                      <SegmentTrieNode>
+                      <link>
+                      <script>
+                      <script>
+                      <RootLayout>
+>                       <html
+>                         lang="en"
+>                         suppressHydrationWarning={true}
+>                         className="inter_f78823fd-module__vG9ymG__variable"
+>                       >
+>                         <header>
+                          ...
+                  ...
+
+[00:35:09.489] Browser ERROR   In HTML, %s cannot be a child of <%s>.%s
+This will cause a hydration error.%s <script> html  
+
+  ...
+    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>
+      <AppDevOverlayErrorBoundary globalError={[...]}>
+        <ReplaySsrOnlyErrors>
+        <DevRootHTTPAccessFallbackBoundary>
+          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
+            <HTTPAccessFallbackErrorBoundary pathname="/posts" notFound={<NotAllowedRootHTTPFallbackError>} ...>
+              <RedirectBoundary>
+                <RedirectErrorBoundary router={{...}}>
+                  <Head>
+                  <__next_root_layout_boundary__>
+                    <SegmentViewNode type="layout" pagePath="layout.tsx">
+                      <SegmentTrieNode>
+                      <link>
+                      <script>
+                      <script>
+                      <RootLayout>
+>                       <html
+>                         lang="en"
+>                         suppressHydrationWarning={true}
+>                         className="inter_f78823fd-module__vG9ymG__variable"
+>                       >
+                          <header>
+                          <body>
+>                         <script
+>                           defer={true}
+>                           src="https://static.cloudflareinsights.com/beacon.min.js"
+>                           data-cf-beacon={"{\"token\": \"10955f53d5ee4f5880bcbf7725c1febc\"}"}
+>                         >
+                          ...
+                  ...
+
+[00:35:09.688] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[00:35:09.688] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/posts","route":"/posts"}
+[00:35:09.688] Browser LOG     %c[Vercel Web Analytics]%c [view] http://localhost:3000/posts color: rgb(120, 120, 120) color: inherit {"dp":"/posts","o":"http://localhost:3000/posts","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1772705356314} /_vercel/insights/view
+[00:35:11.669] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+[00:35:11.669] Browser LOG     %c[Vercel Web Analytics]%c [view] http://localhost:3000/posts/exploiting-virtual-memory-tricks-every-systems-programmer-should-know color: rgb(120, 120, 120) color: inherit {"dp":"/posts/[slug]","o":"http://localhost:3000/posts/exploiting-virtual-memory-tricks-every-systems-programmer-should-know","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1772705358292} /_vercel/insights/view
+[00:35:40.634] Server  WARN     ⚠ ./
+Failed to find font override values for font `Bitcount`
+Skipping generating a fallback font.
+
+
+[00:35:40.852] Browser LOG     %c[Vercel Web Analytics]%c [view] http://localhost:3000/posts color: rgb(120, 120, 120) color: inherit {"dp":"/posts","o":"http://localhost:3000/posts","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1772705387475} /_vercel/insights/view
+[00:36:52.443] Server  LOG      ✓ Compiled in 236ms
+[00:36:52.585] Server  WARN     ⚠ ./
+Failed to find font override values for font `Bitcount`
+Skipping generating a fallback font.
+
+
+[00:38:10.100] Server  WARN     ⚠ ./
+Failed to find font override values for font `Bitcount`
+Skipping generating a fallback font.
+
+
+[00:39:37.724] Server  LOG      ✓ Compiled in 311ms
+[00:40:37.969] Browser LOG     %c[Vercel Web Analytics]%c [view] http://localhost:3000/posts/exploiting-virtual-memory-tricks-every-systems-programmer-should-know color: rgb(120, 120, 120) color: inherit {"dp":"/posts/[slug]","o":"http://localhost:3000/posts/exploiting-virtual-memory-tricks-every-systems-programmer-should-know","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1772705684587} /_vercel/insights/view
+[00:40:47.701] Browser LOG     %c[Vercel Web Analytics]%c [view] http://localhost:3000/posts color: rgb(120, 120, 120) color: inherit {"dp":"/posts","o":"http://localhost:3000/posts","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1772705694326} /_vercel/insights/view
+[00:40:54.892] Browser LOG     %c[Vercel Web Analytics]%c [view] http://localhost:3000/posts/inline-assembly-and-compiler-intrinsics-for-performance color: rgb(120, 120, 120) color: inherit {"dp":"/posts/[slug]","o":"http://localhost:3000/posts/inline-assembly-and-compiler-intrinsics-for-performance","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1772705701517} /_vercel/insights/view
+[00:41:33.646] Server  LOG      ✓ Compiled in 116ms
+[00:42:36.425] Server  ERROR    ⨯ ReferenceError: ChevronLeftIcon is not defined
+[00:42:52.529] Server  WARN     ⚠ ./
+Failed to find font override values for font `Bitcount`
+Skipping generating a fallback font.
+
+
+[00:42:52.761] Browser ERROR   Cannot render a sync or defer <script> outside the main document without knowing its order. Try adding async="" or moving it into the root <head> tag.
+[00:42:52.761] Browser ERROR   In HTML, %s cannot be a child of <%s>.%s
+This will cause a hydration error.%s <header> html  
+
+  ...
+    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>
+      <AppDevOverlayErrorBoundary globalError={[...]}>
+        <ReplaySsrOnlyErrors>
+        <DevRootHTTPAccessFallbackBoundary>
+          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
+            <HTTPAccessFallbackErrorBoundary pathname="/posts/inl..." notFound={<NotAllowedRootHTTPFallbackError>} ...>
+              <RedirectBoundary>
+                <RedirectErrorBoundary router={{...}}>
+                  <Head>
+                  <__next_root_layout_boundary__>
+                    <SegmentViewNode type="layout" pagePath="layout.tsx">
+                      <SegmentTrieNode>
+                      <link>
+                      <script>
+                      <script>
+                      <RootLayout>
+>                       <html
+>                         lang="en"
+>                         suppressHydrationWarning={true}
+>                         className="inter_f78823fd-module__vG9ymG__variable"
+>                       >
+>                         <header>
+                          ...
+                  ...
+
+[00:42:52.761] Browser ERROR   In HTML, %s cannot be a child of <%s>.%s
+This will cause a hydration error.%s <script> html  
+
+  ...
+    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>
+      <AppDevOverlayErrorBoundary globalError={[...]}>
+        <ReplaySsrOnlyErrors>
+        <DevRootHTTPAccessFallbackBoundary>
+          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
+            <HTTPAccessFallbackErrorBoundary pathname="/posts/inl..." notFound={<NotAllowedRootHTTPFallbackError>} ...>
+              <RedirectBoundary>
+                <RedirectErrorBoundary router={{...}}>
+                  <Head>
+                  <__next_root_layout_boundary__>
+                    <SegmentViewNode type="layout" pagePath="layout.tsx">
+                      <SegmentTrieNode>
+                      <link>
+                      <script>
+                      <script>
+                      <RootLayout>
+>                       <html
+>                         lang="en"
+>                         suppressHydrationWarning={true}
+>                         className="inter_f78823fd-module__vG9ymG__variable"
+>                       >
+                          <header>
+                          <body>
+>                         <script
+>                           defer={true}
+>                           src="https://static.cloudflareinsights.com/beacon.min.js"
+>                           data-cf-beacon={"{\"token\": \"10955f53d5ee4f5880bcbf7725c1febc\"}"}
+>                         >
+                          ...
+                  ...
+
+[00:42:52.936] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[00:42:52.937] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/posts/inline-assembly-and-compiler-intrinsics-for-performance","route":"/posts/[slug]"}
+[00:42:52.937] Browser LOG     %c[Vercel Web Analytics]%c [view] http://localhost:3000/posts/inline-assembly-and-compiler-intrinsics-for-performance color: rgb(120, 120, 120) color: inherit {"dp":"/posts/[slug]","o":"http://localhost:3000/posts/inline-assembly-and-compiler-intrinsics-for-performance","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1772705819563} /_vercel/insights/view
+[00:43:12.271] Server  WARN     ⚠ ./
+Failed to find font override values for font `Bitcount`
+Skipping generating a fallback font.
+
+
+[00:43:12.301] Browser ERROR   Cannot render a sync or defer <script> outside the main document without knowing its order. Try adding async="" or moving it into the root <head> tag.
+[00:43:12.409] Browser ERROR   In HTML, %s cannot be a child of <%s>.%s
+This will cause a hydration error.%s <header> html  
+
+  ...
+    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>
+      <AppDevOverlayErrorBoundary globalError={[...]}>
+        <ReplaySsrOnlyErrors>
+        <DevRootHTTPAccessFallbackBoundary>
+          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
+            <HTTPAccessFallbackErrorBoundary pathname="/posts/inl..." notFound={<NotAllowedRootHTTPFallbackError>} ...>
+              <RedirectBoundary>
+                <RedirectErrorBoundary router={{...}}>
+                  <Head>
+                  <__next_root_layout_boundary__>
+                    <SegmentViewNode type="layout" pagePath="layout.tsx">
+                      <SegmentTrieNode>
+                      <link>
+                      <script>
+                      <script>
+                      <RootLayout>
+>                       <html
+>                         lang="en"
+>                         suppressHydrationWarning={true}
+>                         className="inter_f78823fd-module__vG9ymG__variable"
+>                       >
+>                         <header>
+                          ...
+                  ...
+
+[00:43:12.409] Browser ERROR   In HTML, %s cannot be a child of <%s>.%s
+This will cause a hydration error.%s <script> html  
+
+  ...
+    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>
+      <AppDevOverlayErrorBoundary globalError={[...]}>
+        <ReplaySsrOnlyErrors>
+        <DevRootHTTPAccessFallbackBoundary>
+          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
+            <HTTPAccessFallbackErrorBoundary pathname="/posts/inl..." notFound={<NotAllowedRootHTTPFallbackError>} ...>
+              <RedirectBoundary>
+                <RedirectErrorBoundary router={{...}}>
+                  <Head>
+                  <__next_root_layout_boundary__>
+                    <SegmentViewNode type="layout" pagePath="layout.tsx">
+                      <SegmentTrieNode>
+                      <link>
+                      <script>
+                      <script>
+                      <RootLayout>
+>                       <html
+>                         lang="en"
+>                         suppressHydrationWarning={true}
+>                         className="inter_f78823fd-module__vG9ymG__variable"
+>                       >
+                          <header>
+                          <body>
+>                         <script
+>                           defer={true}
+>                           src="https://static.cloudflareinsights.com/beacon.min.js"
+>                           data-cf-beacon={"{\"token\": \"10955f53d5ee4f5880bcbf7725c1febc\"}"}
+>                         >
+                          ...
+                  ...
+
+[00:43:12.608] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[00:43:12.608] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/posts/inline-assembly-and-compiler-intrinsics-for-performance","route":"/posts/[slug]"}
+[00:43:12.608] Browser LOG     %c[Vercel Web Analytics]%c [view] http://localhost:3000/posts/inline-assembly-and-compiler-intrinsics-for-performance color: rgb(120, 120, 120) color: inherit {"dp":"/posts/[slug]","o":"http://localhost:3000/posts/inline-assembly-and-compiler-intrinsics-for-performance","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1772705839235} /_vercel/insights/view
+[00:44:31.138] Server  WARN     ⚠ ./
+Failed to find font override values for font `Bitcount`
+Skipping generating a fallback font.
+
+
+[00:44:31.331] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+[00:44:31.331] Browser LOG     %c[Vercel Web Analytics]%c [view] http://localhost:3000/posts color: rgb(120, 120, 120) color: inherit {"dp":"/posts","o":"http://localhost:3000/posts","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1772705917954} /_vercel/insights/view
+[00:44:37.524] Server  WARN     ⚠ ./
+Failed to find font override values for font `Bitcount`
+Skipping generating a fallback font.
+
+
+[00:44:37.860] Browser LOG     %c[Vercel Web Analytics]%c [view] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1772705924482} /_vercel/insights/view
+[00:44:40.264] Server  WARN     ⚠ ./
+Failed to find font override values for font `Bitcount`
+Skipping generating a fallback font.
+
+
+[00:44:40.446] Browser LOG     %c[Vercel Web Analytics]%c [view] http://localhost:3000/posts color: rgb(120, 120, 120) color: inherit {"dp":"/posts","o":"http://localhost:3000/posts","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1772705927071} /_vercel/insights/view
+[00:44:43.666] Browser LOG     %c[Vercel Web Analytics]%c [view] http://localhost:3000/posts/inline-assembly-and-compiler-intrinsics-for-performance color: rgb(120, 120, 120) color: inherit {"dp":"/posts/[slug]","o":"http://localhost:3000/posts/inline-assembly-and-compiler-intrinsics-for-performance","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1772705930291} /_vercel/insights/view
+[00:44:50.530] Browser LOG     %c[Vercel Web Analytics]%c [view] http://localhost:3000/posts color: rgb(120, 120, 120) color: inherit {"dp":"/posts","o":"http://localhost:3000/posts","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1772705937155} /_vercel/insights/view

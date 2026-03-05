@@ -163,6 +163,7 @@
 /* Smooth scroll behavior */
 html {
     scroll-behavior: smooth;
+    overflow-x: clip; /* prevent horizontal scrollbar from floating margin callouts */
 }
 
 /* Selection styling */
@@ -379,56 +380,162 @@ html {
 }
 
 /* ============================================
-   BLOG CONTENT — Dark Terminal Monospace Style
-   with side margin-note callouts
+   BLOG — Theme-aware CSS variables
+   All blog colours go through these so light
+   and dark mode Just Work.
+   ============================================ */
+
+:root {
+    /* --- blog palette (light) --- */
+    --blog-bg: oklch(0.985 0 0);
+    --blog-bg-elevated: oklch(0.97 0 0);
+    --blog-bg-sunken: oklch(0.96 0 0);
+    --blog-fg: oklch(0.18 0 0);
+    --blog-fg-muted: oklch(0.45 0 0);
+    --blog-fg-faint: oklch(0.65 0 0);
+    --blog-border: oklch(0.9 0 0);
+    --blog-border-bold: oklch(0.82 0 0);
+    --blog-accent: oklch(0.5 0.22 290); /* violet */
+    --blog-accent-fg: oklch(0.42 0.26 290);
+    --blog-code-bg: oklch(0.96 0 0);
+    --blog-code-fg: oklch(0.42 0.26 290);
+    --blog-pre-bg: oklch(0.14 0 0);
+    --blog-pre-fg: oklch(0.92 0 0);
+    --blog-pre-header: oklch(0.18 0 0);
+    --blog-note: oklch(0.6 0.18 75); /* amber */
+    --blog-warn: oklch(0.55 0.22 28); /* red-orange */
+    --blog-error: oklch(0.55 0.24 28); /* red */
+    --blog-tip: oklch(0.55 0.18 155); /* green */
+    --blog-def: oklch(0.52 0.16 250); /* blue */
+    --blog-selection-bg: oklch(0.5 0.22 290);
+    --blog-selection-fg: #fff;
+    --blog-grid-line: oklch(0.92 0 0);
+}
+
+.dark {
+    --blog-bg: oklch(0.1 0 0);
+    --blog-bg-elevated: oklch(0.13 0 0);
+    --blog-bg-sunken: oklch(0.08 0.005 280);
+    --blog-fg: oklch(0.85 0 0);
+    --blog-fg-muted: oklch(0.55 0 0);
+    --blog-fg-faint: oklch(0.35 0 0);
+    --blog-border: oklch(0.2 0 0);
+    --blog-border-bold: oklch(0.28 0 0);
+    --blog-accent: oklch(0.62 0.24 290);
+    --blog-accent-fg: oklch(0.76 0.18 290);
+    --blog-code-bg: oklch(0.16 0.005 280);
+    --blog-code-fg: oklch(0.78 0.14 300);
+    --blog-pre-bg: oklch(0.1 0.005 280);
+    --blog-pre-fg: oklch(0.9 0 0);
+    --blog-pre-header: oklch(0.15 0.005 280);
+    --blog-note: oklch(0.72 0.16 75);
+    --blog-warn: oklch(0.68 0.22 25);
+    --blog-error: oklch(0.68 0.24 25);
+    --blog-tip: oklch(0.68 0.18 155);
+    --blog-def: oklch(0.68 0.14 250);
+    --blog-selection-bg: oklch(0.5 0.22 290);
+    --blog-selection-fg: #fff;
+    --blog-grid-line: oklch(0.16 0 0);
+}
+
+/* ============================================
+   BLOG CONTENT — Theme-aware monospace style
+   with floating side callouts
    ============================================ */
 
 .blog-content {
     font-family:
-        "Geist Mono", "JetBrains Mono", "Fira Code", "SF Mono", "Cascadia Code",
-        ui-monospace, monospace;
-    font-size: 0.9375rem;
-    line-height: 1.85;
-    color: #c9d1d9;
+        var(--font-inter),
+        "Inter",
+        "Geist",
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Roboto,
+        Oxygen,
+        Ubuntu,
+        Cantarell,
+        "Helvetica Neue",
+        sans-serif;
+    font-size: 1rem;
+    line-height: 1.8;
+    color: var(--blog-fg);
     position: relative;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 /* --- Headings --- */
 
 .blog-content h1 {
-    font-size: 2rem;
+    font-family:
+        var(--font-inter),
+        "Inter",
+        "Geist",
+        -apple-system,
+        BlinkMacSystemFont,
+        sans-serif;
+    font-size: 2.25rem;
     font-weight: 700;
-    color: #e6edf3;
-    letter-spacing: -0.02em;
+    color: var(--blog-fg);
+    letter-spacing: -0.035em;
+    line-height: 1.2;
     margin-top: 3.5rem;
     margin-bottom: 1.25rem;
     padding-bottom: 0.75rem;
-    border-bottom: 1px solid #1c1e26;
+    border-bottom: 1px solid var(--blog-border);
 }
 
 .blog-content h2 {
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: #e6edf3;
-    letter-spacing: -0.01em;
+    font-family:
+        var(--font-inter),
+        "Inter",
+        "Geist",
+        -apple-system,
+        BlinkMacSystemFont,
+        sans-serif;
+    font-size: 1.625rem;
+    font-weight: 650;
+    color: var(--blog-fg);
+    letter-spacing: -0.025em;
+    line-height: 1.25;
     margin-top: 3rem;
     margin-bottom: 1rem;
     padding-bottom: 0.6rem;
-    border-bottom: 1px solid #1c1e26;
+    border-bottom: 1px solid var(--blog-border);
 }
 
 .blog-content h3 {
-    font-size: 1.2rem;
-    font-weight: 600;
-    color: #e6edf3;
+    font-family:
+        var(--font-inter),
+        "Inter",
+        "Geist",
+        -apple-system,
+        BlinkMacSystemFont,
+        sans-serif;
+    font-size: 1.3rem;
+    font-weight: 625;
+    color: var(--blog-fg);
+    letter-spacing: -0.015em;
+    line-height: 1.3;
     margin-top: 2.25rem;
     margin-bottom: 0.75rem;
 }
 
 .blog-content h4 {
-    font-size: 1.05rem;
+    font-family:
+        var(--font-inter),
+        "Inter",
+        "Geist",
+        -apple-system,
+        BlinkMacSystemFont,
+        sans-serif;
+    font-size: 1.1rem;
     font-weight: 600;
-    color: #c9d1d9;
+    color: var(--blog-fg);
+    letter-spacing: -0.01em;
+    line-height: 1.35;
     margin-top: 1.75rem;
     margin-bottom: 0.5rem;
 }
@@ -436,34 +543,37 @@ html {
 /* --- Paragraphs --- */
 
 .blog-content p {
-    color: #c9d1d9;
-    margin-bottom: 1.25rem;
-    line-height: 1.85;
+    color: var(--blog-fg);
+    margin-bottom: 1.35rem;
+    line-height: 1.8;
+    letter-spacing: -0.003em;
 }
 
 /* --- Links --- */
 
 .blog-content a {
-    color: #e6edf3;
+    color: var(--blog-fg);
     text-decoration: underline;
     text-underline-offset: 3px;
-    text-decoration-color: #6e40c9;
+    text-decoration-color: var(--blog-accent);
     transition: all 0.2s ease;
 }
 
 .blog-content a:hover {
-    color: #ffffff;
-    text-decoration-color: #8957e5;
+    color: var(--blog-accent-fg);
+    text-decoration-color: var(--blog-accent-fg);
 }
 
 /* --- Inline code (badges like nodes/proxy GET) --- */
 
 .blog-content code {
-    font-family: inherit;
+    font-family:
+        "Geist Mono", "JetBrains Mono", "Fira Code", "SF Mono", "Cascadia Code",
+        ui-monospace, monospace;
     font-size: 0.825em;
-    background: #1c1e26;
-    color: #d2a8ff;
-    border: 1px solid #2d333b;
+    background: var(--blog-code-bg);
+    color: var(--blog-code-fg);
+    border: 1px solid var(--blog-border-bold);
     border-radius: 4px;
     padding: 0.15em 0.45em;
     font-weight: 500;
@@ -471,34 +581,37 @@ html {
 }
 
 /* =============================================
-   CODE BLOCKS — with header bar, lang, copy btn
+   CODE BLOCKS — header bar, lang label, copy
    ============================================= */
 
 .blog-content .code-block-wrapper {
     position: relative;
     margin: 1.75rem 0;
-    border: 1px solid #1c1e26;
-    border-left: 3px solid #6e40c9;
+    border: 1px solid var(--blog-border);
+    border-left: 3px solid var(--blog-accent);
     border-radius: 8px;
     overflow: hidden;
-    background: #0d1117;
+    background: var(--blog-pre-bg);
 }
 
 .blog-content .code-block-header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background: #161b22;
-    border-bottom: 1px solid #1c1e26;
+    background: var(--blog-pre-header);
+    border-bottom: 1px solid var(--blog-border);
     padding: 6px 16px;
+    font-family:
+        "Geist Mono", "JetBrains Mono", "Fira Code", ui-monospace, monospace;
 }
 
 .blog-content .code-block-lang {
     font-size: 0.65rem;
     font-weight: 600;
-    color: #7d8590;
+    color: var(--blog-fg-muted);
     letter-spacing: 0.08em;
     text-transform: uppercase;
+    font-family: inherit;
 }
 
 .blog-content .code-block-meta {
@@ -506,25 +619,27 @@ html {
     align-items: center;
     gap: 8px;
     font-size: 0.625rem;
-    color: #4d5566;
+    color: var(--blog-fg-faint);
     letter-spacing: 0.03em;
     text-transform: uppercase;
+    font-family: inherit;
 }
 
 .blog-content .code-block-lines {
-    color: #4d5566;
+    color: var(--blog-fg-faint);
 }
 
 .blog-content .code-block-separator {
-    color: #2d333b;
+    color: var(--blog-border-bold);
 }
 
 .blog-content .code-block-copy {
     background: none;
-    border: 1px solid #2d333b;
+    border: 1px solid var(--blog-border-bold);
     border-radius: 3px;
-    color: #7d8590;
-    font-family: inherit;
+    color: var(--blog-fg-muted);
+    font-family:
+        "Geist Mono", "JetBrains Mono", "Fira Code", ui-monospace, monospace;
     font-size: 0.6rem;
     font-weight: 600;
     letter-spacing: 0.1em;
@@ -534,12 +649,12 @@ html {
 }
 
 .blog-content .code-block-copy:hover {
-    color: #e6edf3;
-    border-color: #6e40c9;
-    background: rgba(110, 64, 201, 0.1);
+    color: var(--blog-pre-fg);
+    border-color: var(--blog-accent);
+    background: color-mix(in oklch, var(--blog-accent) 12%, transparent);
 }
 
-/* The actual pre/code inside wrapper */
+/* pre/code inside wrapper */
 .blog-content .code-block-wrapper pre {
     margin: 0;
     border: none;
@@ -554,9 +669,12 @@ html {
     border: none;
     border-radius: 0;
     padding: 1rem 1.25rem;
+    font-family:
+        "Geist Mono", "JetBrains Mono", "Fira Code", "SF Mono", "Cascadia Code",
+        ui-monospace, monospace;
     font-size: 0.8125rem;
     line-height: 1.7;
-    color: #e6edf3;
+    color: var(--blog-pre-fg);
     overflow-x: auto;
     white-space: pre;
     -webkit-overflow-scrolling: touch;
@@ -565,9 +683,9 @@ html {
 /* Fallback: bare pre blocks (no wrapper) */
 .blog-content > pre {
     position: relative;
-    background: #0d1117;
-    border: 1px solid #1c1e26;
-    border-left: 3px solid #6e40c9;
+    background: var(--blog-pre-bg);
+    border: 1px solid var(--blog-border);
+    border-left: 3px solid var(--blog-accent);
     border-radius: 8px;
     padding: 0;
     margin: 1.75rem 0;
@@ -580,9 +698,12 @@ html {
     border: none;
     border-radius: 0;
     padding: 1rem 1.25rem;
+    font-family:
+        "Geist Mono", "JetBrains Mono", "Fira Code", "SF Mono", "Cascadia Code",
+        ui-monospace, monospace;
     font-size: 0.8125rem;
     line-height: 1.7;
-    color: #e6edf3;
+    color: var(--blog-pre-fg);
     overflow-x: auto;
     white-space: pre;
 }
@@ -593,80 +714,91 @@ html {
 }
 
 .blog-content pre code::-webkit-scrollbar-track {
-    background: #0d1117;
+    background: var(--blog-pre-bg);
 }
 
 .blog-content pre code::-webkit-scrollbar-thumb {
-    background: #2d333b;
+    background: var(--blog-border-bold);
     border-radius: 3px;
 }
 
 .blog-content pre code::-webkit-scrollbar-thumb:hover {
-    background: #444c56;
+    background: var(--blog-fg-faint);
 }
 
 /* ==============================================
-   MARGIN CALLOUTS — Side-positioned notes
-   Styled like the reference: right-aligned text
-   on the left margin, italic, with a dash line
-   connecting to the main content column.
+   FLOATING SIDE CALLOUTS
+   ──────────────────────────────────────────────
+   On wide screens (≥ 1280 px) the callout floats
+   to the RIGHT of the content column.  A thin
+   diagonal "pointer" line connects it back to the
+   inline position where the blockquote sat.
+
+   On narrower screens it collapses to a bordered
+   inline card with a coloured left accent.
    ============================================== */
 
 .blog-content .margin-callout {
+    /* inline-card default (< 1280 px) */
     position: relative;
-    display: grid;
-    grid-template-columns: 200px 1fr;
-    gap: 0;
-    margin: 2.25rem 0;
-    margin-left: -232px;
-    width: calc(100% + 232px);
-    align-items: start;
+    margin: 1.5rem 0;
+    padding: 0.85rem 1rem 0.85rem 1.15rem;
+    border-radius: 6px;
+    background: var(--blog-bg-elevated);
+    border: 1px solid var(--blog-border);
+    border-left: 3px solid var(--blog-note); /* default colour, overridden per type */
 }
 
+/* --- label row (always visible) --- */
+.blog-content .margin-callout .margin-callout-label {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 0.35rem;
+}
+
+.blog-content .margin-callout .margin-callout-label-text {
+    font-family:
+        var(--font-inter),
+        "Inter",
+        "Geist",
+        -apple-system,
+        BlinkMacSystemFont,
+        sans-serif;
+    font-size: 0.6875rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    font-style: normal;
+}
+
+/* hide the dash on small screens; it becomes the pointer arc on wide */
+.blog-content .margin-callout .margin-callout-dash {
+    display: none;
+}
+
+/* inner wrapper — just pass through */
 .blog-content .margin-callout .margin-callout-inner {
     display: contents;
 }
 
-/* Left column: label + dash line */
-.blog-content .margin-callout .margin-callout-label {
-    display: flex;
-    align-items: flex-start;
-    justify-content: flex-end;
-    gap: 0;
-    padding-top: 4px;
-    order: -1;
-}
-
-.blog-content .margin-callout .margin-callout-label-text {
-    font-size: 0.8125rem;
-    font-weight: 700;
-    font-style: italic;
-    letter-spacing: 0.02em;
-    white-space: nowrap;
-    text-align: right;
-    flex-shrink: 0;
-}
-
-/* The horizontal dash connecting label to content */
-.blog-content .margin-callout .margin-callout-dash {
-    display: inline-block;
-    width: 32px;
-    height: 1px;
-    margin-left: 10px;
-    margin-top: 0.6em;
-    flex-shrink: 0;
-}
-
-/* Right column: the actual note content */
+/* --- body content --- */
 .blog-content .margin-callout .margin-callout-body {
-    padding-left: 0;
+    display: block;
 }
 
 .blog-content .margin-callout .margin-callout-content {
+    font-family:
+        var(--font-inter),
+        "Inter",
+        "Geist",
+        -apple-system,
+        BlinkMacSystemFont,
+        sans-serif;
     font-size: 0.8125rem;
     font-style: italic;
     line-height: 1.6;
-    color: #7d8590;
+    color: var(--blog-fg-muted);
 }
 
 .blog-content .margin-callout .margin-callout-content p {
@@ -684,56 +816,221 @@ html {
     font-size: 0.8em;
 }
 
-/* --- Callout type: Note (default) --- */
-.blog-content .callout-note .margin-callout-label-text {
-    color: #d29922;
+/* ── colour per callout type ── */
+
+/* Note (default) */
+.blog-content .callout-note {
+    border-left-color: var(--blog-note);
 }
-.blog-content .callout-note .margin-callout-dash {
-    background: #d29922;
+.blog-content .callout-note .margin-callout-label-text {
+    color: var(--blog-note);
 }
 
-/* --- Callout type: Warning --- */
-.blog-content .callout-warning .margin-callout-label-text {
-    color: #f85149;
+/* Warning */
+.blog-content .callout-warning {
+    border-left-color: var(--blog-warn);
 }
-.blog-content .callout-warning .margin-callout-dash {
-    background: #f85149;
+.blog-content .callout-warning .margin-callout-label-text {
+    color: var(--blog-warn);
 }
 .blog-content .callout-warning .margin-callout-content {
-    color: #f8878f;
+    color: var(--blog-warn);
 }
 
-/* --- Callout type: Definition --- */
+/* Definition */
+.blog-content .callout-definition {
+    border-left-color: var(--blog-def);
+}
 .blog-content .callout-definition .margin-callout-label-text {
-    color: #58a6ff;
-}
-.blog-content .callout-definition .margin-callout-dash {
-    background: #58a6ff;
-}
-.blog-content .callout-definition .margin-callout-content {
-    color: #8b949e;
+    color: var(--blog-def);
 }
 
-/* --- Callout type: Error --- */
-.blog-content .callout-error .margin-callout-label-text {
-    color: #f85149;
+/* Error */
+.blog-content .callout-error {
+    border-left-color: var(--blog-error);
 }
-.blog-content .callout-error .margin-callout-dash {
-    background: #f85149;
+.blog-content .callout-error .margin-callout-label-text {
+    color: var(--blog-error);
 }
 .blog-content .callout-error .margin-callout-content {
-    color: #f8878f;
+    color: var(--blog-error);
 }
 
-/* --- Callout type: Tip --- */
-.blog-content .callout-tip .margin-callout-label-text {
-    color: #3fb950;
+/* Tip */
+.blog-content .callout-tip {
+    border-left-color: var(--blog-tip);
 }
-.blog-content .callout-tip .margin-callout-dash {
-    background: #3fb950;
+.blog-content .callout-tip .margin-callout-label-text {
+    color: var(--blog-tip);
 }
 .blog-content .callout-tip .margin-callout-content {
-    color: #7ee787;
+    color: var(--blog-tip);
+}
+
+/* ── Wide-screen floating mode (≥ 1280 px) ────
+   Callouts alternate LEFT and RIGHT margins.
+   Odd callouts → right, even callouts → left.
+   clear: both prevents overlap; they stack
+   vertically if they would collide.
+
+   A curved dashed "pointer" arc connects the
+   callout back to the content edge.
+   ───────────────────────────────────────────── */
+
+@media (min-width: 1280px) {
+    /* ── Base: all callouts float + shared reset ── */
+    .blog-content .margin-callout {
+        width: 210px;
+        padding: 0;
+        background: transparent;
+        border: none;
+        border-left: none;
+        border-radius: 0;
+        position: relative;
+        clear: both; /* prevents any overlap between consecutive callouts */
+        margin-bottom: 1.5rem;
+    }
+
+    /* ── ODD callouts → float RIGHT ── */
+    .blog-content .margin-callout:nth-of-type(odd) {
+        float: right;
+        margin: 0 -255px 1.5rem 1.5rem;
+    }
+
+    /* ── EVEN callouts → float LEFT ── */
+    .blog-content .margin-callout:nth-of-type(even) {
+        float: left;
+        margin: 0 1.5rem 1.5rem -255px;
+    }
+
+    /* Label text: bold italic */
+    .blog-content .margin-callout .margin-callout-label {
+        margin-bottom: 0.3rem;
+    }
+
+    .blog-content .margin-callout .margin-callout-label-text {
+        font-size: 0.75rem;
+        font-weight: 800;
+        font-style: italic;
+        letter-spacing: 0.06em;
+    }
+
+    /* ── The pointer arc — curved dashed connector ──
+       Uses a transparent box with one curved dashed border
+       to draw a smooth arc from the callout toward the content edge.
+       The box is positioned absolutely and uses border-radius
+       to create the curve effect. */
+
+    .blog-content .margin-callout .margin-callout-dash {
+        display: block;
+        position: absolute;
+        width: 36px;
+        height: 22px;
+        background: transparent;
+        /* reset any old solid background */
+        transform: none;
+    }
+
+    /* RIGHT-side callouts (odd): arc curves from left edge of callout toward content */
+    .blog-content .margin-callout:nth-of-type(odd) .margin-callout-dash {
+        left: -40px;
+        top: 6px;
+        border-top: none;
+        border-right: none;
+        border-left: none;
+        border-bottom: 2px dashed var(--callout-dash-color, var(--blog-note));
+        border-radius: 0 0 0 24px;
+    }
+
+    /* LEFT-side callouts (even): arc curves from right edge of callout toward content */
+    .blog-content .margin-callout:nth-of-type(even) .margin-callout-dash {
+        right: -40px;
+        left: auto;
+        top: 6px;
+        border-top: none;
+        border-left: none;
+        border-right: none;
+        border-bottom: 2px dashed var(--callout-dash-color, var(--blog-note));
+        border-radius: 0 0 24px 0;
+    }
+
+    /* ── Left-side callout: flip label to right-align ── */
+    .blog-content .margin-callout:nth-of-type(even) .margin-callout-label {
+        justify-content: flex-end;
+    }
+
+    .blog-content .margin-callout:nth-of-type(even) .margin-callout-content {
+        text-align: right;
+    }
+
+    /* ── Pointer arc colours per callout type ── */
+    .blog-content .callout-note {
+        --callout-dash-color: var(--blog-note);
+    }
+    .blog-content .callout-warning {
+        --callout-dash-color: var(--blog-warn);
+    }
+    .blog-content .callout-definition {
+        --callout-dash-color: var(--blog-def);
+    }
+    .blog-content .callout-error {
+        --callout-dash-color: var(--blog-error);
+    }
+    .blog-content .callout-tip {
+        --callout-dash-color: var(--blog-tip);
+    }
+
+    /* Also add a small dot at the arc endpoint touching the content edge,
+       giving a clear "anchor" feel */
+    .blog-content .margin-callout .margin-callout-dash::after {
+        content: "";
+        position: absolute;
+        width: 5px;
+        height: 5px;
+        border-radius: 50%;
+        background: var(--callout-dash-color, var(--blog-note));
+    }
+
+    /* Dot position for right-side callouts (odd): dot at left end of arc */
+    .blog-content .margin-callout:nth-of-type(odd) .margin-callout-dash::after {
+        left: -1px;
+        bottom: -3px;
+    }
+
+    /* Dot position for left-side callouts (even): dot at right end of arc */
+    .blog-content
+        .margin-callout:nth-of-type(even)
+        .margin-callout-dash::after {
+        right: -1px;
+        left: auto;
+        bottom: -3px;
+    }
+
+    /* Smaller text in the floating card */
+    .blog-content .margin-callout .margin-callout-content {
+        font-size: 0.72rem;
+        line-height: 1.5;
+    }
+}
+
+/* ── Extra-wide screens (≥ 1536 px) — give more room ── */
+@media (min-width: 1536px) {
+    .blog-content .margin-callout:nth-of-type(odd) {
+        margin-right: -290px;
+        width: 240px;
+    }
+    .blog-content .margin-callout:nth-of-type(even) {
+        margin-left: -290px;
+        width: 240px;
+    }
+    .blog-content .margin-callout:nth-of-type(odd) .margin-callout-dash {
+        width: 42px;
+        left: -46px;
+    }
+    .blog-content .margin-callout:nth-of-type(even) .margin-callout-dash {
+        width: 42px;
+        right: -46px;
+    }
 }
 
 /* --- Lists --- */
@@ -753,14 +1050,15 @@ html {
 }
 
 .blog-content li {
-    color: #c9d1d9;
+    color: var(--blog-fg);
     margin-bottom: 0.5rem;
     line-height: 1.75;
     padding-left: 0.25rem;
+    letter-spacing: -0.003em;
 }
 
 .blog-content li::marker {
-    color: #6e40c9;
+    color: var(--blog-accent);
 }
 
 .blog-content ul ul,
@@ -774,14 +1072,14 @@ html {
 /* --- Bold text --- */
 
 .blog-content strong {
-    color: #e6edf3;
-    font-weight: 700;
+    color: var(--blog-fg);
+    font-weight: 650;
 }
 
 /* --- Emphasis --- */
 
 .blog-content em {
-    color: #8b949e;
+    color: var(--blog-fg-muted);
     font-style: italic;
 }
 
@@ -789,7 +1087,7 @@ html {
 
 .blog-content hr {
     border: none;
-    border-top: 1px solid #1c1e26;
+    border-top: 1px solid var(--blog-border);
     margin: 2.5rem 0;
 }
 
@@ -805,30 +1103,44 @@ html {
     width: 100%;
     border-collapse: collapse;
     font-size: 0.85rem;
-    border: 1px solid #1c1e26;
+    font-family:
+        var(--font-inter),
+        "Inter",
+        "Geist",
+        -apple-system,
+        BlinkMacSystemFont,
+        sans-serif;
+    border: 1px solid var(--blog-border);
     border-radius: 6px;
     overflow: hidden;
 }
 
 .blog-content thead {
-    background: #161b22;
+    background: var(--blog-bg-elevated);
 }
 
 .blog-content th {
     padding: 0.75rem 1rem;
     text-align: left;
     font-weight: 600;
-    color: #e6edf3;
-    border-bottom: 2px solid #1c1e26;
-    font-size: 0.8rem;
-    letter-spacing: 0.03em;
+    color: var(--blog-fg);
+    border-bottom: 2px solid var(--blog-border);
+    font-size: 0.75rem;
+    letter-spacing: 0.04em;
     text-transform: uppercase;
+    font-family:
+        var(--font-inter),
+        "Inter",
+        "Geist",
+        -apple-system,
+        BlinkMacSystemFont,
+        sans-serif;
 }
 
 .blog-content td {
     padding: 0.65rem 1rem;
-    border-bottom: 1px solid #1c1e26;
-    color: #c9d1d9;
+    border-bottom: 1px solid var(--blog-border);
+    color: var(--blog-fg);
 }
 
 .blog-content tr:last-child td {
@@ -836,7 +1148,7 @@ html {
 }
 
 .blog-content tbody tr:hover {
-    background: #0d1117;
+    background: var(--blog-bg-sunken);
 }
 
 /* --- Images --- */
@@ -845,66 +1157,31 @@ html {
     max-width: 100%;
     height: auto;
     border-radius: 8px;
-    border: 1px solid #1c1e26;
+    border: 1px solid var(--blog-border);
     margin: 2rem 0;
 }
 
 /* --- Selection --- */
 
 .blog-content ::selection {
-    background: #6e40c9;
-    color: #ffffff;
+    background: var(--blog-selection-bg);
+    color: var(--blog-selection-fg);
 }
 
 /* --- First paragraph after heading — slightly larger --- */
 
 .blog-content h2 + p,
 .blog-content h3 + p {
-    font-size: 0.95rem;
+    font-size: 1.0125rem;
 }
 
 /* ==================================================
-   RESPONSIVE: margin callouts become inline on small
-   screens, code blocks scale down
+   RESPONSIVE
    ================================================== */
-
-/* Below 1200px: not enough room for margin overflow,
-   collapse to stacked inline layout */
-@media (max-width: 1200px) {
-    .blog-content .margin-callout {
-        display: flex;
-        flex-direction: column;
-        margin-left: 0;
-        width: 100%;
-        gap: 0;
-        background: #0d1117;
-        border: 1px solid #1c1e26;
-        border-radius: 6px;
-        padding: 1rem 1.25rem;
-    }
-
-    .blog-content .margin-callout .margin-callout-inner {
-        display: contents;
-    }
-
-    .blog-content .margin-callout .margin-callout-label {
-        justify-content: flex-start;
-        margin-bottom: 0.4rem;
-        padding-top: 0;
-    }
-
-    .blog-content .margin-callout .margin-callout-dash {
-        display: none;
-    }
-
-    .blog-content .margin-callout .margin-callout-body {
-        padding-left: 0;
-    }
-}
 
 @media (max-width: 640px) {
     .blog-content {
-        font-size: 0.875rem;
+        font-size: 0.9375rem;
     }
 
     .blog-content h1 {
@@ -939,7 +1216,7 @@ html {
     }
 
     .blog-content .margin-callout {
-        padding: 0.85rem 1rem;
+        padding: 0.75rem 0.85rem 0.75rem 1rem;
     }
 
     .blog-content table {

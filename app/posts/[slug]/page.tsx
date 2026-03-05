@@ -8,10 +8,10 @@ import {
   ArrowLeft,
   Calendar,
   Clock,
-  Tag,
-  Terminal,
-  Copy,
   ChevronRight,
+  ChevronLeftCircleIcon,
+  ChevronLeft,
+  ChevronLeftIcon,
 } from "lucide-react";
 import { BlogDownloadButtons } from "@/components/blog-download-buttons";
 
@@ -126,8 +126,14 @@ export default async function BlogPostPage({ params }: Props) {
     wordCount: blog.content.split(/\s+/).length,
   };
 
+  const formattedDate = new Date(blog.date).toLocaleDateString("en-US", {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+  });
+
   return (
-    <main className="min-h-screen bg-[#0a0a0c] text-[#c9d1d9]">
+    <main className="blog-page min-h-screen bg-background text-foreground">
       {/* JSON-LD structured data for search engines */}
       <script
         type="application/ld+json"
@@ -136,68 +142,54 @@ export default async function BlogPostPage({ params }: Props) {
 
       <Header />
 
-      {/* Subtle grid background */}
-      <div
-        className="fixed inset-0 pointer-events-none opacity-[0.03]"
-        style={{
-          backgroundImage: `linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px)`,
-          backgroundSize: "48px 48px",
-        }}
-      />
-
-      <article className="relative z-10 max-w-[900px] mx-auto px-5 sm:px-8 xl:ml-[calc(50%-450px+116px)] xl:mr-auto pt-28 md:pt-36 pb-20 overflow-visible">
-        {/* Breadcrumb / Back */}
-        <Link
-          href="/posts"
-          className="inline-flex items-center gap-2 text-sm font-mono text-[#7d8590] hover:text-[#e6edf3] transition-colors mb-10 group"
-        >
-          <ArrowLeft className="w-3.5 h-3.5 transition-transform group-hover:-translate-x-1" />
-          <span>cd ../posts</span>
-        </Link>
-
-        {/* Meta bar */}
-        <div className="flex flex-wrap items-center gap-x-5 gap-y-2 text-xs font-mono text-[#7d8590] mb-6 pb-4 border-b border-[#1c1e26]">
-          <span className="flex items-center gap-1.5">
-            <Terminal className="w-3.5 h-3.5 text-[#6e40c9]" />
-            <span className="text-[#c9d1d9]">Tutorial</span>
-            <span className="mx-1 text-[#2d333b]">on</span>
-            {blog.tags.slice(0, 2).map((tag) => (
-              <span key={tag} className="text-[#c9d1d9]">
-                {tag}
-              </span>
-            ))}
+      <article className="blog-article relative z-10 max-w-[720px] mx-auto px-5 sm:px-8 pt-28 md:pt-36 pb-20 overflow-visible">
+        {/* Breadcrumb */}
+        <nav className="flex items-center gap-1.5 text-[13px] text-muted-foreground mb-8">
+          <Link
+            href="/posts"
+            className="hover:text-foreground transition-colors"
+          >
+            Posts
+          </Link>
+          <ChevronRight className="w-3.5 h-3.5 opacity-40" />
+          <span className="text-foreground/70 truncate max-w-[280px] sm:max-w-none">
+            {blog.title}
           </span>
-          <span className="flex items-center gap-1.5">
-            <Calendar className="w-3.5 h-3.5" />
-            Published:{" "}
-            {new Date(blog.date).toLocaleDateString("en-US", {
-              year: "numeric",
-              month: "short",
-              day: "numeric",
-            })}
-          </span>
-          <span className="flex items-center gap-1.5">
-            <Clock className="w-3.5 h-3.5" />
-            {blog.readTime}
-          </span>
-        </div>
+        </nav>
 
-        {/* Title */}
-        <header className="mb-12">
-          <h1 className="text-3xl sm:text-4xl md:text-[2.75rem] leading-[1.15] font-bold tracking-tight text-[#e6edf3] font-mono mb-6">
+        {/* Header */}
+        <header className="mb-10">
+          <Link href={"/posts"} className="absolute left-0">
+            <ChevronLeftIcon />
+          </Link>
+
+          <h1 className="flex gap-x-2 text-2xl  leading-[1.12] font-bold tracking-[-0.035em] text-foreground mb-5">
             {blog.title}
           </h1>
 
-          <p className="text-base sm:text-lg text-[#7d8590] leading-relaxed font-mono max-w-[720px] mb-6">
+          <p className="text-base sm:text-[1.0625rem] text-muted-foreground leading-relaxed max-w-[640px] mb-6">
             {blog.excerpt}
           </p>
 
+          {/* Meta row */}
+          <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-[13px] text-muted-foreground mb-5">
+            <span className="flex items-center gap-1.5">
+              <Calendar className="w-3.5 h-3.5 opacity-50" />
+              {formattedDate}
+            </span>
+            <span className="opacity-20">·</span>
+            <span className="flex items-center gap-1.5">
+              <Clock className="w-3.5 h-3.5 opacity-50" />
+              {blog.readTime}
+            </span>
+          </div>
+
           {/* Tags */}
-          <div className="flex flex-wrap gap-2 mb-6">
+          <div className="flex flex-wrap gap-1.5 mb-5">
             {blog.tags.map((tag) => (
               <span
                 key={tag}
-                className="px-2.5 py-1 bg-[#1c1e26] border border-[#2d333b] rounded text-[10px] font-mono tracking-widest text-[#7d8590] uppercase"
+                className="px-2 py-0.5 bg-muted/60 border border-border/60 rounded-md text-[11px] font-medium tracking-wide text-muted-foreground uppercase"
               >
                 {tag}
               </span>
@@ -208,30 +200,28 @@ export default async function BlogPostPage({ params }: Props) {
           <BlogDownloadButtons slug={slug} title={blog.title} />
         </header>
 
-        {/* Separator */}
-        <div className="flex items-center gap-3 mb-12 text-[#2d333b]">
-          <div className="h-px flex-1 bg-[#1c1e26]" />
-          <Terminal className="w-4 h-4" />
-          <div className="h-px flex-1 bg-[#1c1e26]" />
-        </div>
+        {/* Divider */}
+        <div className="h-px bg-border mb-10" />
 
-        {/* Blog content — overflow-visible allows margin notes to extend left */}
+        {/* Blog content — overflow-visible allows floating callouts on wide screens */}
         <div
-          className="blog-content font-mono overflow-visible"
+          className="blog-content overflow-visible"
           dangerouslySetInnerHTML={{ __html: htmlContent }}
         />
 
-        {/* Footer separator */}
-        <div className="mt-16 pt-8 border-t border-[#1c1e26]">
+        {/* Footer */}
+        <div className="mt-16 pt-8 border-t border-border">
           <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
             <Link
               href="/posts"
-              className="inline-flex items-center gap-2 text-sm font-mono text-[#7d8590] hover:text-[#e6edf3] transition-colors group"
+              className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors group"
             >
               <ArrowLeft className="w-3.5 h-3.5 transition-transform group-hover:-translate-x-1" />
-              Back to all posts
+              All posts
             </Link>
-            <span className="text-xs font-mono text-[#2d333b]">EOF</span>
+            <span className="text-xs text-muted-foreground/30 font-mono">
+              EOF
+            </span>
           </div>
         </div>
       </article>

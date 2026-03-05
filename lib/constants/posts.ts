@@ -40,4 +40,24 @@ export const POSTS: Post[] = [
     readTime: "20 min read",
     tags: ["ASSEMBLY", "C", "PERFORMANCE", "x86-64", "SIMD"],
   },
+  {
+    id: "4",
+    slug: "got-plt-the-dark-art-of-dynamic-linking",
+    title: "GOT/PLT: The Dark Art of Dynamic Linking on Linux",
+    excerpt:
+      "How your program actually calls shared library functions at runtime — the Global Offset Table, Procedure Linkage Table, lazy binding, and why understanding this machinery is critical for security and performance.",
+    date: "2026-02-03",
+    readTime: "19 min read",
+    tags: ["ELF", "LINKER", "LINUX", "x86-64", "SECURITY"],
+  },
+  {
+    id: "5",
+    slug: "linux-syscalls-from-userspace-to-kernel-and-back",
+    title: "Linux Syscalls: From Userspace to Kernel and Back",
+    excerpt:
+      "Tracing the full lifecycle of a system call on x86-64 Linux — from the userspace wrapper through VDSO, the syscall instruction, kernel entry, dispatch tables, and the return path. With code to make raw syscalls without libc.",
+    date: "2026-01-27",
+    readTime: "21 min read",
+    tags: ["LINUX", "KERNEL", "SYSCALL", "x86-64", "C"],
+  },
 ];
