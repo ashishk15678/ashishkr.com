@@ -12,7 +12,7 @@ const bitcount = Bitcount({
 
 export function HeroSection() {
   return (
-    <section className="flex flex-col lg:flex-row justify-between min-h-screen items-center px-4 sm:px-6 md:px-12 lg:px-20 py-16 group">
+    <section className="flex flex-col lg:flex-row justify-between min-h-screen items-center px-4 sm:px-6 md:px-12 lg:px-20 py-20 group">
       {/* Text Content Container */}
       <div
         className="flex-1 flex flex-col justify-center w-full"
@@ -25,13 +25,43 @@ export function HeroSection() {
               target="_blank"
               prefetch
             >
-              <div className="relative w-[35px] h-[35px] mr-4 cursor-pointer translate-y-1 group-hover:-translate-y-1 transition-all shadow-sm shadow-black dark:shadow-white rounded-full overflow-hidden border-2 border-border">
-                <Image
-                  src="https://avatars.githubusercontent.com/u/147980956?v=4"
-                  fill
-                  alt="Github pfp"
-                  className="object-cover"
-                />
+              <div className="cursor-pointer translate-y-1 group-hover:-translate-y-1 transition-all flex flex-col items-center">
+                {/* The Arched Text */}
+                <div className="-mb-6 z-10">
+                  {" "}
+                  {/* Negative margin pulls it closer to the image */}
+                  <svg
+                    width="60"
+                    height="25"
+                    viewBox="0 0 100 40"
+                    className="overflow-visible"
+                  >
+                    <path
+                      id="curve"
+                      fill="transparent"
+                      d="M 10,40 A 40,40 0 0,1 90,40"
+                    />
+                    <text className="text-sm text-black fill-primary font-bold tracking-[0.2em]  uppercase">
+                      <textPath
+                        xlinkHref="#curve"
+                        startOffset="50%"
+                        textAnchor="middle"
+                      >
+                        GITHUB
+                      </textPath>
+                    </text>
+                  </svg>
+                </div>
+
+                {/* The Profile Picture */}
+                <div className="relative w-[35px] h-[35px] shadow-sm shadow-black dark:shadow-white rounded-full overflow-hidden border-2 border-border">
+                  <Image
+                    src="https://avatars.githubusercontent.com/u/147980956?v=4"
+                    fill
+                    alt="Github pfp"
+                    className="object-cover"
+                  />
+                </div>
               </div>
             </Link>
             Hello, I am
