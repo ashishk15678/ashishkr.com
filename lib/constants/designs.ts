@@ -1,3 +1,10 @@
+import {
+  AppleDashboard,
+  ClerkDashboard,
+  TerminalDashboard,
+} from "@/components/dashboards";
+import { ReactNode } from "react";
+
 export interface Design {
   id: string;
   slug: string;
@@ -7,129 +14,91 @@ export interface Design {
   description: string;
   longDescription: string;
   tags: string[];
-  theme: "obsidian" | "slate" | "lavender" | "lime" | "mono";
+  theme: "clerk" | "apple" | "terminal";
   features: string[];
   tools: string[];
   year: string;
   category: string;
-  hasLiveDemo?: boolean;
+  component: ReactNode;
 }
 
 export const DESIGNS: Design[] = [
   {
     id: "1",
-    slug: "obsidian-dashboard",
+    slug: "clerk-dashboard",
     number: "01",
-    title: "Obsidian Dashboard",
-    subtitle: "Pure Monochrome Analytics",
+    title: "Clerk Dashboard",
+    subtitle: "Minimal Auth Management Console",
     description:
-      "A razor-sharp analytics dashboard built entirely in black and white. No color distractions — just data, structure, and clarity.",
+      "A clean, soft-toned dashboard inspired by Clerk's design language — frosted glass sidebar, violet accents, generous whitespace, and warm neutrals that make data feel approachable.",
     longDescription:
-      "Obsidian Dashboard strips away every unnecessary visual element to let data speak for itself. The stark black-and-white palette creates an arresting visual hierarchy where every metric, chart, and data point commands attention. Inspired by brutalist design principles and high-contrast editorial layouts, this dashboard proves that restraint is the ultimate form of sophistication.",
-    tags: ["DASHBOARD", "MONOCHROME", "ANALYTICS"],
-    theme: "obsidian",
+      "This dashboard takes direct inspiration from Clerk's exceptional product design. The soft neutral background (#F9F9F8) creates a warm canvas, while the frosted-glass sidebar with backdrop-blur adds depth without heaviness. Violet accent colors tie into the authentication theme — sign-in activity, API key management, session monitoring — all presented through rounded-2xl cards with subtle 1px borders. Sparkline micro-charts, status pills with animated ping indicators, stacked avatars, and a real-time event log give the interface a living, breathing quality. Every pixel of whitespace is intentional, creating a dashboard you could stare at for hours without fatigue.",
+    tags: ["DASHBOARD", "MINIMAL", "AUTH", "CLERK-STYLE"],
+    theme: "clerk",
     features: [
-      "High-contrast data cards",
-      "Pure B&W bar charts",
-      "Minimal navigation strip",
-      "Real-time metric updates",
+      "Frosted glass sidebar with org switcher",
+      "Sparkline micro-charts on stat cards",
+      "Real-time sign-in feed with avatar stack",
+      "Auth method breakdown with progress bars",
+      "Animated live-status indicators",
+      "Event log with color-coded severity",
     ],
-    tools: ["React", "Tailwind CSS", "Recharts"],
+    tools: ["React", "Tailwind CSS", "Lucide Icons", "CSS Backdrop Blur"],
     year: "2025",
     category: "Dashboard",
-    hasLiveDemo: true,
+    component: ClerkDashboard,
   },
   {
     id: "2",
-    slug: "slate-crm",
+    slug: "apple-dashboard",
     number: "02",
-    title: "Slate CRM",
-    subtitle: "Enterprise Relationship Manager",
+    title: "Apple Dashboard",
+    subtitle: "Cupertino-Inspired Commerce Analytics",
     description:
-      "A warm-gray enterprise CRM interface with clean data tables, pipeline views, and subtle zinc tones that feel both professional and approachable.",
+      "An analytics dashboard channeling Apple's design philosophy — translucent layers, SF-inspired typography, smooth gradient cards, ring progress charts, and the unmistakable Cupertino attention to detail.",
     longDescription:
-      "Slate CRM embodies the quiet confidence of enterprise software done right. The carefully calibrated gray palette — from zinc-100 backgrounds to zinc-700 text — creates an environment where users can focus for hours without fatigue. Every interaction surface is deliberately understate, letting the data relationships become the visual story.",
-    tags: ["CRM", "ENTERPRISE", "NEUTRAL"],
-    theme: "slate",
+      "Every element in this dashboard pays homage to Apple's design system. The #F5F5F7 background is the exact shade Apple uses across their web properties. Cards float with rounded-2xl corners and subtle zinc-200/60 borders that almost disappear. Stat cards feature gradient accent bars and icon badges with colored shadows — blue for revenue, emerald for orders, pink for customers, amber for ratings. The revenue area chart uses smooth cubic bezier curves with a gradient fill that fades to transparent. Device breakdown shows ring progress indicators for iPhone, Mac, iPad, and Vision Pro. A weather widget in the sidebar adds that quintessential Apple touch. The orders table uses status pills (shipped/processing/delivered) with appropriately tinted backgrounds. Typography uses -0.02em tracking throughout, giving text that compressed, premium SF Pro feel.",
+    tags: ["DASHBOARD", "APPLE", "ANALYTICS", "COMMERCE"],
+    theme: "apple",
     features: [
-      "Contact pipeline view",
-      "Sortable data tables",
-      "Activity timeline",
-      "Quick-action toolbar",
+      "Translucent sidebar with weather widget",
+      "Smooth cubic bezier area chart",
+      "Ring progress indicators per device",
+      "Gradient stat cards with colored shadows",
+      "Orders table with status pills",
+      "Insight cards with gradient icon badges",
     ],
-    tools: ["React", "Tailwind CSS", "Lucide Icons"],
+    tools: ["React", "Tailwind CSS", "SVG Charts", "CSS Gradients"],
     year: "2025",
-    category: "CRM Application",
-    hasLiveDemo: true,
+    category: "Dashboard",
+    component: AppleDashboard,
   },
   {
     id: "3",
-    slug: "iris-auth",
+    slug: "terminal-dashboard",
     number: "03",
-    title: "Iris Auth",
-    subtitle: "Clerk-Inspired Authentication",
+    title: "Terminal Ops",
+    subtitle: "Bloomberg-Grade Infrastructure Monitor",
     description:
-      "A refined authentication portal with soft lavender gradients, frosted glass cards, and elegant form fields — directly inspired by Clerk.com's aesthetic.",
+      "A dense, data-saturated infrastructure dashboard built for ops engineers — stock ticker strip, CPU heatmaps, cluster node tables, live event streams, and latency percentile breakdowns on a pure dark canvas.",
     longDescription:
-      "Iris Auth captures the essence of modern authentication design pioneered by platforms like Clerk. The lavender and violet palette creates a sense of trust and calm, while frosted glass effects and precise micro-interactions elevate every touchpoint. Social login buttons, OTP inputs, and form validation states are all designed to feel delightful rather than transactional.",
-    tags: ["AUTH", "LAVENDER", "CLERK-STYLE"],
-    theme: "lavender",
+      "Inspired by Bloomberg terminals and mission-critical ops consoles, this dashboard maximizes information density without sacrificing readability. The #0C0C0E base with 1px zinc-800 borders creates a grid of data panels that feel like looking into a spacecraft cockpit. A live ticker strip scrolls market data across the top. System health metrics show CPU, memory, disk I/O, network, latency, and error rates with color-coded threshold bars (green → amber → red). The throughput chart renders 40 data points as a mini bar chart with the last 5 highlighted in bright emerald. Cluster nodes display in a dense table with inline metric bars for CPU and memory utilization. An event stream panel shows real-time logs with color-coded severity levels (INFO/WARN/ERR). A CPU heatmap grid uses 32 cells with intensity-mapped colors. The bottom status bar shows TLS status, database latency, Redis response time, CDN PoP count, and WebSocket connection state. A real ticking clock in the top bar completes the live-monitoring feel.",
+    tags: ["DASHBOARD", "TERMINAL", "OPS", "INFRASTRUCTURE"],
+    theme: "terminal",
     features: [
-      "Frosted glass sign-in card",
-      "Social OAuth buttons",
-      "OTP code input",
-      "Animated transitions",
+      "Live stock ticker strip with price changes",
+      "CPU heatmap grid with intensity mapping",
+      "Cluster node table with inline metric bars",
+      "Real-time event stream with severity levels",
+      "Latency percentile breakdown (p50–p99)",
+      "Deploy history with environment badges",
+      "Bottom status bar with system vitals",
+      "Ticking UTC clock for live feel",
     ],
-    tools: ["React", "Tailwind CSS", "Framer Motion"],
+    tools: ["React", "Tailwind CSS", "SVG Sparklines", "Monospace Typography"],
     year: "2025",
-    category: "Authentication",
-    hasLiveDemo: true,
-  },
-  {
-    id: "4",
-    slug: "volt-landing",
-    number: "04",
-    title: "Volt Landing",
-    subtitle: "Developer-First Product Page",
-    description:
-      "An electrifying landing page with neon lime accents on dark surfaces. Terminal-inspired code blocks and developer-centric copy that commands attention.",
-    longDescription:
-      "Volt Landing speaks the language of developers. The electric lime-green accents (#a3e635) against deep black surfaces create an aesthetic reminiscent of terminal windows and IDE themes. Code blocks are first-class citizens, feature grids use monospace typography, and every CTA feels like running a command. Built for tools that developers actually want to use.",
-    tags: ["LANDING", "DEVELOPER", "NEON"],
-    theme: "lime",
-    features: [
-      "Terminal code blocks",
-      "Monospace typography",
-      "Feature grid with icons",
-      "CLI-style CTAs",
-    ],
-    tools: ["React", "Tailwind CSS", "Geist Mono"],
-    year: "2025",
-    category: "Landing Page",
-    hasLiveDemo: true,
-  },
-  {
-    id: "5",
-    slug: "mono-saas",
-    number: "05",
-    title: "Mono SaaS",
-    subtitle: "Shadcn-Style Product Suite",
-    description:
-      "A complete SaaS product page in pure black-on-white. Precise spacing, zero color, maximum clarity — the shadcn/ui philosophy taken to its logical conclusion.",
-    longDescription:
-      "Mono SaaS is an exercise in radical simplicity. Every pixel of whitespace is intentional, every border serves a purpose, and color is entirely absent. The result is a design that feels both timeless and thoroughly modern — a blank canvas where content becomes the only visual element. Navigation, hero sections, pricing tables, and feature grids all exist in perfect monochrome harmony.",
-    tags: ["SAAS", "MINIMAL", "SHADCN-STYLE"],
-    theme: "mono",
-    features: [
-      "Clean navigation bar",
-      "Typographic hero section",
-      "Pricing comparison table",
-      "Feature showcase grid",
-    ],
-    tools: ["React", "Tailwind CSS", "shadcn/ui"],
-    year: "2025",
-    category: "SaaS Landing",
-    hasLiveDemo: true,
+    category: "Dashboard",
+    component: TerminalDashboard,
   },
 ];
 

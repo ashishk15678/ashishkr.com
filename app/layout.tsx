@@ -6,6 +6,7 @@ import { ThemeProvider } from "@/components/theme-provider";
 import "./globals.css";
 import { Suspense } from "react";
 import { GoogleAnalytics } from "@next/third-parties/google";
+import CalComponent from "@/components/cal-com";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -47,6 +48,7 @@ export default function RootLayout({
           <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
             {children}
             <Analytics />
+            <CalComponent />
           </ThemeProvider>
         </Suspense>
       </body>

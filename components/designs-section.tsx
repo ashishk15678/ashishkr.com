@@ -6,24 +6,31 @@ import { ArrowUpRight, Layers } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { DESIGNS, type Design } from "@/lib/constants/designs";
 
-const themeAccents: Record<string, { bar: string; bg: string; text: string }> = {
-  obsidian: { bar: "bg-white", bg: "bg-zinc-950", text: "text-white/40" },
-  slate: { bar: "bg-zinc-400", bg: "bg-zinc-100", text: "text-zinc-400" },
-  lavender: { bar: "bg-violet-400", bg: "bg-violet-50", text: "text-violet-400" },
-  lime: { bar: "bg-lime-400", bg: "bg-zinc-950", text: "text-lime-400/40" },
-  mono: { bar: "bg-zinc-900", bg: "bg-white", text: "text-zinc-400" },
-};
+const themeAccents: Record<string, { bar: string; bg: string; text: string }> =
+  {
+    clerk: {
+      bar: "bg-violet-500",
+      bg: "bg-[#F9F9F8]",
+      text: "text-violet-500/50",
+    },
+    apple: { bar: "bg-blue-500", bg: "bg-[#F5F5F7]", text: "text-blue-500/50" },
+    terminal: {
+      bar: "bg-emerald-500",
+      bg: "bg-[#0C0C0E]",
+      text: "text-emerald-400/50",
+    },
+  };
 
 function DesignCard({ design, index }: { design: Design; index: number }) {
   const accent = themeAccents[design.theme];
-  const isWide = index === 0 || index === 3;
+  const isWide = index === 0 || index === 2;
 
   return (
     <Link
       href={`/designs/${design.slug}`}
       className={cn(
         "group relative block",
-        isWide ? "lg:col-span-7" : "lg:col-span-5"
+        isWide ? "lg:col-span-7" : "lg:col-span-5",
       )}
     >
       <div
@@ -32,7 +39,7 @@ function DesignCard({ design, index }: { design: Design; index: number }) {
           "border border-border/50",
           "bg-card",
           "transition-all duration-300 ease-out",
-          "hover:border-border hover:shadow-lg hover:-translate-y-1"
+          "hover:border-border hover:shadow-lg hover:-translate-y-1",
         )}
       >
         {/* Theme accent bar */}
@@ -41,7 +48,12 @@ function DesignCard({ design, index }: { design: Design; index: number }) {
         {/* Preview swatch */}
         <div className={cn("h-28 relative overflow-hidden", accent.bg)}>
           <div className="absolute inset-0 flex items-center justify-center">
-            <span className={cn("text-[10px] font-mono tracking-widest", accent.text)}>
+            <span
+              className={cn(
+                "text-[10px] font-mono tracking-widest",
+                accent.text,
+              )}
+            >
               {design.number} — {design.category.toUpperCase()}
             </span>
           </div>
@@ -54,14 +66,16 @@ function DesignCard({ design, index }: { design: Design; index: number }) {
               <h3 className="text-base font-bold tracking-tight mb-0.5">
                 {design.title}
               </h3>
-              <p className="text-[11px] text-muted-foreground">{design.subtitle}</p>
+              <p className="text-[11px] text-muted-foreground">
+                {design.subtitle}
+              </p>
             </div>
             <div
               className={cn(
                 "w-7 h-7 rounded-full flex items-center justify-center",
                 "border border-border/60",
                 "transition-all duration-200",
-                "group-hover:bg-foreground group-hover:text-background group-hover:border-foreground"
+                "group-hover:bg-foreground group-hover:text-background group-hover:border-foreground",
               )}
             >
               <ArrowUpRight className="w-3 h-3 transition-transform duration-200 group-hover:rotate-45" />

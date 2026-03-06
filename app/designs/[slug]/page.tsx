@@ -2,38 +2,26 @@
 
 import Link from "next/link";
 import { DESIGNS, getDesignBySlug } from "@/lib/constants/designs";
-import {
-  ArrowLeft,
-  ArrowUpRight,
-  Layers,
-  Wrench,
-  Play,
-} from "lucide-react";
+import { ArrowLeft, ArrowUpRight, Layers, Wrench, Play } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Header } from "@/components/header";
 import {
-  ObsidianDashboard,
-  SlateCRM,
-  IrisAuth,
-  VoltLanding,
-  MonoSaas,
-} from "@/components/design-demos";
+  ClerkDashboard,
+  AppleDashboard,
+  TerminalDashboard,
+} from "@/components/dashboards";
 import { use } from "react";
 
 const demoComponents: Record<string, React.ComponentType> = {
-  "obsidian-dashboard": ObsidianDashboard,
-  "slate-crm": SlateCRM,
-  "iris-auth": IrisAuth,
-  "volt-landing": VoltLanding,
-  "mono-saas": MonoSaas,
+  "clerk-dashboard": ClerkDashboard,
+  "apple-dashboard": AppleDashboard,
+  "terminal-dashboard": TerminalDashboard,
 };
 
 const themeDots: Record<string, string> = {
-  obsidian: "bg-white",
-  slate: "bg-zinc-500",
-  lavender: "bg-violet-500",
-  lime: "bg-lime-400",
-  mono: "bg-zinc-900",
+  clerk: "bg-violet-500",
+  apple: "bg-blue-500",
+  terminal: "bg-emerald-500",
 };
 
 export default function DesignPage({
@@ -59,7 +47,8 @@ export default function DesignPage({
 
   const currentIndex = DESIGNS.findIndex((d) => d.slug === slug);
   const prevDesign = currentIndex > 0 ? DESIGNS[currentIndex - 1] : null;
-  const nextDesign = currentIndex < DESIGNS.length - 1 ? DESIGNS[currentIndex + 1] : null;
+  const nextDesign =
+    currentIndex < DESIGNS.length - 1 ? DESIGNS[currentIndex + 1] : null;
   const DemoComponent = demoComponents[slug];
   const dot = themeDots[design.theme] || "bg-zinc-500";
 

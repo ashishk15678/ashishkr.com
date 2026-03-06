@@ -15,6 +15,26 @@ export interface Project {
 
 export const PROJECTS: Project[] = [
   {
+    id: "0",
+    number: "00",
+    year: "2025",
+    endYear: "PRESENT",
+    title: "Design Tweak",
+    tags: ["NEXT.JS", "REACT", "TAWILWINDCSS"],
+    description:
+      "Tweak your designs with a single click , play with colors , fonts and designs , and then just click copy.",
+    longDescription:
+      "Zon3 is a visual workflow automation platform inspired by n8n. It allows users to create custom workflows by connecting nodes in a visual editor. Built with Next.js and React for the frontend, with tRPC providing type-safe API communication and PostgreSQL as the database backend.",
+    link: "https://tweak.ashishkr.com?ref=ashishkr.com",
+    images: [
+      "/tweak/dashboard.png",
+      "/tweak/export.png",
+      "/tweak/mail.png",
+      "/tweak/mail_neo.png",
+      "/tweak/mail_glass.png",
+    ],
+  },
+  {
     id: "1",
     number: "01",
     year: "2025",
