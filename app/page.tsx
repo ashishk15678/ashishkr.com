@@ -1,7 +1,6 @@
 import { HeroSection } from "@/components/hero-section";
 import { SkillsMarquee } from "@/components/skills-marquee";
 import { ProjectsSection } from "@/components/projects-section";
-import { DesignsSection } from "@/components/designs-section";
 import { RecognitionSection } from "@/components/recognition-section";
 import { ContactSection } from "@/components/contact-section";
 import { Header } from "@/components/header";
@@ -14,10 +13,8 @@ export default function Home() {
       <HeroSection />
       <SkillsMarquee />
       <ProjectsSection />
-      <DesignsSection />
       <RecognitionSection />
       <ContactSection />
     </main>
   );
 }
-
