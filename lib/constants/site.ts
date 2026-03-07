@@ -25,5 +25,6 @@ export const NAV_LINKS = [
   { name: "Home", href: "/" },
   { name: "Posts", href: "/posts" },
   { name: "Designs", href: "/designs" },
+  { name: "Showcase", href: "/showcase" },
   { name: "Simulations", href: "/simulations" },
 ];
