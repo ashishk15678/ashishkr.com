@@ -1,4 +1,6 @@
-import { blogPosts, type BlogPostData } from "./blog-data";
+import fs from "fs";
+import path from "path";
+import matter from "gray-matter";
 
 export interface BlogPost {
   slug: string;
@@ -13,54 +15,95 @@ export interface BlogPost {
   type: "peerlist" | "here";
 }
 
+const POSTS_DIR = path.join(process.cwd(), "content", "posts");
+
 function calculateReadTime(content: string): string {
-  const wordCount = content.split(/\s+/).length;
+  const wordCount = content.split(/\s+/).filter(Boolean).length;
   const minutes = Math.ceil(wordCount / 200);
   return `${minutes} min read`;
 }
 
-function generateRawMarkdown(post: BlogPostData): string {
-  return `---
-title: "${post.title}"
-excerpt: "${post.excerpt}"
-date: "${post.date}"
-tags: [${post.tags.map((t) => `"${t}"`).join(", ")}]
----
-
-${post.content}`;
+function generateRawMarkdown(
+  frontmatter: Record<string, unknown>,
+  content: string,
+): string {
+  const fm = [
+    "---",
+    `title: "${frontmatter.title}"`,
+    `excerpt: "${frontmatter.excerpt}"`,
+    `date: "${frontmatter.date}"`,
+    `tags: [${(frontmatter.tags as string[]).map((t) => `"${t}"`).join(", ")}]`,
+  ];
+  if (frontmatter.heroImage) {
+    fm.push(`heroImage: "${frontmatter.heroImage}"`);
+  }
+  fm.push("---", "");
+  return fm.join("\n") + content;
 }
 
-export function getAllBlogSlugs(): string[] {
-  return blogPosts.map((post) => post.slug);
+function getPostFiles(): string[] {
+  if (!fs.existsSync(POSTS_DIR)) {
+    return [];
+  }
+  return fs
+    .readdirSync(POSTS_DIR)
+    .filter((file) => file.endsWith(".md"))
+    .sort();
 }
 
-export function getBlogBySlug(slug: string): BlogPost | null {
-  const post = blogPosts.find((p) => p.slug === slug);
+function parsePost(filename: string): BlogPost | null {
+  const filePath = path.join(POSTS_DIR, filename);
+  const fileContents = fs.readFileSync(filePath, "utf-8");
+  const { data, content } = matter(fileContents);
 
-  if (!post) {
+  const slug = filename.replace(/\.md$/, "");
+
+  if (!data.title || !data.date) {
     return null;
   }
 
+  const trimmedContent = content.trim();
+
   return {
-    slug: post.slug,
-    title: post.title,
-    excerpt: post.excerpt,
-    date: post.date,
-    readTime: calculateReadTime(post.content),
-    tags: post.tags,
-    content: post.content,
-    rawContent: generateRawMarkdown(post),
-    heroImage: post.heroImage,
+    slug,
+    title: data.title,
+    excerpt: data.excerpt || "",
+    date: data.date,
+    readTime: calculateReadTime(trimmedContent),
+    tags: data.tags || [],
+    content: trimmedContent,
+    rawContent: generateRawMarkdown(data, trimmedContent),
+    heroImage: data.heroImage,
     type: "here",
   };
+}
+
+export function getAllBlogSlugs(): string[] {
+  return getPostFiles().map((file) => file.replace(/\.md$/, ""));
+}
+
+export function getBlogBySlug(slug: string): BlogPost | null {
+  const filename = `${slug}.md`;
+  const filePath = path.join(POSTS_DIR, filename);
+
+  if (!fs.existsSync(filePath)) {
+    return null;
+  }
+
+  return parsePost(filename);
 }
 
 export const peerlistBlogs: BlogPost[] = [];
 
 export function getAllBlogs(): BlogPost[] {
-  const allblogs = [...blogPosts, ...peerlistBlogs];
-  return allblogs
-    .map((post) => getBlogBySlug(post.slug))
-    .filter((blog): blog is BlogPost => blog !== null)
-    .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+  const files = getPostFiles();
+  const filePosts = files
+    .map((file) => parsePost(file))
+    .filter((post): post is BlogPost => post !== null);
+
+  const allPosts = [...filePosts, ...peerlistBlogs];
+
+  return allPosts.sort(
+    (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime(),
+  );
 }
