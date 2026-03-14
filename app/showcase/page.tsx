@@ -68,6 +68,7 @@ import { BlogCard } from "@/components/showcase/blog-card";
 import { Keyboard, MacKeyboard } from "@/components/showcase/keyboard";
 import { AIToolsCard } from "@/components/showcase/ai-tools-card";
 import { DevBentoCard } from "@/components/showcase/dev-bento-card";
+import ShaderMenu from "@/components/showcase/shader-menu";
 
 // ═══════════════════════════════════════════════════════
 // COMPONENT REGISTRY
@@ -790,7 +791,7 @@ import { Keyboard } from "@/components/showcase/keyboard";
     tags: ["finance", "3d", "animated", "wallet"],
     icon: CreditCard,
     previewBg: "bg-[#4a5548]",
-    component: <WalletCard balance="$250,000" label="TOTAL BALANCE" />,
+    component: <ShaderMenu />,
     deps: ["framer-motion"],
     code: `"use client"`,
     usage: "use client",
