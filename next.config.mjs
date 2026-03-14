@@ -5,6 +5,7 @@ const nextConfig = {
   },
   images: {
     formats: ["image/webp", "image/avif"],
+    domains: ["avatars.githubusercontent.com"],
   },
 
   poweredByHeader: false,
@@ -61,7 +62,7 @@ const nextConfig = {
           {
             key: "Content-Security-Policy",
             value:
-              "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self';",
+              "default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://cloudflareinsights.com https://app.cal.com https://cal.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://avatars.githubusercontent.com https://*.githubusercontent.com; connect-src 'self' https://www.google-analytics.com https://stats.g.doubleclick.net https://app.cal.com;",
           },
           {
             key: "Permissions-Policy",

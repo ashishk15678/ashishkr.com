@@ -782,6 +782,19 @@ export default function Page() {
 import { Keyboard } from "@/components/showcase/keyboard";
 <Keyboard variant="mac" soundEnabled={true} />`,
   },
+  {
+    id: "shader menu",
+    name: "Shader Menu",
+    description: "Shader menu with ",
+    category: "creative",
+    tags: ["finance", "3d", "animated", "wallet"],
+    icon: CreditCard,
+    previewBg: "bg-[#4a5548]",
+    component: <WalletCard balance="$250,000" label="TOTAL BALANCE" />,
+    deps: ["framer-motion"],
+    code: `"use client"`,
+    usage: "use client",
+  },
 ];
 
 // Compute category counts
