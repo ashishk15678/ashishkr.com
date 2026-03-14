@@ -726,7 +726,7 @@ function DevStudioLandingCard() {
                 <span className="font-extrabold">design and</span>
               </p>
               <p className="text-sm sm:text-base font-extrabold tracking-tight">
-                development studio ⚡
+                development studio
               </p>
             </div>
             <p className="text-[9px] text-white/50 max-w-[240px] mx-auto">
@@ -735,22 +735,6 @@ function DevStudioLandingCard() {
             </p>
             <div className="inline-block px-3 py-1 rounded-full bg-white text-black text-[9px] font-medium">
               Book a call
-            </div>
-          </div>
-          {/* Brands */}
-          <div className="px-4 py-3 border-t border-white/10">
-            <p className="text-[7px] text-white/30 text-center mb-2 tracking-widest uppercase">
-              Trusted by famous brands
-            </p>
-            <div className="flex justify-center gap-4">
-              {BRANDS.slice(0, 4).map((b) => (
-                <span
-                  key={b.name}
-                  className="text-[8px] text-white/40 flex items-center gap-1"
-                >
-                  <span>{b.icon}</span> {b.name}
-                </span>
-              ))}
             </div>
           </div>
           {/* Project screenshots row */}
@@ -1089,9 +1073,6 @@ export default function DesignsPage() {
               backgroundSize: "32px 32px",
             }}
           />
-          {/* Gradient orbs */}
-          <div className="absolute top-20 -left-48 w-96 h-96 bg-violet-500/8 rounded-full blur-3xl pointer-events-none" />
-          <div className="absolute bottom-0 -right-48 w-96 h-96 bg-blue-500/8 rounded-full blur-3xl pointer-events-none" />
 
           {/* Avatar stack */}
           <motion.div
@@ -1120,7 +1101,7 @@ export default function DesignsPage() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="relative z-10 text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tighter max-w-3xl"
           >
-            Your best in class{" "}
+            Your <span> best</span> in class{" "}
             <span className="font-extrabold">design and</span>
             <br />
             <span className="font-extrabold">development studio</span>{" "}

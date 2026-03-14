@@ -30,6 +30,16 @@ export const metadata: Metadata = {
   },
 };
 
+function GlobalLoading() {
+  return (
+    <>
+      <div className="h-screen w-screen flex items-center justify-center animate-pulse ">
+        Loading the portfolio ...
+      </div>
+    </>
+  );
+}
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -44,7 +54,7 @@ export default function RootLayout({
         />
       </header>
       <body className={`font-sans antialiased ${inter.className}`}>
-        <Suspense fallback={<div>Loading...</div>}>
+        <Suspense fallback={<GlobalLoading />}>
           <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
             {children}
             <Analytics />

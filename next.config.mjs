@@ -4,32 +4,16 @@ const nextConfig = {
     ignoreBuildErrors: true,
   },
   images: {
-    unoptimized: true,
+    formats: ["image/webp", "image/avif"],
   },
 
-  // ── Production hardening ──────────────────────────────────
-
-  // Remove the X-Powered-By: Next.js header
   poweredByHeader: false,
-
   compress: true,
-
   productionBrowserSourceMaps: false,
-
   reactStrictMode: true,
   swcMinify: true,
 
-  // ── Compiler options ──────────────────────────────────────
-  compiler: {
-    // Remove console.log in production
-    removeConsole: {
-      // exclude: ["warn", "error"],
-    },
-  },
-
-  // ── Experimental optimizations ────────────────────────────
   experimental: {
-    // Tree-shake barrel files from large packages
     optimizePackageImports: [
       "lucide-react",
       "framer-motion",
@@ -53,7 +37,6 @@ const nextConfig = {
     ],
   },
 
-  // ── Security headers ──────────────────────────────────────
   async headers() {
     return [
       {
@@ -76,6 +59,11 @@ const nextConfig = {
             value: "strict-origin-when-cross-origin",
           },
           {
+            key: "Content-Security-Policy",
+            value:
+              "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self';",
+          },
+          {
             key: "Permissions-Policy",
             value: "camera=(), microphone=(), geolocation=()",
           },
@@ -87,7 +75,7 @@ const nextConfig = {
         headers: [
           {
             key: "Cache-Control",
-            value: "public, max-age=31536000, immutable",
+            value: "public, max-age=86400, mutable",
           },
         ],
       },
