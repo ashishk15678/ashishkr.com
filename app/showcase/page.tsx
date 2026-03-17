@@ -7,7 +7,6 @@ import { cn } from "@/lib/utils";
 import { Header } from "@/components/header";
 import {
   ArrowLeft,
-  ArrowUpRight,
   Code2,
   Eye,
   Copy,

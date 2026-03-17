@@ -52,6 +52,17 @@ export default function RootLayout({
           rel="icon"
           href="https://avatars.githubusercontent.com/u/147980956?v=4"
         />
+        <meta
+          property="og:title"
+          content="Ashish Kumar | Full-stack & ML Engineer"
+        />
+        <meta property="og:type" content="profile" />
+        <meta property="og:url" content="https://ashishkr.com/" />
+        <meta property="og:image" content="https://ashishkr.com/image.png" />
+        <meta
+          property="og:description"
+          content="Full-stack Engineer turning complex problems into elegant solutions. Building scalable systems and intelligent applications."
+        />
       </header>
       <body className={`font-sans antialiased ${inter.className}`}>
         <Suspense fallback={<GlobalLoading />}>

@@ -1179,6 +1179,16 @@ export default function DesignsPage() {
             {DESIGNS[0] && <DashboardPreviewCard design={DESIGNS[0]} />}
           </MarqueeRow>
         </AnimatedSection>
+        <div className="gap-4 p-2 grid grid-cols-2">
+          <Link href={"/designs/butterfly"} prefetch>
+            <div
+              className="
+            p-4 border border-border rounded-2xl
+            "
+            ></div>
+          </Link>
+          <div className=""></div>
+        </div>
 
         {/* ─── CTA ─── */}
         <section className="px-4 sm:px-6 md:px-12 lg:px-20 py-16 md:py-20">
