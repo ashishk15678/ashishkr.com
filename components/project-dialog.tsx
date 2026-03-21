@@ -2,13 +2,17 @@
 
 import * as React from "react";
 import * as DialogPrimitive from "@radix-ui/react-dialog";
-import { X, ExternalLink, ChevronLeft, ChevronRight } from "lucide-react";
+import {
+  X,
+  ExternalLink,
+  ChevronLeft,
+  ChevronRight,
+  GithubIcon,
+} from "lucide-react";
 import { cn } from "@/lib/utils";
 import type { Project } from "@/lib/constants/projects";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-
-// Apple-style Dialog Components
 
 function AppleDialogOverlay({
   className,
@@ -42,32 +46,16 @@ function AppleDialogContent({
 
       <DialogPrimitive.Content
         className={cn(
-          // Base positioning and sizing
-
           "fixed top-[50%] left-[50%] z-50 w-full max-w-2xl max-h-[85vh]",
-
           "translate-x-[-50%] translate-y-[-50%] overflow-hidden",
-
-          // Apple-style glassmorphism
-
           "bg-background/80 backdrop-blur-2xl",
-
           "border border-border/50 rounded-2xl shadow-2xl",
-
-          // Apple-style animations
-
           "data-[state=open]:animate-in data-[state=closed]:animate-out",
-
           "data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0",
-
           "data-[state=closed]:zoom-out-[0.96] data-[state=open]:zoom-in-[0.96]",
-
           "data-[state=closed]:slide-out-to-left-1/2 data-[state=closed]:slide-out-to-top-[48%]",
-
           "data-[state=open]:slide-in-from-left-1/2 data-[state=open]:slide-in-from-top-[48%]",
-
           "duration-300 ease-[cubic-bezier(0.32,0.72,0,1)]",
-
           className,
         )}
         {...props}
@@ -91,11 +79,7 @@ function StatsPill({ label, value }: { label: string; value: number }) {
     </div>
   );
 }
-export function ProjectDialog({
-  project,
-  open,
-  onOpenChange,
-}: ProjectDialogProps) {
+export function ProjectDialog({ project, open, onOpenChange }: any) {
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
 
   const openLightbox = (index: number) => setActiveIndex(index);
@@ -211,6 +195,20 @@ export function ProjectDialog({
               </a>
             </div>
           )}
+
+          {project.github && (
+            <div className="pt-4 border-t border-border/50">
+              <a
+                href={project.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-center gap-2 w-full py-4 px-6 rounded-xl bg-background text-foreground  font-medium transition-all hover:scale-[1.02]"
+              >
+                <span>Github</span>
+                <GithubIcon className="w-4 h-4" />
+              </a>
+            </div>
+          )}
         </div>
       </AppleDialogContent>
 
@@ -285,7 +283,7 @@ export function ProjectCardWrapper({
   index,
 
   children,
-}: ProjectCardWrapperProps) {
+}: any) {
   const [open, setOpen] = React.useState(false);
 
   return (

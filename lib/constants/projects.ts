@@ -11,6 +11,7 @@ export interface Project {
   images?: string[];
   graphs?: { label: string; value: number }[];
   link?: string;
+  github?: string;
 }
 
 export const PROJECTS: Project[] = [
@@ -33,6 +34,7 @@ export const PROJECTS: Project[] = [
       "/tweak/mail_neo.png",
       "/tweak/mail_glass.png",
     ],
+    github: "https://github.com/ashishk15678/tweak",
   },
   {
     id: "1",
@@ -60,6 +62,7 @@ export const PROJECTS: Project[] = [
       "/zon3/blank_screen.png",
       "/zon3/login.png",
     ],
+    github: "https://github.com/ashishk15678/n8n-web3",
   },
   {
     id: "2",
@@ -73,6 +76,7 @@ export const PROJECTS: Project[] = [
       "A containerization system built from scratch in C, implementing core Linux kernel features like namespaces, cgroups, and chroot. This project demonstrates deep understanding of process isolation, resource management, and Unix system programming.",
     architecture:
       "CLI Interface → Container Runtime → Linux Kernel (namespaces, cgroups, chroot)",
+    github: "https://github.com/ashishk15678/docker-clone",
   },
   {
     id: "3",
@@ -95,5 +99,6 @@ export const PROJECTS: Project[] = [
       "/sharedcn/sharedcn_new.png",
       "/sharedcn/sharedcn_new_2.png",
     ],
+    github: "https://github.com/ashishk15678/sharedcn",
   },
 ];

@@ -10,22 +10,14 @@ export function ProjectsSection() {
       data-inspectable
     >
       {/* Section header */}
-      <div className="mb-10 md:mb-16">
+      <div className="mb-10 md:mb-16 text-center">
         <h2 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-bold tracking-tighter section-title">
-          <TextReveal>Selected</TextReveal>
+          <TextReveal>Projects.</TextReveal>
         </h2>
-        <h2 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-bold tracking-tighter text-muted-foreground/40">
-          <TextReveal delay={200}>Projects.</TextReveal>
-        </h2>
-      </div>
-
-      {/* Year range */}
-      <div className="flex justify-end mb-6 md:mb-8 text-xs md:text-sm text-muted-foreground tracking-widest">
-        2022 — 2025
       </div>
 
       {/* Projects list */}
-      <div className="border-t border-border">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8">
         {PROJECTS.map((project, index) => (
           <ProjectCard key={project.id} project={project} index={index} />
         ))}
