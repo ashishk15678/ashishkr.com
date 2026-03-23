@@ -41,6 +41,8 @@ import {
   Keyboard as KeyboardIcon,
   Bot,
   LayoutGrid,
+  Lock,
+  Mic,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -68,6 +70,10 @@ import { Keyboard, MacKeyboard } from "@/components/showcase/keyboard";
 import { AIToolsCard } from "@/components/showcase/ai-tools-card";
 import { DevBentoCard } from "@/components/showcase/dev-bento-card";
 import ShaderMenu from "@/components/showcase/shader-menu";
+import { ActomeSearch } from "@/components/showcase/actome-search";
+import { SecuritySlider } from "@/components/showcase/security-slider";
+import { SimpleGlowInput } from "@/components/showcase/simple-glow-input";
+import { VoiceSearch } from "@/components/showcase/voice-search";
 
 // ═══════════════════════════════════════════════════════
 // COMPONENT REGISTRY
@@ -121,6 +127,54 @@ const CATEGORIES: {
 
 const REGISTRY: ComponentEntry[] = [
   // ── Featured / Creative (from images) ──
+  {
+    id: "actome-search",
+    name: "Actome Search",
+    description:
+      "Neumorphic search input with soft shadows and orange under-glow on focus.",
+    category: "creative",
+    tags: ["input", "search", "neumorphism", "glow"],
+    icon: Search,
+    component: <ActomeSearch />,
+    code: `import { ActomeSearch } from "@/components/showcase/actome-search";`,
+    usage: `<ActomeSearch />`,
+  },
+  {
+    id: "security-slider",
+    name: "Security Slider",
+    description:
+      "Interactive slider with glowing indicators and a toggleable lock mechanism.",
+    category: "creative",
+    tags: ["slider", "security", "interactive", "lock"],
+    icon: Lock,
+    component: <SecuritySlider />,
+    code: `import { SecuritySlider } from "@/components/showcase/security-slider";`,
+    usage: `<SecuritySlider />`,
+  },
+  {
+    id: "simple-glow-input",
+    name: "Glow Input",
+    description:
+      "Minimalist input field with inner shadow reveal and bottom light source.",
+    category: "creative",
+    tags: ["input", "minimal", "glow", "shadow"],
+    icon: Sparkles,
+    component: <SimpleGlowInput />,
+    code: `import { SimpleGlowInput } from "@/components/showcase/simple-glow-input";`,
+    usage: `<SimpleGlowInput />`,
+  },
+  {
+    id: "voice-search",
+    name: "Voice Search",
+    description:
+      "Voice input component with pulsating microphone activation state.",
+    category: "creative",
+    tags: ["voice", "input", "microphone", "animation"],
+    icon: Mic,
+    component: <VoiceSearch />,
+    code: `import { VoiceSearch } from "@/components/showcase/voice-search";`,
+    usage: `<VoiceSearch />`,
+  },
   {
     id: "wallet-card",
     name: "Wallet Card",
