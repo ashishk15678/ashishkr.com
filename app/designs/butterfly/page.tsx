@@ -1,7 +1,7 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
 
-const TOTAL_FRAMES = 480;
+const TOTAL_FRAMES = 120;
 const FRAMES = Array.from(
   { length: TOTAL_FRAMES },
   (_, i) => `/designs/butterfly/frame_${String(i + 1).padStart(4, "0")}.webp`,
