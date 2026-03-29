@@ -45,6 +45,7 @@ import { Separator } from "@/components/ui/separator";
 import { Input } from "@/components/ui/input";
 import { Progress } from "@/components/ui/progress";
 import { Switch } from "@/components/ui/switch";
+import Image from "next/image";
 
 // ─── Avatar stack ───
 const AVATAR_STACK = [
@@ -1183,9 +1184,17 @@ export default function DesignsPage() {
           <Link href={"/designs/butterfly"} prefetch>
             <div
               className="
-            p-4 border border-border rounded-2xl
+            p-4 border border-border rounded-3xl
             "
-            ></div>
+            >
+              <Image
+                src={"/designs/butterfly.png"}
+                alt="Butterfly"
+                className="w-full h-full object-cover rounded-xl"
+                height={450}
+                width={450}
+              />
+            </div>
           </Link>
           <div className=""></div>
         </div>
