@@ -8,6 +8,7 @@ import type { Project } from "@/lib/constants/projects";
 import { useRef, useState, useEffect, useCallback } from "react";
 import { createPortal } from "react-dom";
 import { motion, AnimatePresence } from "framer-motion";
+import { TechIcon } from "@/components/tech-icons";
 
 interface ProjectCardProps {
   project: Project;
@@ -71,8 +72,50 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
                   />
                 </AnimatePresence>
               ) : (
-                <div className="absolute inset-0 flex items-center justify-center text-muted-foreground">
-                  Preview coming soon
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <div className="relative w-full h-full">
+                    {/* Rich fallback preview */}
+                    <div className="absolute inset-0 bg-linear-to-br from-muted/80 via-background to-muted/60" />
+                    <div className="absolute -top-24 -left-24 h-72 w-72 rounded-full bg-cyan-500/15 blur-3xl" />
+                    <div className="absolute -bottom-24 -right-24 h-72 w-72 rounded-full bg-violet-500/15 blur-3xl" />
+
+                    {/* subtle grid */}
+                    <div
+                      className="absolute inset-0 opacity-[0.22]"
+                      style={{
+                        backgroundImage:
+                          "linear-gradient(to right, rgba(255,255,255,0.08) 1px, rgba(0,0,0,0) 1px), linear-gradient(to bottom, rgba(255,255,255,0.06) 1px, rgba(0,0,0,0) 1px)",
+                        backgroundSize: "42px 42px",
+                      }}
+                    />
+
+                    <div className="absolute inset-0 flex flex-col items-center justify-center px-6 text-center">
+                      <div className="mb-3 flex items-center gap-2 text-[10px] tracking-widest uppercase text-muted-foreground">
+                        <span className="h-1.5 w-1.5 rounded-full bg-amber-400" />
+                        No screenshots yet
+                      </div>
+
+                      <div className="text-lg md:text-xl font-semibold">
+                        {project.title}
+                      </div>
+                      <div className="mt-2 text-xs md:text-sm text-muted-foreground max-w-[34ch]">
+                        This project doesn’t have a gallery yet — here’s a quick
+                        tech snapshot.
+                      </div>
+
+                      <div className="mt-4 flex flex-wrap justify-center gap-2">
+                        {project.tags.slice(0, 6).map((tag) => (
+                          <span
+                            key={tag}
+                            className="px-2.5 py-1 rounded-full border border-border/70 bg-background/40 backdrop-blur text-[10px] tracking-wider inline-flex items-center gap-2"
+                          >
+                            <TechIcon tag={tag} className="w-3.5 h-3.5" glow />
+                            {tag}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
                 </div>
               )}
               <div className="absolute inset-0 bg-linear-to-t from-black/60 via-black/20 to-transparent pointer-events-none" />
@@ -109,9 +152,10 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
                 {project.tags.map((tag, tagIndex) => (
                   <span
                     key={tag}
-                    className="px-2 md:px-3 py-0.5 md:py-1 border border-border rounded-full text-[10px] md:text-xs tracking-wider transition-all duration-300 backdrop-blur-2xl"
+                    className="px-2 md:px-3 py-0.5 md:py-1 border border-border rounded-full text-[10px] md:text-xs tracking-wider transition-all duration-300 backdrop-blur-2xl inline-flex items-center gap-2"
                     style={{ transitionDelay: `${tagIndex * 50}ms` }}
                   >
+                    <TechIcon tag={tag} className="w-3.5 h-3.5" glow />
                     {tag}
                   </span>
                 ))}

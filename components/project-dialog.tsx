@@ -13,6 +13,7 @@ import { cn } from "@/lib/utils";
 import type { Project } from "@/lib/constants/projects";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { TechIcon } from "@/components/tech-icons";
 
 function AppleDialogOverlay({
   className,
@@ -141,11 +142,12 @@ export function ProjectDialog({ project, open, onOpenChange }: any) {
               {project.title}
             </DialogPrimitive.Title>
             <div className="flex flex-wrap gap-2">
-              {project.tags.map((tag) => (
+              {project.tags.map((tag: string) => (
                 <span
                   key={tag}
-                  className="px-3 py-1 text-xs border border-border/70 rounded-full bg-muted/30"
+                  className="px-3 py-1 text-xs border border-border/70 rounded-full bg-muted/30 inline-flex items-center gap-2"
                 >
+                  <TechIcon tag={tag} className="w-4 h-4" glow />
                   {tag}
                 </span>
               ))}
@@ -163,7 +165,7 @@ export function ProjectDialog({ project, open, onOpenChange }: any) {
                 Gallery
               </h3>
               <div className="grid grid-cols-2 gap-3">
-                {project.images.map((image, index) => (
+                {project.images.map((image: string, index: number) => (
                   <motion.div
                     key={index}
                     whileHover={{ scale: 0.98 }}

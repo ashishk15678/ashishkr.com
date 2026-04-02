@@ -101,4 +101,23 @@ export const PROJECTS: Project[] = [
     ],
     github: "https://github.com/ashishk15678/sharedcn",
   },
+  {
+    id: "4",
+    number: "04",
+    year: "2025",
+    title: "Reddit Lite",
+    tags: ["PHP", "XAMPP", "HTML", "CSS"],
+    description:
+      "A Reddit lite , made for webtech project in college , added here cuz why not",
+    github: "https://github.com/ashishk15678/reddit-lite",
+  },
+  {
+    id: "5",
+    number: "05",
+    year: "2025",
+    title: "Java Encyrption (College project)",
+    tags: ["Java", "Swing UI"],
+    description: "A College project",
+    github: "https://github.com/ashishk15678/securevault",
+  },
 ];
