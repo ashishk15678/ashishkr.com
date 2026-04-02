@@ -1,9 +1,10 @@
 import {
   AppleDashboard,
   ClerkDashboard,
+  CyberpunkMapLanding,
   TerminalDashboard,
 } from "@/components/dashboards";
-import { ReactNode } from "react";
+import type { ComponentType } from "react";
 
 export interface Design {
   id: string;
@@ -19,7 +20,7 @@ export interface Design {
   tools: string[];
   year: string;
   category: string;
-  component: ReactNode;
+  component: ComponentType;
 }
 
 export const DESIGNS: Design[] = [
@@ -99,6 +100,31 @@ export const DESIGNS: Design[] = [
     year: "2025",
     category: "Dashboard",
     component: TerminalDashboard,
+  },
+  {
+    id: "4",
+    slug: "cyberpunk-map-landing",
+    number: "04",
+    title: "CyberMap Landing",
+    subtitle: "Neon Map App HUD (Cyberpunk)",
+    description:
+      "A cyberpunk-themed landing page for a map app — neon HUD, vector routes, POI beacons, hazard overlays, and a traffic-light totem with loud, saturated color.",
+    longDescription:
+      'This design embraces a Cyberpunk 2077-inspired aesthetic: scanlines, noise, glowing gradients, holographic sweeps, and hard-edged monospace microcopy. The hero is a map-as-HUD panel with vector routes, POI beacons, hazard zones, and live telemetry. A secondary "traffic node" totem showcases traffic lights and street symbols to reinforce the navigation theme. The result is a high-contrast, color-rich landing module that feels like a chrome-and-neon interface for routing through a sleepless city.',
+    tags: ["LANDING", "CYBERPUNK", "MAP", "NEON", "HUD"],
+    theme: "terminal",
+    features: [
+      "Neon HUD hero with scanlines + noise overlay",
+      "Vector map routes with gradient glow styling",
+      "Traffic light totem + street symbol widgets",
+      "POI beacons and hazard overlay markers",
+      "Live feed panel with status pings",
+      "Vibrant multi-color cyberpunk palette",
+    ],
+    tools: ["React", "Tailwind CSS", "Lucide Icons", "Inline SVG"],
+    year: "2025",
+    category: "Landing Page",
+    component: CyberpunkMapLanding,
   },
 ];
 

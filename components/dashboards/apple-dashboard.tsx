@@ -5,13 +5,12 @@ export function AppleDashboard() {
     "/switch/switch_dashboard.png",
     "/switch/switch_dashboard_2.png",
   ];
+
   return (
-    <>
-      <div className="bg-red-500">
-        {images.map((image) => {
-          <Image src={image} alt="" />;
-        })}
-      </div>
-    </>
+    <div className="bg-red-500 p-4">
+      {images.map((image) => (
+        <Image key={image} src={image} alt="" />
+      ))}
+    </div>
   );
 }

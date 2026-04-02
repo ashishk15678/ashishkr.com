@@ -1196,6 +1196,21 @@ export default function DesignsPage() {
               />
             </div>
           </Link>
+          <Link href={"/designs/cyberpunk-map-landing"} prefetch>
+            <div
+              className="
+            p-4 border border-border rounded-3xl
+            "
+            >
+              <Image
+                src={"/designs/cyberpunk.png"}
+                alt="Cyberpunk Map Landing"
+                className="w-full h-full object-cover rounded-xl"
+                height={450}
+                width={450}
+              />
+            </div>
+          </Link>
           <div className=""></div>
         </div>
 

@@ -9,6 +9,7 @@ import {
   ClerkDashboard,
   AppleDashboard,
   TerminalDashboard,
+  CyberpunkMapLanding,
 } from "@/components/dashboards";
 import { use } from "react";
 
@@ -16,6 +17,7 @@ const demoComponents: Record<string, React.ComponentType> = {
   "clerk-dashboard": ClerkDashboard,
   "apple-dashboard": AppleDashboard,
   "terminal-dashboard": TerminalDashboard,
+  "cyberpunk-map-landing": CyberpunkMapLanding,
 };
 
 const themeDots: Record<string, string> = {
