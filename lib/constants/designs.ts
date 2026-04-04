@@ -1,5 +1,6 @@
 import {
   AppleDashboard,
+  ButterflyLanding,
   ClerkDashboard,
   CyberpunkMapLanding,
   TerminalDashboard,
@@ -24,6 +25,31 @@ export interface Design {
 }
 
 export const DESIGNS: Design[] = [
+  {
+    id: "5",
+    slug: "butterfly-landing",
+    number: "05",
+    title: "ButterflyLanding",
+    subtitle: "Cluely-Inspired Product Landing (White/Blue)",
+    description:
+      "A heavily Cluely-inspired landing page layout with a white/blue base, clean hierarchy, and scroll-linked SVG motion — no gradients, no floating objects.",
+    longDescription:
+      "This landing page leans hard into Cluely’s design language: generous whitespace, crisp typography, subtle hairlines, and intentional motion. The hero features abstract butterfly linework and a scroll-linked SVG label that shifts position as you scroll. A mid-page motion panel reinforces the same motif with route-dash animation and a scroll-tracked label. The result feels editorial and product-ready — a modern landing page that stays minimal while still feeling alive.",
+    tags: ["LANDING", "CLUELY-INSPIRED", "WHITE", "BLUE", "SVG", "SCROLL"],
+    theme: "apple",
+    features: [
+      "Cluely-style landing layout and typography",
+      "Scroll-linked SVG motion (hero label + mid-panel cue)",
+      "Route dash animations and pulsing POI markers",
+      "White/blue palette with hairline borders",
+      "No gradients, no floating objects",
+      "Prefers-reduced-motion support",
+    ],
+    tools: ["React", "Tailwind CSS", "Lucide Icons", "Inline SVG"],
+    year: "2025",
+    category: "Landing Page",
+    component: ButterflyLanding,
+  },
   {
     id: "1",
     slug: "clerk-dashboard",
