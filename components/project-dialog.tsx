@@ -201,7 +201,7 @@ export function ProjectDialog({ project, open, onOpenChange }: any) {
           {project.github && (
             <div className="pt-4 border-t border-border/50">
               <a
-                href={project.link}
+                href={project.github}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center justify-center gap-2 w-full py-4 px-6 rounded-xl bg-background text-foreground  font-medium transition-all hover:scale-[1.02]"

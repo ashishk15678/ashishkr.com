@@ -1,6 +1,7 @@
 export interface Project {
   id: string;
   number: string;
+  slug?: string;
   year: string;
   endYear?: string;
   title: string;
@@ -18,6 +19,7 @@ export const PROJECTS: Project[] = [
   {
     id: "0",
     number: "00",
+    slug: "design-tweak",
     year: "2025",
     endYear: "PRESENT",
     title: "Design Tweak",
@@ -39,6 +41,7 @@ export const PROJECTS: Project[] = [
   {
     id: "1",
     number: "01",
+    slug: "zon3",
     year: "2025",
     endYear: "PRESENT",
     title: "zon3.xyz",
@@ -67,6 +70,7 @@ export const PROJECTS: Project[] = [
   {
     id: "2",
     number: "02",
+    slug: "docker-clone",
     year: "2025",
     title: "Docker clone",
     tags: ["C", "Linux"],
@@ -81,6 +85,7 @@ export const PROJECTS: Project[] = [
   {
     id: "3",
     number: "03",
+    slug: "sharedcn",
     year: "2025",
     title: "SharedCN",
     tags: ["NEXT.JS 15", "REACT", "NODE", "CLI"],
@@ -104,6 +109,33 @@ export const PROJECTS: Project[] = [
   {
     id: "4",
     number: "04",
+    slug: "cex",
+    year: "2025",
+    title: "CEX (Centralized Exchange)",
+    tags: ["C", "Makefile"],
+    description:
+      "A centralized cryptocurrency exchange matching engine written in C.",
+    longDescription:
+      "A low-level, high-performance centralized cryptocurrency exchange matching engine built entirely in C. Focuses on fast order matching and efficient memory management.",
+    github: "https://github.com/ashishk15678/cex",
+  },
+  {
+    id: "5",
+    number: "05",
+    slug: "cms",
+    year: "2025",
+    title: "Modern CMS",
+    tags: ["Next.js", "React", "TypeScript", "TailwindCSS"],
+    description:
+      "A headless content management system tailored for modern web applications.",
+    longDescription:
+      "A fully-featured headless Content Management System that allows users to create, manage, and publish content seamlessly across various platforms.",
+    github: "https://github.com/ashishk15678/cms",
+  },
+  {
+    id: "6",
+    number: "06",
+    slug: "reddit-lite",
     year: "2025",
     title: "Reddit Lite",
     tags: ["PHP", "XAMPP", "HTML", "CSS"],
@@ -112,8 +144,9 @@ export const PROJECTS: Project[] = [
     github: "https://github.com/ashishk15678/reddit-lite",
   },
   {
-    id: "5",
-    number: "05",
+    id: "7",
+    number: "07",
+    slug: "java-encryption",
     year: "2025",
     title: "Java Encyrption (College project)",
     tags: ["Java", "Swing UI"],

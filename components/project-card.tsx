@@ -30,7 +30,7 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
           setFrameIndex((prev) =>
             project.images ? (prev + 1) % project.images.length : 0,
           ),
-        3200,
+        6000,
       );
     }, index * 900);
     return () => {
@@ -57,86 +57,93 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
           onMouseLeave={() => setIsHovered(false)}
         >
           <div className="flex flex-col gap-4">
-            <div className="relative aspect-video w-full bg-linear-to-br from-muted to-background overflow-hidden">
-              {hasImages ? (
+            {hasImages && (
+              <div className="relative aspect-video w-full bg-linear-to-br from-muted to-background overflow-hidden rounded-t-2xl">
                 <AnimatePresence mode="wait">
                   <motion.img
                     key={`${project.id}-${frameIndex}`}
                     src={project.images![frameIndex]}
                     alt={project.title}
-                    initial={{ opacity: 0.4, scale: 1.02 }}
+                    initial={{ opacity: 0.8, scale: 1.01 }}
                     animate={{ opacity: 1, scale: 1 }}
                     exit={{ opacity: 0 }}
-                    transition={{ duration: 0.6, ease: "easeOut" }}
+                    transition={{ duration: 1.2, ease: "easeOut" }}
                     className="absolute inset-0 w-full h-full object-cover"
                   />
                 </AnimatePresence>
-              ) : (
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="relative w-full h-full">
-                    {/* Rich fallback preview */}
-                    <div className="absolute inset-0 bg-linear-to-br from-muted/80 via-background to-muted/60" />
-                    <div className="absolute -top-24 -left-24 h-72 w-72 rounded-full bg-cyan-500/15 blur-3xl" />
-                    <div className="absolute -bottom-24 -right-24 h-72 w-72 rounded-full bg-violet-500/15 blur-3xl" />
+                <div className="absolute inset-0 bg-linear-to-t from-black/60 via-black/20 to-transparent pointer-events-none" />
+                <div className="absolute bottom-3 left-3 flex items-center gap-2">
+                  <span className="px-2 py-1 rounded-full bg-black/60 text-white text-[10px] font-semibold tracking-wide uppercase">
+                    {project.year}
+                    {project.endYear ? ` — ${project.endYear}` : ""}
+                  </span>
+                  {project.link && (
+                    <a
+                      href={project.link}
+                      target="_blank"
+                      className="px-2 py-1 rounded-full bg-white/15 text-white text-[10px] font-semibold tracking-wide uppercase hover:bg-white/25 transition"
+                    >
+                      View
+                    </a>
+                  )}
+                  {project.github && (
+                    <a
+                      href={project.github}
+                      target="_blank"
+                      className="px-2 py-1 rounded-full bg-white/15 text-white text-[10px] font-semibold tracking-wide uppercase hover:bg-white/25 transition"
+                    >
+                      GitHub
+                    </a>
+                  )}
+                  {project.slug && (
+                    <a
+                      href={`/projects/${project.slug}`}
+                      className="px-2 py-1 rounded-full bg-white/15 text-white text-[10px] font-semibold tracking-wide uppercase hover:bg-white/25 transition"
+                    >
+                      Case Study
+                    </a>
+                  )}
+                </div>
+              </div>
+            )}
 
-                    {/* subtle grid */}
-                    <div
-                      className="absolute inset-0 opacity-[0.22]"
-                      style={{
-                        backgroundImage:
-                          "linear-gradient(to right, rgba(255,255,255,0.08) 1px, rgba(0,0,0,0) 1px), linear-gradient(to bottom, rgba(255,255,255,0.06) 1px, rgba(0,0,0,0) 1px)",
-                        backgroundSize: "42px 42px",
-                      }}
-                    />
-
-                    <div className="absolute inset-0 flex flex-col items-center justify-center px-6 text-center">
-                      <div className="mb-3 flex items-center gap-2 text-[10px] tracking-widest uppercase text-muted-foreground">
-                        <span className="h-1.5 w-1.5 rounded-full bg-amber-400" />
-                        No screenshots yet
-                      </div>
-
-                      <div className="text-lg md:text-xl font-semibold">
-                        {project.title}
-                      </div>
-                      <div className="mt-2 text-xs md:text-sm text-muted-foreground max-w-[34ch]">
-                        This project doesn’t have a gallery yet — here’s a quick
-                        tech snapshot.
-                      </div>
-
-                      <div className="mt-4 flex flex-wrap justify-center gap-2">
-                        {project.tags.slice(0, 6).map((tag) => (
-                          <span
-                            key={tag}
-                            className="px-2.5 py-1 rounded-full border border-border/70 bg-background/40 backdrop-blur text-[10px] tracking-wider inline-flex items-center gap-2"
-                          >
-                            <TechIcon tag={tag} className="w-3.5 h-3.5" glow />
-                            {tag}
-                          </span>
-                        ))}
-                      </div>
-                    </div>
-                  </div>
+            <div
+              className={`flex flex-col gap-3 px-4 pb-5 ${!hasImages ? "pt-4" : ""}`}
+            >
+              {!hasImages && (
+                <div className="flex flex-wrap items-center gap-2 mb-2">
+                  <span className="px-2 py-1 rounded-full bg-muted text-foreground text-[10px] font-semibold tracking-wide uppercase">
+                    {project.year}
+                    {project.endYear ? ` — ${project.endYear}` : ""}
+                  </span>
+                  {project.link && (
+                    <a
+                      href={project.link}
+                      target="_blank"
+                      className="px-2 py-1 rounded-full border border-border bg-background/50 backdrop-blur text-[10px] font-semibold tracking-wide uppercase hover:bg-muted transition"
+                    >
+                      View
+                    </a>
+                  )}
+                  {project.github && (
+                    <a
+                      href={project.github}
+                      target="_blank"
+                      className="px-2 py-1 rounded-full border border-border bg-background/50 backdrop-blur text-[10px] font-semibold tracking-wide uppercase hover:bg-muted transition"
+                    >
+                      GitHub
+                    </a>
+                  )}
+                  {project.slug && (
+                    <a
+                      href={`/projects/${project.slug}`}
+                      className="px-2 py-1 rounded-full border border-border bg-background/50 backdrop-blur text-[10px] font-semibold tracking-wide uppercase hover:bg-muted transition"
+                    >
+                      Case Study
+                    </a>
+                  )}
                 </div>
               )}
-              <div className="absolute inset-0 bg-linear-to-t from-black/60 via-black/20 to-transparent pointer-events-none" />
-              <div className="absolute bottom-3 left-3 flex items-center gap-2">
-                <span className="px-2 py-1 rounded-full bg-black/60 text-white text-[10px] font-semibold tracking-wide uppercase">
-                  {project.year}
-                  {project.endYear ? ` — ${project.endYear}` : ""}
-                </span>
-                {project.link && (
-                  <a
-                    href={project.link}
-                    target="_blank"
-                    className="px-2 py-1 rounded-full bg-white/15 text-white text-[10px] font-semibold tracking-wide uppercase hover:bg-white/25 transition"
-                  >
-                    View
-                  </a>
-                )}
-              </div>
-            </div>
-
-            <div className="flex flex-col gap-3 px-4 pb-5">
               <div className="flex items-start justify-between gap-3">
                 <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight">
                   {project.title}
