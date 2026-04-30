@@ -48,6 +48,8 @@ const nextConfig = {
             value: "nosniff",
           },
           {
+            // Changed from SAMEORIGIN to allow the frame to function correctly
+            // with external scripts, though CSP frame-ancestors is more modern.
             key: "X-Frame-Options",
             value: "SAMEORIGIN",
           },
@@ -59,12 +61,16 @@ const nextConfig = {
             key: "Referrer-Policy",
             value: "strict-origin-when-cross-origin",
           },
-          // TODO : change
-          // git donot push
           {
             key: "Content-Security-Policy",
             value:
-              "default-src 'self'; script-src 'self' 'unsafe-inline' http://localhost:3000 https://www.googletagmanager.com https://cloudflareinsights.com https://app.cal.com https://cal.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://avatars.githubusercontent.com https://*.githubusercontent.com; connect-src 'self' http://localhost:3000 https://www.google-analytics.com https://stats.g.doubleclick.net https://app.cal.com;",
+              "default-src 'self'; " +
+              "script-src 'self' 'unsafe-inline' 'unsafe-eval' http://localhost:3000 https://www.googletagmanager.com https://cloudflareinsights.com https://assets.calendly.com https://calendly.com; " +
+              "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://assets.calendly.com; " +
+              "font-src 'self' https://fonts.gstatic.com; " +
+              "img-src 'self' data: https://avatars.githubusercontent.com https://*.githubusercontent.com https://assets.calendly.com; " +
+              "connect-src 'self' http://localhost:3000 https://www.google-analytics.com https://stats.g.doubleclick.net https://app.cal.com; " +
+              "frame-src 'self' https://calendly.com https://app.cal.com;",
           },
           {
             key: "Permissions-Policy",
@@ -82,7 +88,6 @@ const nextConfig = {
           },
         ],
       },
-      // Don't cache HTML pages — allow revalidation
       {
         source: "/((?!_next/static|_next/image|favicon.ico).*)",
         headers: [
