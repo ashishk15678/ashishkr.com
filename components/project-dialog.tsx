@@ -14,6 +14,7 @@ import type { Project } from "@/lib/constants/projects";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { TechIcon } from "@/components/tech-icons";
+import { ArchitectureFlow } from "./projects-section";
 
 function AppleDialogOverlay({
   className,
@@ -132,12 +133,6 @@ export function ProjectDialog({ project, open, onOpenChange }: any) {
 
           {/* Header Section (Restored your original code) */}
           <div className="mb-6">
-            <div className="flex items-center gap-2 text-xs text-muted-foreground tracking-widest mb-2">
-              <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
-              <span>
-                {project.number} — {project.year}
-              </span>
-            </div>
             <DialogPrimitive.Title className="text-3xl sm:text-4xl font-bold tracking-tight mb-4">
               {project.title}
             </DialogPrimitive.Title>

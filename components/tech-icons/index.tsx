@@ -162,6 +162,13 @@ export const TECH_ICON_MAP: Record<string, TechIconDescriptor> = {
   linux: { Icon: Terminal, label: "Linux", tone: "emerald" },
   cli: { Icon: Terminal, label: "CLI", tone: "zinc" },
 
+  // Databases & tools
+  prisma: { Icon: Workflow, label: "Prisma", tone: "indigo" },
+  bun: { Icon: Package, label: "Bun", tone: "amber" },
+  sqlite: { Icon: Database, label: "SQLite", tone: "cyan" },
+  cjson: { Icon: Code, label: "cJSON", tone: "pink" },
+  libcurl: { Icon: Globe, label: "libcurl", tone: "green" },
+
   // Other
   php: { Icon: Package, label: "PHP", tone: "purple" },
   xampp: { Icon: Server, label: "XAMPP", tone: "orange" },
