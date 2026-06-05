@@ -1126,14 +1126,7 @@ export default function DesignsPage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.5 }}
             className="relative z-10 mt-6"
-          >
-            <Button className="rounded-full px-6 gap-2" asChild>
-              <Link href="https://cal.com/ashish15678">
-                Book a call
-                <ArrowUpRight className="w-4 h-4" />
-              </Link>
-            </Button>
-          </motion.div>
+          ></motion.div>
         </section>
 
         {/* ─── MARQUEE ROW 1 — Left scroll ─── */}

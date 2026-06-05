@@ -41,7 +41,7 @@ export const DOCK_ITEMS = [
     id: "email",
     icon: Mail,
     label: "Email",
-    href: "mailto:15678ashish@gmail.com",
+    href: "mailto:6ashish.kr@gmail.com",
     external: true,
   },
   { id: "divider2", type: "divider" as const },

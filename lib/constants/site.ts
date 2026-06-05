@@ -2,7 +2,7 @@ export const SITE_CONFIG = {
   name: "Ashish Kr",
   firstName: "ASHISH",
   lastName: "KUMAR",
-  email: "15678ashish@gmail.com",
+  email: "6ashish.kr@gmail.com",
   location: "Gr Noida, INDIA",
   credentials: "Student of B.TECH",
   tagline:
