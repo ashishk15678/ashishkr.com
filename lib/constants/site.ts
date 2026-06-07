@@ -11,6 +11,11 @@ export const SITE_CONFIG = {
   openToWork: true,
   copyright: `© ${new Date().getFullYear()} ASHISH KUMAR`,
   version: "PORTFOLIO_V1",
+  resumeFileName: "ashish_resume.pdf",
+  resumeDownloadUrl:
+    "https://drive.google.com/uc?export=download&id=1T2ZBKO1EE8e-gwu2w8Umt0Q-Ehg9RW4q",
+  resumePreviewUrl:
+    "https://drive.google.com/file/d/1T2ZBKO1EE8e-gwu2w8Umt0Q-Ehg9RW4q/preview",
 };
 
 export const SOCIAL_LINKS = {
