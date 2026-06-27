@@ -16,7 +16,7 @@ export const SITE_CONFIG = {
 export const SOCIAL_LINKS = {
   github: "https://github.com/ashishk15678",
   linkedin: "https://www.linkedin.com/in/ashishk15678/",
-  twitter: "https://twitter.com/ashishonsol",
+  twitter: "https://twitter.com/0x08f",
   email: `mailto:${SITE_CONFIG.email}`,
   peerlist: "https://peerlist.io/ashishk",
 };

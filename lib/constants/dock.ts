@@ -34,7 +34,7 @@ export const DOCK_ITEMS = [
     id: "twitter",
     icon: Twitter,
     label: "Twitter",
-    href: "https://twitter.com/ashishonsol",
+    href: "https://twitter.com/0x08f",
     external: true,
   },
   {
