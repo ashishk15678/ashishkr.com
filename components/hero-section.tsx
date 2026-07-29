@@ -3,6 +3,15 @@ import { TextReveal } from "./text-reveal";
 import Image from "next/image";
 import { Bitcount } from "next/font/google";
 import Link from "next/link";
+import { Download, FileText } from "lucide-react";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "./ui/dialog";
 
 const bitcount = Bitcount({
   subsets: ["latin"],
@@ -87,6 +96,48 @@ export function HeroSection() {
           <p className="text-base md:text-lg lg:text-xl text-muted-foreground leading-relaxed max-w-md">
             {SITE_CONFIG.tagline}
           </p>
+          <div className="mt-6 max-w-md rounded-2xl border border-primary/40 bg-card p-4 shadow-lg shadow-primary/10">
+            <p className="text-xs tracking-[0.18em] text-primary mb-3">
+              RESUME
+            </p>
+            <div className="flex flex-col sm:flex-row gap-3">
+              <Dialog>
+                <DialogTrigger asChild>
+                  <button
+                    type="button"
+                    className="inline-flex items-center justify-center gap-2 rounded-full bg-foreground px-5 py-3 text-sm font-semibold tracking-wide text-background hover:opacity-90 transition-opacity"
+                  >
+                    <FileText className="w-4 h-4" />
+                    View Resume
+                  </button>
+                </DialogTrigger>
+                <DialogContent className="w-[95vw] max-w-5xl p-3 sm:p-4">
+                  <DialogHeader className="pb-2">
+                    <DialogTitle>ashish_resume.pdf</DialogTitle>
+                    <DialogDescription>
+                      Preview the latest resume here.
+                    </DialogDescription>
+                  </DialogHeader>
+                  <iframe
+                    src={SITE_CONFIG.resumePreviewUrl}
+                    title="Ashish Resume PDF"
+                    className="w-full h-[75vh] rounded-md border border-border"
+                    loading="lazy"
+                  />
+                </DialogContent>
+              </Dialog>
+
+              <Link
+                href={SITE_CONFIG.resumeDownloadUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-2 rounded-full bg-primary px-5 py-3 text-sm font-semibold tracking-wide text-primary-foreground hover:bg-primary/90 transition-colors"
+              >
+                <Download className="w-4 h-4" />
+                Download Resume
+              </Link>
+            </div>
+          </div>
         </div>
       </div>
 
