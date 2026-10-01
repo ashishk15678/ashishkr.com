@@ -65,12 +65,12 @@ const nextConfig = {
             key: "Content-Security-Policy",
             value:
               "default-src 'self'; " +
-              "script-src 'self' 'unsafe-inline' 'unsafe-eval' http://localhost:3000 https://www.googletagmanager.com https://cloudflareinsights.com https://assets.calendly.com https://calendly.com; " +
+              "script-src 'self' 'unsafe-inline' 'unsafe-eval' http://localhost:3000 https://chatline.ashishkr.com https://www.googletagmanager.com https://cloudflareinsights.com https://assets.calendly.com https://calendly.com; " +
               "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://assets.calendly.com; " +
               "font-src 'self' https://fonts.gstatic.com; " +
               "img-src 'self' data: https://avatars.githubusercontent.com https://*.githubusercontent.com https://assets.calendly.com; " +
-              "connect-src 'self' http://localhost:3000 https://www.google-analytics.com https://stats.g.doubleclick.net https://app.cal.com; " +
-              "frame-src 'self' https://calendly.com https://app.cal.com;",
+              "connect-src 'self' http://localhost:3000 https://chatline.ashishkr.com https://www.google-analytics.com https://stats.g.doubleclick.net https://app.cal.com; " +
+              "frame-src 'self' https://chatline.ashishkr.com https://calendly.com https://app.cal.com;",
           },
           {
             key: "Permissions-Policy",
