@@ -70,20 +70,20 @@ export default function RootLayout({
             <Analytics />
           </ThemeProvider>
         </Suspense>
+        {/*Cloudflare */}
+        <script
+          defer
+          src="https://static.cloudflareinsights.com/beacon.min.js"
+          data-cf-beacon='{"token": "10955f53d5ee4f5880bcbf7725c1febc"}'
+        ></script>
+        {/*GTAG */}
+        <GoogleAnalytics gaId="G-WKMVNETJP0" />
+        <script
+          src="https://chatline.ashishkr.com/widget.js"
+          data-chatline-id="cmulolsed000204l2f26a9p2s"
+          defer
+        ></script>
       </body>
-      {/*Cloudflare */}
-      <script
-        defer
-        src="https://static.cloudflareinsights.com/beacon.min.js"
-        data-cf-beacon='{"token": "10955f53d5ee4f5880bcbf7725c1febc"}'
-      ></script>
-      {/*GTAG */}
-      <GoogleAnalytics gaId="G-WKMVNETJP0" />
-      <script
-        src="https://chatline.ashishkr.com/widget.js"
-        data-chatline-id="cmulolsed000204l2f26a9p2s"
-        defer
-      ></script>
     </html>
   );
 }
