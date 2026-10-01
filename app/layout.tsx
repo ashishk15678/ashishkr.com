@@ -79,6 +79,11 @@ export default function RootLayout({
       ></script>
       {/*GTAG */}
       <GoogleAnalytics gaId="G-WKMVNETJP0" />
+      <script
+        src="https://chatline.ashishkr.com/widget.js"
+        data-chatline-id="cmulolsed000204l2f26a9p2s"
+        defer
+      ></script>
     </html>
   );
 }
